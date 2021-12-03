@@ -1,7 +1,11 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 .btn-custom {
     border-radius: 50px;
 }
 
-.ml-5 {
-    margin-right: 5;
+.navbar {
+    border-radius: 0px 0px 15px 15px;
 }
