@@ -5,7 +5,7 @@ ul.social-network {
 
 ul.social-network li {
   display: inline;
-  padding: 5px;
+  padding: 0px;
   margin: 0;
 }
 
@@ -25,4 +25,14 @@ ul.social-network li {
 
 .fa-twitter:hover {
   color: rgb(27, 159, 199);
+}
+
+.linha-vertical {
+  height: 133.2px;
+  border-left: 2px solid;
+  border-color: rgb(255, 255, 255);
+}
+
+.page-footer {
+  border-radius: 13px 13px 0px 0px;
 }
