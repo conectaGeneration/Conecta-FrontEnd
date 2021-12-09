@@ -5,14 +5,10 @@ import { MenuComponent } from './menu/menu.component';
 //import { SobreComponent } from './sobre/sobre.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'sobre', pathMatch: 'full' },
-  {
-    path: 'menu',
-    component: MenuComponent,
-  },
-
   { path: '', redirectTo: 'entrar', pathMatch: 'full' }, //quando a uri estiver vazia, sera acessado
   {
     path: 'entrar',
@@ -22,10 +18,23 @@ const routes: Routes = [
     path: 'cadastrar',
     component: CadastrarComponent,
   },
+  {
+    path: 'inicio',
+    component: InicioComponent
+  },
+  {
+    path: 'menu',
+    component: MenuComponent,
+  },
+  {
+    path: 'sobre',
+    component: SobreComponent
+  }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
