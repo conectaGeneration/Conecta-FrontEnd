@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { MenuComponent } from './menu/menu.component';
 import { SobreComponent } from './sobre/sobre.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // ESTA COM  A IMPORTAÇÃO DO FONTAWESOME
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
@@ -22,7 +22,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // FontAwesomeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
