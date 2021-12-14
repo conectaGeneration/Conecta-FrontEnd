@@ -1,3 +1,4 @@
+import { TemaComponent } from './tema/tema.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
@@ -29,7 +30,13 @@ const routes: Routes = [
   {
     path: 'sobre',
     component: SobreComponent
+  },
+  {
+    path:'tema',
+    component: TemaComponent
   }
+
+
 
 ];
 
