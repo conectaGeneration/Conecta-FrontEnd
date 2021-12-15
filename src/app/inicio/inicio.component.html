@@ -1,86 +1,87 @@
 <div class="container-fluid">
   <div class="row d-flex justify-content-center mt-3">
 
-   <!-- COLUNA ESQUERDA -->
-      <div class="col-md-2 mb-4 bg-secondary">
+    <!-- COLUNA ESQUERDA -->
+    <div class="col-md-2 mb-4 bg-secondary">
 
-        <div class="row d-flex justify-content-center">
+      <div class="row d-flex justify-content-center">
 
-          <div class="col-md-10 text-center">
-            <img class="navbar-brand img rounded mx-auto" src="{{foto}}" alt="Foto de perfil" width="65px" height="65px">
-          </div>
+        <div class="col-md-10 text-center">
+          <img class="navbar-brand img rounded mx-auto" src="{{foto}}" alt="Foto de perfil" width="65px" height="65px">
         </div>
-
-        <hr class="mt-2 mb-2">
-
-        <div class="col-md-12 text-center">
-          <p>{{nome}}</p>
-
-          <a class="btn btn-outline-dark mb-2 d-flex justify-content-center" href="#postagens">Ver postagens</a>
-        </div>
-        
       </div>
 
-      <!-- COLUNA DO MEIO -->
-      <div class="col-md-5 mb-4" id="caixaMeio">
-        <div class="row  justify-content-center">
-            <!-- <img class=" img-fluid rounded-circle mt-3" src="{{foto}}" width="20px" height="20px"> -->
-          
-          <button data-bs-toggle="modal" data-bs-target="#novaPostagem"class="col-md-6 btn mr-1 ml-1 text-left  mb-2 mt-3 d-flex justify-content-left" data-toggle="modal" data-target="#novaPostagem"
-            id="btnPubli">
-            <img class=" rounded-circle " src="{{foto}}" width="40px" height="40px">
+      <hr class="mt-2 mb-2">
 
-            <p >
-              Fazer publicação
-            </p>
-            
-          </button>
-        
-        
-        </div>
-  
+      <div class="col-md-12 text-center">
+        <p>{{nome}}</p>
+
+        <a class="btn btn-outline-dark mb-2 d-flex justify-content-center" href="#postagens">Ver postagens</a>
       </div>
 
-      <!-- NA DIREITA -->
-      <div class="col-md-2 mb-4 bg-warning">
-        <div class="row d-flex justify-content-center">
+    </div>
+
+    <!-- COLUNA DO MEIO -->
+    <div class="col-md-5 mb-4" id="caixaMeio">
+      <div class="row  justify-content-center">
+        <!-- <img class=" img-fluid rounded-circle mt-3" src="{{foto}}" width="20px" height="20px"> -->
+
+        <button data-bs-toggle="modal" data-bs-target="#novaPostagem"
+          class="col-md-6 btn mr-1 ml-1 text-left  mb-2 mt-3 d-flex justify-content-left" data-toggle="modal"
+          data-target="#novaPostagem" id="btnPubli">
+          <img class=" rounded-circle " src="{{foto}}" width="40px" height="40px">
+
+          <p>
+            Fazer publicação
+          </p>
+
+        </button>
+
+
+      </div>
+
+    </div>
+
+    <!-- NA DIREITA -->
+    <div class="col-md-2 mb-4 bg-warning">
+      <div class="row d-flex justify-content-center">
+        <div>
+
           <div>
+            <h2> Conecta.</h2>
+          </div>
 
-            <div>
-              <h2> Conecta.</h2>
-            </div>
-            
-            <div class="d-flex justify-content-center">
-              <img src="https://i.imgur.com/HRkJv1z.png?1" alt="" width="40px" height="40px" >
-            </div>
+          <div class="d-flex justify-content-center">
+            <img src="https://i.imgur.com/HRkJv1z.png?1" alt="" width="40px" height="40px">
+          </div>
 
-            
-            <div class="row">
 
-              <h6 class="text-white text-center mt-4">Redes sociais</h6>
-              <ul class="social-network d-flex justify-content-center">
-                <li>
-                  <a href="https://github.com/conectaGeneration" target="_blank" class="icoGithub"><i class="fa fa-github"
-                      aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="https://github.com/conectaGeneration pl-1 pr-1" target="_blank" class="icoFacebook"><i class="fa fa-facebook"
-                      aria-hidden="true"></i></a>
-                </li>
-                <li>
-                  <a href="https://github.com/conectaGeneration" target="_blank" class="icoTwitter"><i class="fa fa-twitter"
-                      aria-hidden="true"></i></a>
-                </li>
-              </ul>
-        
-            </div>
+          <div class="row">
+
+            <h6 class="text-white text-center mt-4">Redes sociais</h6>
+            <ul class="social-network d-flex justify-content-center">
+              <li>
+                <a href="https://github.com/conectaGeneration" target="_blank" class="icoGithub"><i class="fa fa-github"
+                    aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="https://github.com/conectaGeneration pl-1 pr-1" target="_blank" class="icoFacebook"><i
+                    class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="https://github.com/conectaGeneration" target="_blank" class="icoTwitter"><i
+                    class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+            </ul>
 
           </div>
+
         </div>
       </div>
-  
+    </div>
 
-    
+
+
   </div>
 </div>
 
@@ -104,7 +105,29 @@
 
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active  text-center" id="nav-todasPostagens" role="tabpanel"
-      aria-labelledby="nav-todasPostagens-tab">Todas as postagens..</div>
+      aria-labelledby="nav-todasPostagens-tab">
+
+      <div class="card mb-6">
+        <div class="row g-0">
+          <div class="col-md-4 bg-dark">
+            <img
+              src="https://image.freepik.com/fotos-gratis/imagem-aproximada-em-tons-de-cinza-de-uma-aguia-careca-americana-em-um-fundo-escuro_181624-31795.jpg"
+              class="img-fluid rounded-start" alt="..." width="200px" height="200px">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
     <div class="tab-pane fade  text-center" id="nav-minhasPostagens" role="tabpanel"
       aria-labelledby="nav-minhasPostagens-tab">Minhas postagens...</div>
     <div class="tab-pane fade  text-center" id="nav-postagemTema" role="tabpanel"
@@ -114,7 +137,7 @@
 
 
 
-<!-- modal -->
+<!-- modal 
 <div class="modal" id="novaPostagem" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -125,22 +148,46 @@
 
       </div>
       <div class="modal-body">
-        <div class="form-group">
-          <label for="titulo">Título</label>
-          <input type="text" class="form-control" id="titulo" placeholder="Digite o título">
-        </div>
+        <form class="row g-3">
+          <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Segmento">
+          </div>
+          <div class="col-md-4">
+            <select aria-selected="">
+          </div>
+          <div class="col-md-4">
+            <input type="password" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-12">
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="col-12">
 
-        <div class="form-group">
-          <label for="texto">Texto</label>
-          <textarea class="form-control" name="texto" id="texto" rows="3"></textarea>
-        </div>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+
+          <div class="col-md-4">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+
+        </form>
+
+
+
+
 
         <div class="form-group">
           <p>Escolha um tema ou
             <button class="btn btn-primary btn-sm" data-bs-dismiss="modal" routerLink="/tema">cadastre um novo</button>
           </p>
           <select name="tema" id="tema" class="form-control">
-            <option></option>
+            <option *ngFor='let item of listaTemas' value="{{item.id}}">
+              Temas
+            </option>
 
           </select>
 
@@ -155,3 +202,4 @@
     </div>
   </div>
 </div>
+-->

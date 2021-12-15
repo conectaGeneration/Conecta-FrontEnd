@@ -1,5 +1,6 @@
 *{
   list-style: none;
+  
 }
 
 
@@ -65,6 +66,16 @@
   color: black;
 }
 
+
+
+
+
+
+.form-group{
+  width: 102px;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
 
 
 
