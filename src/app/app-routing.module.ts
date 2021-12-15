@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    component: InicioComponent
+    component: InicioComponent,
   },
   {
     path: 'menu',
@@ -29,15 +29,12 @@ const routes: Routes = [
   },
   {
     path: 'sobre',
-    component: SobreComponent
+    component: SobreComponent,
   },
   {
-    path:'tema',
-    component: TemaComponent
-  }
-
-
-
+    path: 'tema',
+    component: TemaComponent,
+  },
 ];
 
 @NgModule({

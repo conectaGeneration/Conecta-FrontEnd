@@ -6,7 +6,7 @@
       </a>
 
       <h1 class="fs-h1 text-center text-dark">Temas</h1>
-      <h5 class="text-center">
+      <h5 class="text-center text-dark">
         Veja aqui todos os temas cadastrados ou cadastre um novo:
       </h5>
 
@@ -15,9 +15,24 @@
 
 
           <div class="input-group mb-3">
-            <input [(ngModel)]='tema.descricao' type="text" class="form-control" placeholder="Digite aqui o segmento" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)='cadastrar()'>Cadastrar</button>
+            <input [(ngModel)]='tema.descricao' type="text" class="form-control" placeholder="Digite aqui a descrição"
+              aria-label="Recipient's username" aria-describedby="button-addon2">
+
           </div>
+
+          <div class="input-group mb-3">
+            <input [(ngModel)]='tema.segmento' type="text" class="form-control" placeholder="Digite aqui o segmento"
+              aria-label="Recipient's username" aria-describedby="button-addon2">
+
+          </div>
+
+          <div class="input-group mb-3">
+            <input [(ngModel)]='tema.tipo' type="text" class="form-control" placeholder="Digite aqui o tipo"
+              aria-label="Recipient's username" aria-describedby="button-addon2">
+
+          </div>
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+            (click)='cadastrar()'>Cadastrar</button>
         </div>
       </div>
     </div>
@@ -31,19 +46,23 @@
 
     </div>
     <div class="row mt-3 mb-5 d-flex justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-10">
         <table class="table  table-hover">
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Descrição do Tema</th>
+              <th scope="col">Segmento do Tema</th>
+              <th scope="col">Serviço/Produto</th>
               <th scope="col" class="text-right">Modificações</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th></th>
-              <td></td>
+            <tr *ngFor="let tema of listaTemas">
+              <th>{{tema.id}}</th>
+              <td>{{tema.descricao}}</td>
+              <td>{{tema.segmento}}</td>
+              <td>{{tema.tipo}}</td>
               <td class="d-flex justify-content-end">
                 <button class="btn btn-info button-info text-white">
                   Editar
