@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { MenuComponent } from './menu/menu.component';
 import { SobreComponent } from './sobre/sobre.component';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TemaComponent } from './tema/tema.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { TemaComponent } from './tema/tema.component';
     CadastrarComponent,
     InicioComponent,
     TemaComponent,
+    TemaEditComponent,
+    TemaDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { TemaComponent } from './tema/tema.component';
     HttpClientModule,
     RouterModule,
     FormsModule,
-    // FontAwesomeModule
+    FontAwesomeModule
   ],
   providers: [{
     provide: LocationStrategy,

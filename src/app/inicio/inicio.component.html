@@ -1,35 +1,86 @@
 <div class="container-fluid">
   <div class="row d-flex justify-content-center mt-3">
 
-    <div class="col-md-3 mb-4">
-      <div class="row d-flex justify-content-center">
-        <div class="card-perfil">
-          <div class="card">
-            <div class="card-foto d-flex justify-content-center ">
-              <img class="img " src="{{foto}}" width="50px" height="50px">
+   <!-- COLUNA ESQUERDA -->
+      <div class="col-md-2 mb-4 bg-secondary">
+
+        <div class="row d-flex justify-content-center">
+
+          <div class="col-md-10 text-center">
+            <img class="navbar-brand img rounded mx-auto" src="{{foto}}" alt="Foto de perfil" width="65px" height="65px">
+          </div>
+        </div>
+
+        <hr class="mt-2 mb-2">
+
+        <div class="col-md-12 text-center">
+          <p>{{nome}}</p>
+
+          <a class="btn btn-outline-dark mb-2 d-flex justify-content-center" href="#postagens">Ver postagens</a>
+        </div>
+        
+      </div>
+
+      <!-- COLUNA DO MEIO -->
+      <div class="col-md-5 mb-4" id="caixaMeio">
+        <div class="row  justify-content-center">
+            <!-- <img class=" img-fluid rounded-circle mt-3" src="{{foto}}" width="20px" height="20px"> -->
+          
+          <button data-bs-toggle="modal" data-bs-target="#novaPostagem"class="col-md-6 btn mr-1 ml-1 text-left  mb-2 mt-3 d-flex justify-content-left" data-toggle="modal" data-target="#novaPostagem"
+            id="btnPubli">
+            <img class=" rounded-circle " src="{{foto}}" width="40px" height="40px">
+
+            <p >
+              Fazer publicação
+            </p>
+            
+          </button>
+        
+        
+        </div>
+  
+      </div>
+
+      <!-- NA DIREITA -->
+      <div class="col-md-2 mb-4 bg-warning">
+        <div class="row d-flex justify-content-center">
+          <div>
+
+            <div>
+              <h2> Conecta.</h2>
             </div>
-            <div class="card-body">
-              <h6 class="titulo-perfil">{{nome}}</h6>
-              <p class="card-text">descrição sobre o trabalho</p>
+            
+            <div class="d-flex justify-content-center">
+              <img src="https://i.imgur.com/HRkJv1z.png?1" alt="" width="40px" height="40px" >
             </div>
+
+            
+            <div class="row">
+
+              <h6 class="text-white text-center mt-4">Redes sociais</h6>
+              <ul class="social-network d-flex justify-content-center">
+                <li>
+                  <a href="https://github.com/conectaGeneration" target="_blank" class="icoGithub"><i class="fa fa-github"
+                      aria-hidden="true"></i></a>
+                </li>
+                <li>
+                  <a href="https://github.com/conectaGeneration pl-1 pr-1" target="_blank" class="icoFacebook"><i class="fa fa-facebook"
+                      aria-hidden="true"></i></a>
+                </li>
+                <li>
+                  <a href="https://github.com/conectaGeneration" target="_blank" class="icoTwitter"><i class="fa fa-twitter"
+                      aria-hidden="true"></i></a>
+                </li>
+              </ul>
+        
+            </div>
+
           </div>
         </div>
       </div>
+  
 
-    </div>
-
-    <div class="col-md-6 card-pub d-flex align-items-center">
-
-      <img class="img-pub" src="{{foto}}">
-      <h6 class="text-center">Crie sua nova postagem</h6>
-      <button class="btn btn-pub text-white  float-end" data-bs-toggle="modal" data-bs-target="#novaPostagem">Criar</button>
-
-    </div>
-
-    <div class="col-md-3">
-
-    </div>
-
+    
   </div>
 </div>
 
