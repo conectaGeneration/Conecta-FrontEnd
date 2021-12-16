@@ -1,27 +1,50 @@
-*{
+* {
   list-style: none;
-  
+
 }
 
 
-.container{
-  margin-top: 80px;
+.container {
+  margin-top: 60px;
 }
+
+#bg-color {
+  background-color: rgb(234, 245, 239);
+  min-height: 100vh;
+
+}
+
+.fs-14 {
+  font-size: 14pt;
+}
+
 /* ========================== */
 
 
-.card{
+.feed {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.posts {
+  padding-left: 10vh;
+  padding-right: 10vh;
+}
+
+.card {
   height: 400px;
   width: 210px;
   box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.25);
 }
 
-.card-foto{
+.card-foto {
   margin-top: 10px;
   border-radius: 10px;
 }
 
-.titulo-perfil{
+.titulo-perfil {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -30,52 +53,75 @@
   color: #000000;
 }
 
-.card-pub{
+.card-pub {
 
   width: 350px;
   height: 48px;
 
-  background: #E5E5E5 ;
+  background: #E5E5E5;
   border-radius: 40px;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
-
-
-
-.btn-pub{
-  margin-left: 50px;
-  width: 113px;
-  height: 36px;
-
-  float:right;
-
-  background: #4C4D4C;
-  border-radius: 30px;
-  text-align: center;
-
-}
-
-#btnPubli{
+.columnLateral {
   border-radius: 1rem;
-  background-color: rgb(243, 242, 239, 1);
+  padding-bottom: 60px;
+  background-color: white;
   box-shadow: 0 0 5px 0 rgb(126, 125, 125);
 }
 
+#columnE {
+  margin-left: 7%;
+}
 
-.fa-facebook, .fa-github, .fa-twitter{
-  color: black;
+#columnD {
+  margin-right: 7%;
 }
 
 
+#btnPubli {
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 0 5px 0 rgb(126, 125, 125);
+  padding-right: 120px;
+  padding-left: 10px;
+}
+
+#btnPubli:hover {
+  background-color: rgb(219, 218, 215);
+}
 
 
+.fa-facebook,
+.fa-github,
+.fa-twitter {
+  color: black;
+}
 
+.fixed-sidebar {
+  position: fixed;
+  max-width: 20%;
+  color: white;
+}
 
-.form-group{
+.form-group {
   width: 102px;
   background: #FFFFFF;
   border-radius: 10px;
 }
+
+.size-max {
+  max-height: 300px;
+  min-height: 300px;
+}
+
+.modal-content, .modal-header, .modal-body{
+  background-color: #06524D;
+}
+
+
+
 
 
 

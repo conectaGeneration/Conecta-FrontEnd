@@ -1,94 +1,91 @@
+import { Tema } from './../model/Tema';
+import { TemaService } from './../service/tema.service';
+import { PostagemService } from './../service/postagem.service';
+import { Postagem } from './../model/Postagem';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
-import { Postagem } from '../model/Postagem';
-import { PostagemService } from '../service/postagem.service';
-import { TemaService } from '../service/tema.service';
 import { AutenticacaoService } from '../service/autenticacao.service';
-
-
-import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
+  postagem: Postagem = new Postagem();
+  listaPostagens: Postagem[];
+  tituloPost: string;
 
-postagem: Postagem = new Postagem()
-listaPostagem: Postagem[]
+  tema: Tema = new Tema();
+  listaTemas: Tema[];
+  idTema: number;
+  nomeTema: string;
 
-tema: Tema = new Tema()
-listaTemas: Tema[]
-idTema:number
+  user: Usuario = new Usuario();
+  idUser = environment.id;
 
-usuario: Usuario = new Usuario()
-idUsuario = environment.id
-
-  foto = environment.foto
-  nome = environment.nome
+  foto = environment.foto;
+  nome = environment.nome;
+ imagem = environment.imagem;
 
   constructor(
-  private router: Router,
-  private postagemService: PostagemService,
-  private temaService: TemaService,
-  private autenticacaoService: AutenticacaoService
-  ){}
+    private router: Router,
+    private postagemService: PostagemService,
+    private temaService: TemaService,
+    public authService: AutenticacaoService
+  ) {}
 
-  ngOnInit(){
-    window.scroll(0,0)
+  ngOnInit() {
+    window.scroll(0, 0);
 
-    if(environment.token == ''){
-      alert('Seção expirou, faça login novamente')
-      this.router.navigate(['/entrar'])
-
+    if (environment.token == '') {
+      this.router.navigate(['/entrar']);
     }
 
-    this.getAllTema()
-    this.getAllPostagem()
+    this.getAllTemas();
+    this.getAllPostagens();
   }
 
-  getAllTema(){
-    this.temaService.getAllTema().subscribe((resp: Tema[])=>{
-      this.listaTemas = resp
-    })
+  getAllTemas() {
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp;
+    });
   }
 
-  findByIdTema(){
+  findByIdTema() {
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-      this.tema = resp
-    })
+      this.tema = resp;
+    });
   }
 
-  getAllPostagem(){
-    this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
-      this.listaPostagem = resp
-    })
+  getAllPostagens() {
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp;
+    });
   }
 
-  findByIdUser(){
-    this.autenticacaoService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) =>{
-      this.usuario = resp
-    })
+  findByIdUser() {
+    this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario) => {
+      this.user = resp;
+    });
   }
 
-  publicar(){
-    this.tema.id = this.idTema
-    this.postagem.tema = this.tema
+  publicar() {
+    this.tema.id = this.idTema;
+    this.postagem.tema = this.tema;
 
-    this.usuario.id = this.idUsuario
-    this.postagem.usuario = this.usuario
+    this.user.id = this.idUser;
+    this.postagem.usuario = this.user;
 
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
-      this.postagem = resp
-      alert('Postagem realizada')
-      this.postagem = new Postagem()
-      this.getAllPostagem()
-    })
+    this.postagemService
+      .postPostagem(this.postagem)
+      .subscribe((resp: Postagem) => {
+        this.postagem = resp;
+        alert('Sua publicação foi postada com sucesso!');
+        this.postagem = new Postagem();
+        this.getAllPostagens();
+      });
   }
-
-
-
 }

@@ -1,28 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #077E77;">
-    <div class="container">
-        <a class="navbar-brand text-light f" href="#" routerLink="/inicio">Conecta.</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- ATUALIZANDO NAVE BAR -->
 
-            <div class="collapse navbar-collapse d-flex justify-content-end" id="conteudoNavbarSuportado">
+<nav class="navbar navbar-expand-lg navbar-light" id="navbar">
 
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light f" href="#" routerLink="/inicio">Home <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" routerLink="/sobre"  href="sobre#sobreMembros" >Sobre nós</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white m" routerLink="/sobre"  href="#sobreProjeto">Sobre o projeto</a>
-                    </li>
-                    <li class="nav-item d-flex">
-                        <button type="button" class="btn btn-light btn-sm btn-custom px-5"><a (click)="sair()">Sair</a></button>
-                    </li>
-                </ul>
-            </div>
+    <!-- DIV PARA NOME E ICON -->
+    <div class="d-flex">
 
+      <h4>Conecta.</h4>
     </div>
-</nav>
+
+
+    <!-- ICON HOME -->
+    <div class="d-flex justify-content-center">
+        <img src="https://i.imgur.com/gRljLxs.png" alt="Home" width="25px"
+          height="25px"/>
+      </div>
+
+
+    <!-- BOTÃO OPÇÕES -->
+    <div class="dropdown">
+        <img class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+        src="https://i.imgur.com/DowdU9z.png"  width="25px"
+        height="25px"
+        />
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Editar perfil</a></li>
+          <li><a class="dropdown-item" href="#">Sair</a></li>
+        </ul>
+      </div>
+
+
+
+  </nav>

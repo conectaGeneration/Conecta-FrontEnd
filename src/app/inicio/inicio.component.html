@@ -1,63 +1,132 @@
-<div class="container-fluid">
-  <div class="row d-flex justify-content-center mt-3">
-
+<div class="container-fluid mb-4" id="bg-color">
+  <div class="row d-flex justify-content-space-beetween  feed">
     <!-- COLUNA ESQUERDA -->
-    <div class="col-md-2 mb-4 bg-secondary">
-
+    <div class="col-md-2 mb-4 size-max mt-3 columnLateral" id="columnE">
       <div class="row d-flex justify-content-center">
-
         <div class="col-md-10 text-center">
-          <img class="navbar-brand img rounded mx-auto" src="{{foto}}" alt="Foto de perfil" width="65px" height="65px">
+          <img class="navbar-brand img rounded-circle mx-auto" src="{{ foto }}" alt="Foto de perfil" width="65px"
+            height="65px" />
         </div>
       </div>
 
-      <hr class="mt-2 mb-2">
+      <hr class="mt-2 mb-2" />
 
       <div class="col-md-12 text-center">
-        <p>{{nome}}</p>
+        <h3 class="fs-14">{{ nome }}</h3>
 
         <a class="btn btn-outline-dark mb-2 d-flex justify-content-center" href="#postagens">Ver postagens</a>
       </div>
-
     </div>
 
     <!-- COLUNA DO MEIO -->
-    <div class="col-md-5 mb-4" id="caixaMeio">
-      <div class="row  justify-content-center">
+    <div class="col-md-6 mb-4 mr-2 ml-2" id="caixaMeio">
+      <div class="row justify-content-center">
         <!-- <img class=" img-fluid rounded-circle mt-3" src="{{foto}}" width="20px" height="20px"> -->
 
-        <button data-bs-toggle="modal" data-bs-target="#novaPostagem"
-          class="col-md-6 btn mr-1 ml-1 text-left  mb-2 mt-3 d-flex justify-content-left" data-toggle="modal"
-          data-target="#novaPostagem" id="btnPubli">
-          <img class=" rounded-circle " src="{{foto}}" width="40px" height="40px">
+        <button data-bs-toggle="modal" data-bs-target="#novaPostagem" class="
+            col-md-6
+            btn
+            mr-1
+            ml-1
+            text-left
+            mb-1
+            mt-3
+            d-flex
+            justify-content-start
+          " data-toggle="modal" data-target="#novaPostagem" id="btnPubli">
 
-          <p>
-            Fazer publicação
-          </p>
+          <div>
+            <img class="rounded-circle d-flex flex-row" src="{{ foto }}" width="45px" height="45px" />
+          </div>
 
+          <p>Fazer publicação</p>
         </button>
+        <!-- tab  -->
+        <div class="container" id="postagens">
+          <nav class="posts">
+            <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+              <button class="nav-link active text-secondary" id="nav-todasPostagens-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-todasPostagens" type="button" role="tab" aria-controls="nav-todasPostagens"
+                aria-selected="true">
+                Todas as postagens
+              </button>
+
+              <button class="nav-link text-secondary" id="nav-minhasPostagens-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-minhasPostagens" type="button" role="tab" aria-controls="nav-minhasPostagens"
+                aria-selected="false">
+                Minhas postagens
+              </button>
+
+              <button class="nav-link text-secondary" id="nav-postagemTema-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-postagemTema" type="button" role="tab" aria-controls="nav-postagemTema"
+                aria-selected="false">
+                Postagem por tema
+              </button>
+            </div>
+          </nav>
+
+          <div class="tab-content" id="nav-tabContent">
+            <!-- TODAS POSTAGENS -->
+            <div class="tab-pane fade show active text-center" id="nav-todasPostagens" role="tabpanel"
+              aria-labelledby="nav-todasPostagens-tab">
+              <div class="card-columns mt-4">
+                <div class="card text-center mb-3" *ngFor="let item of listaPostagens">
+                  <div class="card-body">
+                    <img class="navbar-brand img rounded-circle mx-auto" src="{{item.imagem}}" alt="imagem da postagem" width="400px" height="300px" />
+                    <h5 class="card-title m-0">{{ item.titulo }}</h5>
+                    <p class="card-title m-0">{{ item.texto }}</p>
 
 
+                    <small class="text-muted">Tema: {{ item.tema.descricao }}</small>
+
+
+                    <small class="text-muted">Tema: {{ item.tema.tipo }}</small>
+
+
+                    <small class="text-muted">Tema: {{ item.tema.segmento }}</small>
+
+
+                    <p class="card-text mt-3">{{ item.texto }}</p>
+                    <p class="card-text">
+                      <small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
+                        {{ item.data | date: "HH:mm" }}</small>
+                    </p>
+                    <p class="card-text">
+                      <small class="text-muted">por: {{ item.usuario.nome }}</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- MINHAS POSTAGENS -->
+            <div class="tab-pane fade text-center" id="nav-minhasPostagens" role="tabpanel"
+              aria-labelledby="nav-minhasPostagens-tab">
+              Minhas postagens...
+            </div>
+
+            <!-- POSTAGENS POR TEMA -->
+            <div class="tab-pane fade text-center" id="nav-postagemTema" role="tabpanel"
+              aria-labelledby="nav-postagemTema-tab">
+              Postagens por temas...
+            </div>
+          </div>
+        </div>
       </div>
-
     </div>
 
     <!-- NA DIREITA -->
-    <div class="col-md-2 mb-4 bg-warning">
+    <div class="col-md-2 mb-4 mt-3 size-max columnLateral" id="columnD">
       <div class="row d-flex justify-content-center">
         <div>
-
           <div>
-            <h2> Conecta.</h2>
+            <h2>Conecta.</h2>
           </div>
 
           <div class="d-flex justify-content-center">
-            <img src="https://i.imgur.com/HRkJv1z.png?1" alt="" width="40px" height="40px">
+            <img src="https://i.imgur.com/WZbS5xV.png" alt="" width="40px" height="40px" />
           </div>
 
-
-          <div class="row">
-
+          <div class="row icon-social">
             <h6 class="text-white text-center mt-4">Redes sociais</h6>
             <ul class="social-network d-flex justify-content-center">
               <li>
@@ -73,133 +142,95 @@
                     class="fa fa-twitter" aria-hidden="true"></i></a>
               </li>
             </ul>
-
           </div>
-
         </div>
       </div>
     </div>
-
-
 
   </div>
 </div>
 
-<!-- tab  -->
-<div class="container " id="postagens">
-  <nav>
-    <div class="nav nav-tabs  d-flex justify-content-center" id="nav-tab" role="tablist">
-      <button class="nav-link active text-secondary" id="nav-todasPostagens-tab" data-bs-toggle="tab"
-        data-bs-target="#nav-todasPostagens" type="button" role="tab" aria-controls="nav-todasPostagens"
-        aria-selected="true">Todas as postagens</button>
-
-      <button class="nav-link text-secondary" id="nav-minhasPostagens-tab" data-bs-toggle="tab"
-        data-bs-target="#nav-minhasPostagens" type="button" role="tab" aria-controls="nav-minhasPostagens"
-        aria-selected="false">Minhas postagens</button>
-
-      <button class="nav-link text-secondary" id="nav-postagemTema-tab" data-bs-toggle="tab"
-        data-bs-target="#nav-postagemTema" type="button" role="tab" aria-controls="nav-postagemTema"
-        aria-selected="false">Postagem por tema</button>
-    </div>
-  </nav>
-
-  <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active  text-center" id="nav-todasPostagens" role="tabpanel"
-      aria-labelledby="nav-todasPostagens-tab">
-
-      <div class="card mb-6">
-        <div class="row g-0">
-          <div class="col-md-4 bg-dark">
-            <img
-              src="https://image.freepik.com/fotos-gratis/imagem-aproximada-em-tons-de-cinza-de-uma-aguia-careca-americana-em-um-fundo-escuro_181624-31795.jpg"
-              class="img-fluid rounded-start" alt="..." width="200px" height="200px">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-
-    <div class="tab-pane fade  text-center" id="nav-minhasPostagens" role="tabpanel"
-      aria-labelledby="nav-minhasPostagens-tab">Minhas postagens...</div>
-    <div class="tab-pane fade  text-center" id="nav-postagemTema" role="tabpanel"
-      aria-labelledby="nav-postagemTema-tab">Postagens por temas...</div>
-  </div>
-</div>
-
-
-
-<!-- modal 
-<div class="modal" id="novaPostagem" tabindex="-1">
-  <div class="modal-dialog">
+<!-- Modal -->
+<div class="modal t-modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
+
       <div class="modal-header">
-        <h5 class="modal-title">Nova postagem</h5>
-        <button type="button " class="btn mr-2 text-white novo-post" data-bs-toggle="modal"
-          data-bs-target="#novaPostagem">Nova Postagem</button>
-
+        <h5 class="modal-title" id="TituloModalCentralizado">Criar nova postagem</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+
       <div class="modal-body">
-        <form class="row g-3">
-          <div class="col-md-4">
-            <input type="text" class="form-control" placeholder="Segmento">
-          </div>
-          <div class="col-md-4">
-            <select aria-selected="">
-          </div>
-          <div class="col-md-4">
-            <input type="password" class="form-control" id="inputPassword4">
-          </div>
-          <div class="col-12">
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-          </div>
-          <div class="col-12">
-
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        <div class="row">
+          <div class="form-floating mt-3">
+            <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="floatingInput"
+              placeholder="Digite o título">
+            <label for="floatingInput">Título</label>
           </div>
 
+          <div class="form-floating mt-3">
+            <textarea [(ngModel)]='postagem.texto' class="form-control" placeholder="Leave a comment here"
+              id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Texto</label>
+          </div>
+
+          <div class="form-floating mt-3">
+            <input [(ngModel)]='postagem.imagem' class="form-control" placeholder="Leave a comment here"
+              id="floatingInput">
+            <label for="floatingInput">Imagem</label>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+
           <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-              <option selected>Choose...</option>
-              <option>...</option>
+            <select class="form-select" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+              <option disabled selected value>Segmento</option>
+              <option *ngFor='let item of listaTemas' value="{{item.id}}">
+                {{item.segmento}}
+              </option>
             </select>
           </div>
 
-        </form>
+          <div class="col-md-4">
+            <select class="form-select" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+              <option class="text-dark" selected>Tipo</option>
+              <option *ngFor='let item of listaTemas' value="{{item.id}}">
+                {{item.tipo}}
+              </option>
+            </select>
+          </div>
 
-
-
-
-
-        <div class="form-group">
-          <p>Escolha um tema ou
-            <button class="btn btn-primary btn-sm" data-bs-dismiss="modal" routerLink="/tema">cadastre um novo</button>
-          </p>
-          <select name="tema" id="tema" class="form-control">
-            <option *ngFor='let item of listaTemas' value="{{item.id}}">
-              Temas
-            </option>
-
-          </select>
+          <div class="col-md-4">
+            <select class="form-select" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+              <option selected>Descrição</option>
+              <option *ngFor='let item of listaTemas' value="{{item.id}}">
+                {{item.descricao}}
+              </option>
+            </select>
+          </div>
 
         </div>
 
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Publicar</button>
+        <div class="col-md-6 justify-content-end mt-3">
+          <button class="btn btn-light btn-sm" data-bs-dismiss="modal" routerLink='/tema'>Cadastre um novo</button>
         </div>
+
       </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+
+        <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">
+          Publicar
+        </button>
+      </div>
+
     </div>
   </div>
 </div>
--->

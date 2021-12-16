@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from './../../environments/environment.prod';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sobre',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobreComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
 
-  ngOnInit(): void {
+  ) { }
+
+  ngOnInit() {
+    window.scroll(0, 0);
+
+    if (environment.token == '') {
+      this.router.navigate(['/entrar']);
+    }
+
   }
 
 }

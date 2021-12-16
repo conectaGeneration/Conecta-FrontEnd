@@ -1,20 +1,26 @@
-* {
-    font-family: 'Poppins', sans-serif;
-}
+.fs-16
+ {
+   font-size: 16pt;
+ }
 
-.btn-custom {
-    border-radius: 50px;
+ .fs-18
+ {
+   font-size: 18pt;
+ }
 
-}
+ a{
+   cursor: pointer;
+ }
 
-.navbar {
-    border-radius: 0px 0px 13px 13px;
-}
+ #navbar{
+   display: flex;
+   justify-content: space-between;
+   padding-left: 7%;
+   padding-right: 7%;
 
-.m {
-    margin-right: 15px;
-}
+   background-color: #A3CFCD;
+   box-shadow: 0 0 5px 0 rgb(126, 125, 125);
 
-.f {
-    font-weight: bold;
-}
+ }
+
+
