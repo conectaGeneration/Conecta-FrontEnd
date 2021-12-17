@@ -16,6 +16,12 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TemaComponent } from './tema/tema.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { AlertaComponent } from './alerta/alerta.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +35,9 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
     TemaComponent,
     TemaEditComponent,
     TemaDeleteComponent,
+    PostagemDeleteComponent,
+    PostagemEditComponent,
+    AlertaComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,12 +45,16 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
     HttpClientModule,
     RouterModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ModalModule.forRoot(),
+    OrderModule,
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

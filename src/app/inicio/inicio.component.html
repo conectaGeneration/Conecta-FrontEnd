@@ -67,26 +67,30 @@
 
           <div class="tab-content" id="nav-tabContent">
             <!-- TODAS POSTAGENS -->
-            <div class="tab-pane fade show active text-center" id="nav-todasPostagens" role="tabpanel"
+            <div class="tab-pane fade show active text-center" id="nav-todasPostagens center" role="tabpanel"
               aria-labelledby="nav-todasPostagens-tab">
-              <div class="card-columns mt-4">
-                <div class="card text-center mb-3" *ngFor="let item of listaPostagens">
+              <div class="card-columns mt-4" id="center">
+                <div class="card text-center mb-3 justify-content-center" id="card-size"
+                  *ngFor="let item of listaPostagens">
                   <div class="card-body">
-                    <img class="navbar-brand img rounded-circle mx-auto" src="{{item.imagem}}" alt="imagem da postagem" width="400px" height="300px" />
+                    <img class="navbar-brand img rounded-circle mx-auto" src="{{item.imagem}}" alt="imagem da postagem"
+                      width="400px" height="300px"/>
+
                     <h5 class="card-title m-0">{{ item.titulo }}</h5>
                     <p class="card-title m-0">{{ item.texto }}</p>
 
+                    <small class="text-muted text-white space" id="tag-color">
+                      <font color="#ffffff">#{{ item.tema.descricao }}</font>
+                    </small>
 
-                    <small class="text-muted">Tema: {{ item.tema.descricao }}</small>
+                    <small class="text-muted text-white space" id="tag-color">
+                      <font color="#ffffff">#{{ item.tema.tipo }}</font>
+                    </small>
 
+                    <small class="text-muted space" id="tag-color">
+                      <font color="#ffffff">#{{ item.tema.segmento }}</font>
+                    </small>
 
-                    <small class="text-muted">Tema: {{ item.tema.tipo }}</small>
-
-
-                    <small class="text-muted">Tema: {{ item.tema.segmento }}</small>
-
-
-                    <p class="card-text mt-3">{{ item.texto }}</p>
                     <p class="card-text">
                       <small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
                         {{ item.data | date: "HH:mm" }}</small>
@@ -94,6 +98,8 @@
                     <p class="card-text">
                       <small class="text-muted">por: {{ item.usuario.nome }}</small>
                     </p>
+                    <a [routerLink]="['/postagem-edit', item.id]" class="text-danger" href=""> Editar</a>
+                    <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href=""> Apagar</a>
                   </div>
                 </div>
               </div>
@@ -157,7 +163,7 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Criar nova postagem</h5>
+        <h5 class="modal-title text-center" id="TituloModalCentralizado">Criar nova postagem</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
