@@ -6,78 +6,79 @@
       <div class="col-md-4  justify-content-center" id="form-entrar-d">
 
 
-        <div id="text-img">
-          <h2 class="fw-bold">
-            <p>Compartilhe o seu</p>
-            <p>pequeno negócio</p>
-            e receba por isso!
-          </h2>
-        </div>
+        <div class="img-bg">
+          <div id="text-img">
+            <h2 class="fw-bold">
+              <p>Compartilhe o seu</p>
+              <p>pequeno negócio</p>
+              e receba por isso!
+            </h2>
+          </div>
 
-
-        <div class="img-bg"><img src="https://i.imgur.com/LNMKeea.png"></div>
-
+          <img src="https://i.imgur.com/LNMKeea.png"></div>
 
       </div>
 
+      <!--  editandoooo -->
       <div class="col-md-7 d-flex justify-content-center" id="form-entrar">
 
         <div class="col-md-8">
           <h1 class="text-center mb-3 fw-bold fs-3">Cadastre-se</h1>
-
-          <div class="form-group mb-4 fw-bold fs-5">
-            <label for="nome ">Nome</label>
-            <input [(ngModel)]="usuario.nome" class="form-control input-control" type="text" name="nome" id="nome"
-              placeholder="Digite seu nome">
+          <hr width="400px">
+          <div class="form-floating mb-3">
+            <input [(ngModel)]="usuario.nome" type="nome" class="form-control input-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Nome</label>
           </div>
 
-          <div class="form-group mb-4 fw-bold fs-5">
-            <label for="email">Email</label>
-            <input [(ngModel)]="usuario.email" class="form-control input-control" type="text" name="email" id="email"
-              placeholder="Digite seu email">
+          <div class="form-floating mb-3 ">
+            <input [(ngModel)]="usuario.email" placeholder="email" class="form-control input-control" type="email" name="email" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Endereço de email</label>
           </div>
 
-          <div class="form-group mb-4 fw-bold fs-5">
-            <label for="foto">Link da Foto</label>
-            <input [(ngModel)]='usuario.foto' class="form-control input-control" type="text" name="foto" id="foto"
-              placeholder="Link">
+          <div class="form-floating mb-3">
+            <input [(ngModel)]='usuario.foto' class="form-control input-control" placeholder="Link da Foto" type="text" name="foto" id="foto">
+            <label for="floatingInput">Link da Foto</label>
           </div>
 
-
-          <div class="form-group mb-4 fw-bold fs-5">
-            <label for="senha">Senha</label>
-            <input (input)='confirmSenha($event)' class="form-control input-control " type="password" name="senha"
-              id="senha" placeholder="Digite sua senha">
-          </div>
-
-          <div class="form-group mb-4 fw-bold fs-5">
-            <label for="confimSenha">Confirmar senha</label>
-            <input [(ngModel)]='usuario.senha' class="form-control input-control" type="password" name="confirmSenha"
-              id="confirmSenha" placeholder="Digite sua senha novamente">
-          </div>
-
-          <div class="form-group mb-4 fw-bold fs-5">
-            <label for="tipoUsuario">Tipo de Usuário</label>
-            <select class="form-control input-control" (change)="tipoUser($event)" name="tipoUsuario" id="tipoUsuario">
-              <option>Selecione um tipo de usuário</option>
+          <div class="form-floating mb-3 ">
+            <select placeholder="tipo de usuario" class="form-control input-control mt-4" (change)="tipoUser($event)" name="tipoUsuario"
+              id="tipoUsuario">
               <option value="normal">Normal</option>
               <option value="admin">Administrador</option>
             </select>
+            <label for="tipoUsuario">Tipo de Usuário</label>
           </div>
+
+          <div class="d-flex justify-content-space-beetween">
+            <div class="form-floating mb-3 ">
+              <input (input)='confirmSenha($event)' placeholder="senha" class="form-control input-control " type="password" name="senha"
+                id="floatingPassword">
+              <label for="floatingPassword">Senha</label>
+            </div>
+
+            <div class="form-floating mb-3 ml-5 ">
+              <input [(ngModel)]='usuario.senha' placeholder="confirmar senha" class="form-control input-control" type="password" name="confirmSenha"
+                id="floatingPassword">
+              <label for="floatingPassword">Confirmar senha</label>
+            </div>
+          </div>
+
+          <hr class="mt-4 mb-1">
+
+            <p class="text-center fs-15">
+              Já possuiu uma conta?<br> <a routerLink="/entrar" class="link-color">Entre aqui</a>
+            </p>
 
           <div class="d-flex justify-content-center fw-bold fs-4">
             <button class="btn btn-danger mr-4 " type="submit" routerLink="/entrar">Cancelar</button>
-            <button class="btn btn-success " (click)="cadastrar()" type="submit">Cadastrar</button>
+            <button class="btn btn-success " (click)='cadastrar()' type="submit">Cadastrar</button>
           </div>
 
         </div>
 
       </div>
-
-
-
+      <!--  editandooo  -->
 
     </div>
-  </div>
 
-</div>
+  </div>

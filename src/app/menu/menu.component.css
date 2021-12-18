@@ -1,26 +1,44 @@
-.fs-16
- {
-   font-size: 16pt;
- }
+.fs-16 {
+  font-size: 16pt;
+}
 
- .fs-18
- {
-   font-size: 18pt;
- }
+.fs-18 {
+  font-size: 18pt;
+}
 
- a{
-   cursor: pointer;
- }
+a {
+  cursor: pointer;
+}
 
- #navbar{
-   display: flex;
-   justify-content: space-between;
-   padding-left: 7%;
-   padding-right: 7%;
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 7%;
+  padding-right: 7%;
 
-   background-color: #A3CFCD;
-   box-shadow: 0 0 5px 0 rgb(126, 125, 125);
+  background-color: #A3CFCD;
+  box-shadow: 0 0 5px 0 rgb(126, 125, 125);
 
- }
+}
 
+.link-text {
+  text-decoration: none;
+  color: #242370
+}
+
+#c:hover {
+  color: #1227df;
+  transform: scale(1.2);
+  transition: .2s;
+}
+
+#size:hover{
+  transform: scale(1.5);
+  transition: .2s;
+}
+
+.size:hover{
+  transform: scale(1.5);
+  transition: .2s;
+}
 

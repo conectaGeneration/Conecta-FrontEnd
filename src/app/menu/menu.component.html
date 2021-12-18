@@ -2,32 +2,26 @@
 
 <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
 
-    <!-- DIV PARA NOME E ICON -->
-    <div class="d-flex">
-
-      <h4>Conecta.</h4>
-    </div>
-
-
-    <!-- ICON HOME -->
-    <div class="d-flex justify-content-center">
-        <img src="https://i.imgur.com/gRljLxs.png" alt="Home" width="25px"
-          height="25px"/>
-      </div>
+  <!-- DIV PARA NOME E ICON -->
+  <div class="d-flex">
+    <a class="link-text" id="c" href="/#/inicio"><h4>Conecta.</h4></a>
+  </div>
 
 
-    <!-- BOTÃO OPÇÕES -->
-    <div class="dropdown">
-        <img class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
-        src="https://i.imgur.com/DowdU9z.png"  width="25px"
-        height="25px"
-        />
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Editar perfil</a></li>
-          <li><a class="dropdown-item" href="#">Sair</a></li>
-        </ul>
-      </div>
+  <!-- ICON HOME -->
+  <div class="d-flex justify-content-center">
+    <a id="size" routerLink="/inicio"> <img src="https://i.imgur.com/gRljLxs.png" alt="Home" width="25px" height="25px" /></a>
+  </div>
 
 
+  <!-- BOTÃO OPÇÕES -->
+  <div class="dropdown">
+    <img class="dropdown-toggle size" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+      src="https://i.imgur.com/DowdU9z.png" width="25px" height="25px" />
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Editar perfil</a></li>
+      <li><a (click)='sair()' class="dropdown-item" >Sair</a></li>
+    </ul>
+  </div>
 
-  </nav>
+</nav>

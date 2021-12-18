@@ -28,7 +28,7 @@ export class InicioComponent implements OnInit {
 
   foto = environment.foto;
   nome = environment.nome;
- imagem = environment.imagem;
+  imagem = environment.imagem;
 
   constructor(
     private router: Router,
@@ -83,9 +83,13 @@ export class InicioComponent implements OnInit {
       .postPostagem(this.postagem)
       .subscribe((resp: Postagem) => {
         this.postagem = resp;
+        environment.imagem = this.postagem.imagem;
         alert('Sua publicação foi postada com sucesso!');
         this.postagem = new Postagem();
         this.getAllPostagens();
       });
   }
+
+
+
 }
