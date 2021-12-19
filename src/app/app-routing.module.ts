@@ -11,7 +11,7 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
-
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'entrar', pathMatch: 'full' }, //quando a uri estiver vazia, sera acessado
@@ -53,12 +53,16 @@ const routes: Routes = [
   },
   {
     path: 'postagem-delete/:id',
-    component: PostagemDeleteComponent
-  }
+    component: PostagemDeleteComponent,
+  },
+  {
+    path: 'usuario-edit/:id',
+    component: UsuarioEditComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

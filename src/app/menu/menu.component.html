@@ -1,27 +1,38 @@
-<!-- ATUALIZANDO NAVE BAR -->
+<nav class="navbar navb navbar-expand-lg static" >
+  <div class="container-fluid">
+    <a routerLink="/inicio" class="navbar-brand logo" href="#">Conecta.</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+    <form class="d-flex">
+      <ul class="navbar-nav nav-items">
+        <li class="nav-item">
+          <a routerLink="/inicio" class="nav-link active text-white" aria-current="page" href="#">Feed</a>
+        </li>
+        <li class="nav-item">
+          <a  routerLink="/sobre" class="nav-link text-white" href="#">Sobre o projeto</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/sobre" href="#sobrenos" class="nav-link text-white">Sobre nós</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <div class="dropdown" style="color:#fff">
+          <img  style="color:#fff" class="dropdown-toggle icone-branco" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+            src="https://i.imgur.com/DowdU9z.png" width="25px" height="25px" />
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a [routerLink]="['/usuario-edit', id]" class="dropdown-item">Editar perfil</a></li>
+            <li><a (click)='sair()' class="dropdown-item" >Sair</a></li>
+          </ul>
+        </div>
 
-  <!-- DIV PARA NOME E ICON -->
-  <div class="d-flex">
-    <a class="link-text" id="c" href="/#/inicio"><h4>Conecta.</h4></a>
-  </div>
+            </span>
+    </form>
 
 
-  <!-- ICON HOME -->
-  <div class="d-flex justify-content-center">
-    <a id="size" routerLink="/inicio"> <img src="https://i.imgur.com/gRljLxs.png" alt="Home" width="25px" height="25px" /></a>
-  </div>
 
 
-  <!-- BOTÃO OPÇÕES -->
-  <div class="dropdown">
-    <img class="dropdown-toggle size" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
-      src="https://i.imgur.com/DowdU9z.png" width="25px" height="25px" />
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><a class="dropdown-item" href="#">Editar perfil</a></li>
-      <li><a (click)='sair()' class="dropdown-item" >Sair</a></li>
-    </ul>
-  </div>
 
+    </div>
 </nav>

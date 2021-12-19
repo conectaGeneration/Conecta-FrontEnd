@@ -7,6 +7,7 @@ import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { AutenticacaoService } from '../service/autenticacao.service';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -30,18 +31,23 @@ export class InicioComponent implements OnInit {
   nome = environment.nome;
   imagem = environment.imagem;
 
+  key = 'data'
+  reverse = true
+
+
   constructor(
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    public authService: AutenticacaoService
-  ) {}
+    public authService: AutenticacaoService,
+    private alertasService: AlertasService
+  ) { }
 
   ngOnInit() {
     window.scroll(0, 0);
 
     if (environment.token == '') {
-      this.router.navigate(['/entrar']);
+      this.router.navigate(['/entrar'])
     }
 
     this.getAllTemas();
@@ -84,7 +90,7 @@ export class InicioComponent implements OnInit {
       .subscribe((resp: Postagem) => {
         this.postagem = resp;
         environment.imagem = this.postagem.imagem;
-        alert('Sua publicação foi postada com sucesso!');
+        this.alertasService.showAlertSuccess('Sua publicação foi postada com sucesso!');
         this.postagem = new Postagem();
         this.getAllPostagens();
       });

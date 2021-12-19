@@ -26,7 +26,7 @@ idTema: number
     private route:ActivatedRoute,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private alertas: AlertasService
+    private alertasService: AlertasService
     ) { }
 
   ngOnInit() {
@@ -66,10 +66,10 @@ idTema: number
 
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem atualizada com sucesso!')
+      this.alertasService.showAlertSuccess('Postagem atualizada com sucesso!')
       this.router.navigate(['/inicio'])
     })
   }
 
-  
+
 }

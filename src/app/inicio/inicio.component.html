@@ -2,11 +2,11 @@
   <div class="row d-flex justify-content-space-beetween  feed">
 
     <!-- COLUNA ESQUERDA -->
-    <div class="col-md-2 mb-4 size-max mt-5 columnLateral" id="columnE">
+    <div class="col-md-2 mb-4 size-max mt-5 columnLateral " id="columnE">
       <div class="row d-flex justify-content-center">
-        <div class="col-md-10 text-center">
-          <img class="navbar-brand img rounded-circle mx-auto" src="{{ foto }}" alt="Foto de perfil" width="65px"
-            height="65px" />
+        <div class="col-md-10 text-center pt-4">
+          <img class="navbar-brand img rounded-circle mx-auto" src="{{ foto }}" alt="Foto de perfil" width="55px"
+            height="55px" />
         </div>
       </div>
 
@@ -20,27 +20,26 @@
     </div>
 
     <!-- COLUNA DO MEIO -->
-    <div class="col-md-6 mb-4 mr-2 ml-2 mt-4" id="caixaMeio">
+    <div class="col-md-7 mb-4 mr-2 ml-2 mt-4" id="caixaMeio">
       <div class="row d-flex justify-content-center">
 
 
         <button data-bs-toggle="modal" data-bs-target="#novaPostagem" class="
-            col-md-6
+            col-md-8
             btn
-            mr-1
-            ml-1
-            text-left
             mb-1
             mt-3
             d-flex
-            justify-content-start
+
           " data-toggle="modal" data-target="#novaPostagem" id="btnPubli">
 
           <div>
-            <img class="rounded-circle d-flex flex-row" src="{{ foto }}" width="45px" height="45px" />
+            <img class="rounded-circle d-flex flex-row " src="{{ foto }}" width="45px" height="45px" />
           </div>
 
-          <p>Fazer publicação</p>
+          <div class=" text-center mt-2 ml-5">
+            <p>Fazer publicação</p>
+          </div>
         </button>
 
 
@@ -73,16 +72,16 @@
 
           <div class="tab-content d-flex justify-content-center" id="nav-tabContent">
             <!-- TODAS POSTAGENS -->
-            <div class="tab-pane fade show active text-center" id="nav-todasPostagens" role="tabpanel"
+            <div class="tab-pane fade show active text text-start" id="nav-todasPostagens" role="tabpanel"
               aria-labelledby="nav-todasPostagens-tab">
               <div class="card-columns mt-4">
-                <div class="card mb-3" id="card-size" *ngFor='let item of listaPostagens'>
-                  <div class="card-body">
+                <div class="card mb-3" id="card-size" *ngFor='let item of listaPostagens' width='400px'>
+                  <div class="card-body" width='400px'>
 
-                    <h5 class="card-title m-0">{{ item.titulo }}</h5>
+                    <h5 class="card-title m-0" width='400px'>{{ item.titulo }}</h5>
 
-                    <img class="navbar-brand img rounded- mx-auto" src="{{item.imagem}}" alt="imagem da postagem"
-                      width="300px" height="200px" />
+                    <img class="navbar-brand img rounded mx-auto text-center" src="{{item.imagem}}"
+                      alt="imagem da postagem" width="350px" height="200px" />
 
                     <p class="card-title m-0">{{ item.texto }}</p>
 
@@ -112,7 +111,7 @@
             </div>
 
             <!-- MINHAS POSTAGENS -->
-            <div class="tab-pane fade text-center " id="nav-minhasPostagens" role="tabpanel"
+            <div class="tab-pane fade text-start " id="nav-minhasPostagens" role="tabpanel"
               aria-labelledby="nav-minhasPostagens-tab">
               <div class="card-columns mt-4">
                 <div class="card mb-3 " id="card-size" *ngFor='let item of user.postagem'>
@@ -142,7 +141,7 @@
                         {{ item.data | date: "HH:mm" }}</small>
                     </p>
 
-                    <a [routerLink]="['/postagem-edit', item.id]" class="text-danger" href="">Editar</a>
+                    <a [routerLink]="['/postagem-edit', item.id]" class="text-danger mr-4" href="">Editar</a>
                     <a [routerLink]="['/postagem-delete', item.id]" class="dropdown-danger" href=""> Apagar
                     </a>
 
@@ -152,10 +151,10 @@
             </div>
 
             <!-- POSTAGENS POR TEMA -->
-            <div class="tab-pane fade text-center" id="nav-postagemTema" role="tabpanel"
+            <div class="tab-pane fade text-start" id="nav-postagemTema" role="tabpanel"
               aria-labelledby="nav-postagemTema-tab">
               <div class="card-columns mt-4" *ngFor='let tema of listaTemas'>
-                <div class="card text-center mb-3 justify-content-center" id="card-size"
+                <div class="card text-start mb-3 justify-content-center" id="card-size"
                   *ngFor='let item of tema.postagem'>
                   <div class="card-body">
 
@@ -179,12 +178,13 @@
                       <font color="#ffffff">#{{ tema.segmento }} </font>
                     </small>
 
+
+                    <p class="card-text ">
+                      <small class="text-muted ">por: {{ item.usuario.nome }}</small>
+                    </p>
                     <p class="card-text">
                       <small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
                         {{ item.data | date: "HH:mm" }}</small>
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">por: {{ item.usuario.nome }}</small>
                     </p>
 
                   </div>
@@ -199,88 +199,108 @@
     </div>
 
     <!-- NA DIREITA -->
-    <div class="col-md-2 mb-4 mt-5 size-max columnLateral" id="columnD">
+    <div class="col-md-2 mb-4 mt-5 size-max columnLateral teste" id="columnD">
+
       <div class="row d-flex justify-content-center">
         <div>
-          <div>
+          <div class="mt-4 mb-6 text-center">
             <h2>Conecta.</h2>
           </div>
 
-          <div class="d-flex justify-content-center">
-            <img src="https://i.imgur.com/WZbS5xV.png" alt="" width="40px" height="40px" />
-          </div>
-
-          <div class="row icon-social">
-            <h6 class="text-white text-center mt-4">Redes sociais</h6>
-            <ul class="social-network d-flex justify-content-center">
-              <li>
-                <a href="https://github.com/conectaGeneration" target="_blank" class="icoGithub"><i class="fa fa-github"
-                    aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <a href="https://github.com/conectaGeneration pl-1 pr-1" target="_blank" class="icoFacebook"><i
-                    class="fa fa-facebook" aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <a href="https://github.com/conectaGeneration" target="_blank" class="icoTwitter"><i
-                    class="fa fa-twitter" aria-hidden="true"></i></a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
+
+      <div class="row d-flex justify-content-center">
+        <div>
+
+
+          <div class="d-flex justify-content-center mt-8">
+            <img src="https://i.imgur.com/uzxEvgo.png" alt="" width="120px" height="120px" />
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row icon-social">
+
+        <ul class="social-network d-flex justify-content-center">
+          <li>
+            <a href="https://github.com/conectaGeneration" target="_blank" class="icoGithub"><i class="fa fa-github"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/conectaGeneration" target="_blank" class="icoFacebook"><i class="fa fa-facebook"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/conectaGeneration" target="_blank" class="icoTwitter"><i class="fa fa-twitter"
+                aria-hidden="true"></i></a>
+          </li>
+        </ul>
+
+        <div class="text-center">
+          <small>
+            <a class="mb-2" routerLink="/sobre">Sobre nos</a>
+          </small>
+        </div>
+
+
+
+      </div>
+
     </div>
-
   </div>
-</div>
 
-<!-- Modal -->
-<div class="modal t-modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+  <!-- Modal -->
+  <div class="modal t-modal fade" id="novaPostagem" tabindex="-1" role="dialog"
+    aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
 
-      <div class="modal-header">
-        <h5 class="modal-title text-center " id="TituloModalCentralizado">Criar nova postagem</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+        <div class="modal-header">
+          <h5 class="modal-title text-center text-white " id="TituloModalCentralizado">Criar nova postagem</h5>
 
-      <div class="modal-body">
-        <div class="row">
-          <div class="form-floating mt-3">
-            <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="floatingInput"
-              placeholder="Digite o título">
-            <label for="floatingInput">Título</label>
-          </div>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
 
-          <div class="form-floating mt-3">
-            <textarea [(ngModel)]='postagem.texto' class="form-control" placeholder="Leave a comment here"
-              id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Texto</label>
-          </div>
-
-          <div class="form-floating mt-3">
-            <input [(ngModel)]='postagem.imagem' class="form-control" placeholder="Leave a comment here"
-              id="floatingInput">
-            <label for="floatingInput">Imagem</label>
-          </div>
         </div>
 
-        <div class="row mt-3 d-flex justify-content-center">
+        <div class="modal-body">
+          <p class="text-dark">Selecione os campos conforme o que você editou em tema* </p>
+          <div class="row">
+            <div class="form-floating mt-3">
+              <input [(ngModel)]='postagem.titulo' type="text" class="form-control input-modal" id="floatingInput"
+                placeholder="Digite o título">
+              <label  for="floatingInput">Título</label>
+            </div>
 
-          <div class="col-md-12">
-            <p class="text-white">Escolha a opção que descreve sua postagem:</p>
+            <div class="form-floating mt-3">
+              <textarea [(ngModel)]='postagem.texto' class="form-control input-modal" placeholder="Leave a comment here"
+                id="floatingTextarea"></textarea>
+              <label  for="floatingTextarea">Texto</label>
+            </div>
 
-            <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-              <option class="option" *ngFor='let item of listaTemas' value="{{item.id}}">
-                {{item.segmento}} , {{item.tipo}}, {{item.descricao}}
-              </option>
-            </select>
+            <div class="form-floating mt-3">
+              <input [(ngModel)]='postagem.imagem' class="form-control input-modal" placeholder="Leave a comment here"
+                id="floatingInput">
+              <label   for="floatingInput">Imagem</label>
+            </div>
           </div>
 
-          <!-- <div class="col-md-4">
+          <div class="row mt-3 d-flex justify-content-center">
+
+            <div class="col-md-12">
+              <p class="text-dark">Escolha a opção que descreve sua postagem:</p>
+
+              <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                <option class="option" *ngFor='let item of listaTemas' value="{{item.id}}">
+                  {{item.segmento}} , {{item.tipo}}, {{item.descricao}}
+                </option>
+              </select>
+            </div>
+
+            <!-- <div class="col-md-4">
             <select class="form-select" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
               <option class="text-dark" selected>Tipo</option>
               <option *ngFor='let item of listaTemas' value="{{item.tipo}}">
@@ -298,27 +318,24 @@
             </select>
           </div> -->
 
-        </div>
+          </div>
 
-        <div class="col-md-12 justify-content-end mt-3 modal-footer" data-bs-dismiss="modal">
+
+
+        </div>
 
           <button class="btn btn-light btn-sm" data-bs-dismiss="modal" routerLink='/tema'>Cadastre um novo</button>
 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+            Cancelar
+          </button>
 
+          <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">
+            Publicar
+          </button>
         </div>
 
       </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-          Cancelar
-        </button>
-
-        <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">
-          Publicar
-        </button>
-      </div>
-
     </div>
   </div>
-</div>

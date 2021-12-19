@@ -125,6 +125,7 @@ h2::after {
   flex: column
 }
 
-#bg-cards{
-
+.sobrenos{
+  background-color: #0D3230;
+  height: 300px;
 }

@@ -1,43 +1,72 @@
-ul.social-network {
-  list-style: none;
-  padding: 0;
+
+
+body {
+    height: 100% !important;
+
 }
 
-ul.social-network li {
-  display: inline;
-  padding: 0px;
-  margin: 0;
+.container-fluid {
+    margin-top: 101px;
+    color: #000 !important
 }
 
-.fa {
-  font-size: 30pt;
-  color: white;
-  padding: 10px;
+.card {
+    background-color: #F8F9FB !important
 }
 
-.fa-github:hover {
-  color: rgb(135, 25, 209);
+p {
+    font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
+    display: fkex
 }
 
-.fa-facebook:hover {
-  color: rgb(56, 32, 163);
+h3 {
+    font-size: calc(24px + (30 - 24) * ((100vw - 360px) / (1600 - 360))) !important
 }
 
-.fa-twitter:hover {
-  color: rgb(27, 159, 199);
+
+
+.color-text {
+    color: #757575 !important
 }
 
-.linha-vertical {
-  height: 133.2px;
-  border-left: 2px solid;
-  border-color: rgb(255, 255, 255);
+button {
+    font-size: calc(12px + (13 - 12) * ((100vw - 360px) / (1600 - 320))) !important;
+    background-color: #2CA6FB !important;
+    padding-left: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+    padding-right: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+    padding-top: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important;
+    padding-bottom: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
 }
 
-.page-footer {
-  border-radius: 13px 13px 0px 0px;
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
 }
 
-* {
-  list-style: none;
+footer {
+    color: #caced1 !important
+}
 
+
+
+.Careers {
+    cursor: pointer;
+    color: #1E88E5
+}
+
+.row-1 {
+    background-color: #077E77 !important
+}
+
+.row-2 {
+    background-color: #06524D !important
+}
+
+
+.fa-github, .fa-facebook,  .fa-twitter{
+    font-size: 24px;
+    color: #fff;
+    padding-right: 15px;
 }

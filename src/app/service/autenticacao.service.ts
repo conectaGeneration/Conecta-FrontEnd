@@ -24,6 +24,10 @@ export class AutenticacaoService {
     return this.http.get<Usuario>(`http://localhost:8080/usuario/${id}`)
   }
 
+  atualizar(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>('http://localhost:8080/usuario/atualizar', usuario);
+  }
+
   logado() {
     let ok: boolean = false
 

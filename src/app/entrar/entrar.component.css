@@ -1,16 +1,10 @@
-
 *{
   font-family: 'Poppins', sans-serif;
 }
 
 .login{
   padding-top: 50px;
-
 }
-
-
-
-
 
 .login-container-2{
   background-color: #A3CFCD;
@@ -19,7 +13,6 @@
   background-size: cover;
   border-bottom-right-radius: 1rem;
   border-top-right-radius: 1rem;
-
 }
 
 .login-container-2 h2{
@@ -48,7 +41,6 @@
   text-align: center;
 }
 
-
 label{
   font-family: 'Poppins', sans-serif;
   font-style: normal;
@@ -56,11 +48,8 @@ label{
   font-size: 14px;
   line-height: 21px;
   /* identical to box height */
-
   letter-spacing: 0.03em;
-
 }
-
 
 .btn-logar{
   width: 189.88px;
@@ -70,23 +59,6 @@ label{
   background: #077E77;
   border-radius: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #gradient-bg {
   background: rgb(163, 207, 205);
@@ -112,7 +84,7 @@ label{
 }
 
 #form-entrar {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   padding-right: 8rem;
   padding-left: 8rem;
 

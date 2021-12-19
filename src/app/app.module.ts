@@ -21,6 +21,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { AlertaComponent } from './alerta/alerta.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { OrderModule } from 'ngx-order-pipe';
     PostagemDeleteComponent,
     PostagemEditComponent,
     AlertaComponent,
+    UsuarioEditComponent,
   ],
   imports: [
     BrowserModule,

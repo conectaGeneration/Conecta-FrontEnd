@@ -5,21 +5,21 @@
 
       <div class="col-md-7 d-flex justify-content-center" id="form-entrar">
 
-        <div class="col-md-8">
-          <h1 class="text-center mb-3 fw-bold fs-3">Logar</h1>
-          <hr class="400px">
+        <div class="col-md-11">
+          <h1 class="text-center mb-3 fw-bold fs-3">Bem-vindo</h1>
+          <hr width="443px" >
 
           <div class="form-group mb-4">
             <label for="email fw-bold fs-5">Endereço de e-mail</label>
-            <input [(ngModel)]='userLogin.email' class="form-control input-control" type="text" name="email" id="email"
+            <input [(ngModel)]='userLogin.email' class="form-control input-control text-start" type="text" name="email" id="email"
              >
           </div>
 
           <div class="form-group mb-5">
             <label for="senha fw-bold fs-5">Senha</label>
-            <input [(ngModel)]='userLogin.senha' class="form-control input-control" type="password" name="senha" id="senha">
+            <input [(ngModel)]='userLogin.senha' class="form-control input-control text-start" type="password" name="senha" id="senha">
             <div class="text-center">
-            <hr width="400px" class="mt-5 mb-5">
+            <hr width="443px" class="mt-5 mb-5">
             <small class="text-center">
               Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se</a>
             </small>
@@ -37,18 +37,16 @@
       </div>
 
 
-      <div class="col-md-4 login-container-2  justify-content-center" id="form-entrar-d">
+      <div class="col-md-4 login-container-2  justify-content-center text-center" id="form-entrar-d">
 
         <div id="text-img">
-          <h2 class="fw-bold">
-            <p>Compartilhe o seu</p>
-            <p>pequeno negócio</p>
-            e receba por isso!
-          </h2>
+          <p class="fw-bold fs-22">
+            Compartilhe o seu negócio e/ou serviço conosco!
+          </p>
         </div>
 
 
-        <div class="img-bg"><img src="https://i.imgur.com/LNMKeea.png"></div>
+        <div class="img-bg"><img src="https://i.imgur.com/qvEzEgk.png" width="300px"></div>
 
 
       </div>

@@ -71,7 +71,21 @@
   margin-right: 4px;
 }
 
+.hr{
+  margin-bottom: 20px;
+}
+
+.senha{
+margin-right: 5px;
+}
 
 
+.btn-cadastrar{
+  width: 189.88px;
+  height: 48px;
+  color: #fff;
 
+  background: #077E77;
+  border-radius: 5px;
+}
 

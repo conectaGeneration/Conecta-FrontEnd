@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
 import { TemaService } from './../../service/tema.service';
@@ -14,7 +15,7 @@ export class PostagemDeleteComponent implements OnInit {
 
   idPostagem: number
   postagem: Postagem = new Postagem();
-  listaPostagens: Postagem[]; 
+  listaPostagens: Postagem[];
 
   imagem = environment.imagem;
 
@@ -22,7 +23,8 @@ export class PostagemDeleteComponent implements OnInit {
     private postagemService: PostagemService,
     private router: Router,
     private route: ActivatedRoute,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private alertasService: AlertasService
   ) {}
 
 
@@ -35,7 +37,7 @@ export class PostagemDeleteComponent implements OnInit {
   }
     this.idPostagem = this.route.snapshot.params['id']
     this.findByIdPostagem(this.idPostagem)
-  
+
   }
 
   findByIdPostagem(id: number){
@@ -47,10 +49,10 @@ export class PostagemDeleteComponent implements OnInit {
 
   apagar() {
     this.postagemService.deletePostagem(this.idPostagem).subscribe(() => {
-      alert('Postagem apagada com sucesso!');
+      this.alertasService.showAlertSuccess('Postagem apagada com sucesso!');
       this.router.navigate(['/inicio']);
     });
   }
-  
+
 
 }
