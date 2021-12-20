@@ -1,14 +1,9 @@
-/* body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(1, 30, 34);
-  font-family: sans-serif
-} */
 
+* {
+  list-style: none;
+  text-decoration: none;
+}
 
-/* CARROUSEL */
 body {
   font-family: "Open Sans", sans-serif;
   margin-top: 200px
@@ -63,7 +58,51 @@ h2::after {
   position: relative;
   width: 250px;
   height: 210px;
-  background: url("https://i.imgur.com/tHM5naX.jpg");
+  background: url("https://i.imgur.com/R1SS9RY.jpg");
+  background-size: cover;
+  cursor: pointer;
+  border: 12px;
+  border-radius: 6px
+}
+
+.profile1 {
+  position: relative;
+  width: 250px;
+  height: 210px;
+  background: url("https://i.imgur.com/9D2PEjX.jpg");
+  background-size: cover;
+  cursor: pointer;
+  border: 12px;
+  border-radius: 6px
+}
+
+.profile2 {
+  position: relative;
+  width: 250px;
+  height: 210px;
+  background: url("https://i.imgur.com/D5VOdjo.jpg");
+  background-size: cover;
+  cursor: pointer;
+  border: 12px;
+  border-radius: 6px
+}
+
+.profile3 {
+  position: relative;
+  width: 250px;
+  height: 210px;
+  background: url("https://i.imgur.com/veHMpon.jpg");
+  background-size: cover;
+  cursor: pointer;
+  border: 12px;
+  border-radius: 6px
+}
+
+.profilee {
+  position: relative;
+  width: 250px;
+  height: 210px;
+  background: url("https://i.imgur.com/veHMpon.jpg");
   background-size: cover;
   cursor: pointer;
   border: 12px;
@@ -78,11 +117,23 @@ h2::after {
   cursor: pointer;
   opacity: 0;
   transition: all 1s;
-  border-top-right-radius: 35px !important;
   border-radius: 6px
 }
 
 .profile:hover .overlay {
+  opacity: 1
+}
+
+.profile1:hover .overlay {
+  opacity: 1
+}
+.profile2:hover .overlay {
+  opacity: 1
+}
+.profile3:hover .overlay {
+  opacity: 1
+}
+.profilee:hover .overlay {
   opacity: 1
 }
 
@@ -96,7 +147,7 @@ h2::after {
   left: 44px
 }
 
-.social-icons li {
+.social-icons li a{
   width: 25px;
   height: 25px;
   border: 1px solid #eee;
@@ -126,6 +177,7 @@ h2::after {
 }
 
 .sobrenos{
-  background-color: #0D3230;
-  height: 300px;
+  background-color: #1C2727;
+  height: 400px;
+  margin-bottom: 35px;
 }

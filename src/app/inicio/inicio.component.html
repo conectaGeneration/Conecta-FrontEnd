@@ -24,21 +24,16 @@
       <div class="row d-flex justify-content-center">
 
 
-        <button data-bs-toggle="modal" data-bs-target="#novaPostagem" class="
-            col-md-8
-            btn
-            mb-1
-            mt-3
-            d-flex
-
-          " data-toggle="modal" data-target="#novaPostagem" id="btnPubli">
+        <button data-bs-toggle="modal" data-bs-target="#novaPostagem"
+          class="col-md-8 btn mb-1 mt-3 d-flex align-items-center" data-dismiss="modal" data-toggle="modal" data-target="#novaPostagem"
+          id="btnPubli">
 
           <div>
             <img class="rounded-circle d-flex flex-row " src="{{ foto }}" width="45px" height="45px" />
           </div>
 
-          <div class=" text-center mt-2 ml-5">
-            <p>Fazer publicação</p>
+          <div class="text-center mt-3 mx-3">
+            <p>Criar nova publicação</p>
           </div>
         </button>
 
@@ -74,16 +69,28 @@
             <!-- TODAS POSTAGENS -->
             <div class="tab-pane fade show active text text-start" id="nav-todasPostagens" role="tabpanel"
               aria-labelledby="nav-todasPostagens-tab">
+
+              <div class="row d-flex justify-content-center" >
+                <div class="col-md-11">
+                  <div class="form group">
+                    <input type="text" class="form-control fs-6" id="titulo"
+                      placeholder="Digite um titulo de postagem para pesquisar" [(ngModel)]='tituloPost'
+                      (keyup)="findByTituloPostagem()">
+                  </div>
+                </div>
+              </div>
+
               <div class="card-columns mt-4">
-                <div class="card mb-3" id="card-size" *ngFor='let item of listaPostagens' width='400px'>
+                <div class="card mb-3" id="card-size" *ngFor='let item of listaPostagens | orderBy : key : reverse'
+                  width='400px'>
                   <div class="card-body" width='400px'>
 
-                    <h5 class="card-title m-0" width='400px'>{{ item.titulo }}</h5>
+                    <h5 class="card-title m-0 bold" width='400px'> {{ item.titulo }}</h5>
 
-                    <img class="navbar-brand img rounded mx-auto text-center" src="{{item.imagem}}"
-                      alt="imagem da postagem" width="350px" height="200px" />
+                    <img class="navbar-brand img rounded mx-auto text-center ajustar" src="{{item.imagem}}"
+                      alt="SEM-IMAGEM" width="100%" height="250px" />
 
-                    <p class="card-title m-0">{{ item.texto }}</p>
+                    <p class="card-title mt-3">{{ item.texto }}</p>
 
                     <small class="text-muted space" id="tag-color">
                       <font color="#ffffff">#{{ item.tema.descricao }}</font>
@@ -114,15 +121,15 @@
             <div class="tab-pane fade text-start " id="nav-minhasPostagens" role="tabpanel"
               aria-labelledby="nav-minhasPostagens-tab">
               <div class="card-columns mt-4">
-                <div class="card mb-3 " id="card-size" *ngFor='let item of user.postagem'>
+                <div class="card mb-3 " id="card-size" *ngFor='let item of user.postagem | orderBy : key : reverse'>
                   <div class="card-body">
 
-                    <h5 class="card-title ml-4">{{ item.titulo }}</h5>
+                    <h5 class="card-title ml-4 bold">{{ item.titulo }}</h5>
 
-                    <img class="navbar-brand img rounded mx-auto" src="{{item.imagem}}" alt="imagem da postagem"
-                      width="300px" height="200px" />
+                    <img class="navbar-brand img rounded mx-auto ajustar" src="{{item.imagem}}" alt="imagem da postagem"
+                      width="100%" height="250px" />
 
-                    <p class="card-title mb-3">{{ item.texto }}</p>
+                    <p class="card-title mt-3">{{ item.texto }}</p>
 
                     <small class="text-muted  space" id="tag-color">
                       <font color="#ffffff">#{{ item.tema.descricao }}</font>
@@ -153,18 +160,29 @@
             <!-- POSTAGENS POR TEMA -->
             <div class="tab-pane fade text-start" id="nav-postagemTema" role="tabpanel"
               aria-labelledby="nav-postagemTema-tab">
+
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-11">
+                  <div class="form group">
+                    <input type="text" class="form-control fs-6" id="segmento"
+                      placeholder="Digite um segmento de trabalho para pesquisar" [(ngModel)]='segmentoTema'
+                      (keyup)="findBySegmentoTema()">
+                  </div>
+                </div>
+              </div>
+
               <div class="card-columns mt-4" *ngFor='let tema of listaTemas'>
                 <div class="card text-start mb-3 justify-content-center" id="card-size"
-                  *ngFor='let item of tema.postagem'>
+                  *ngFor='let item of tema.postagem | orderBy : key : reverse'>
                   <div class="card-body">
 
-                    <h5 class="card-title m-0">{{ item.titulo }}</h5>
+                    <h5 class="card-title m-0 bold">{{ item.titulo }}</h5>
 
-                    <img class="navbar-brand img rounded mx-auto" src="{{item.imagem}}" alt="imagem da postagem"
-                      width="300px" height="200px" />
+                    <img class="navbar-brand img rounded mx-auto ajustar" src="{{item.imagem}}" alt="imagem da postagem"
+                      width="100%" height="250px" />
 
 
-                    <p class="card-title m-0">{{ item.texto }}</p>
+                    <p class="card-title mt-3">{{ item.texto }}</p>
 
                     <small class="text-muted space" id="tag-color">
                       <font color="#ffffff">#{{tema.descricao }} </font>
@@ -267,35 +285,36 @@
         </div>
 
         <div class="modal-body">
-          <p class="text-dark">Selecione os campos conforme o que você editou em tema* </p>
+          <p class="text-white">Selecione os campos conforme o que você editou em tema</p>
           <div class="row">
             <div class="form-floating mt-3">
-              <input [(ngModel)]='postagem.titulo' type="text" class="form-control input-modal" id="floatingInput"
-                placeholder="Digite o título">
-              <label  for="floatingInput">Título</label>
+              <input [(ngModel)]='postagem.titulo' type="text" class="form-control input-modal text-dark fs-6"
+                id="floatingInput" placeholder="Digite o título">
+              <label for="floatingInput">Título</label>
             </div>
 
             <div class="form-floating mt-3">
-              <textarea [(ngModel)]='postagem.texto' class="form-control input-modal" placeholder="Leave a comment here"
-                id="floatingTextarea"></textarea>
-              <label  for="floatingTextarea">Texto</label>
+              <textarea [(ngModel)]='postagem.texto' class="form-control input-modal text-dark fs-6"
+                placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+              <label for="floatingTextarea">Texto</label>
             </div>
 
             <div class="form-floating mt-3">
-              <input [(ngModel)]='postagem.imagem' class="form-control input-modal" placeholder="Leave a comment here"
-                id="floatingInput">
-              <label   for="floatingInput">Imagem</label>
+              <input [(ngModel)]='postagem.imagem' class="form-control input-modal text-dark fs-6"
+                placeholder="Leave a comment here" id="floatingInput">
+              <label for="floatingInput">Imagem</label>
             </div>
           </div>
 
           <div class="row mt-3 d-flex justify-content-center">
 
             <div class="col-md-12">
-              <p class="text-dark">Escolha a opção que descreve sua postagem:</p>
+              <p class="text-white">Escolha a opção que descreve sua postagem:</p>
 
-              <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-                <option class="option" *ngFor='let item of listaTemas' value="{{item.id}}">
-                  {{item.segmento}} , {{item.tipo}}, {{item.descricao}}
+              <select class="form-control text-dark fs-6" name="tema" id="tema" [(ngModel)]='idTema'
+                (change)='findByIdTema()'>
+                <option class="option text-dark fs-6" *ngFor='let item of listaTemas' value="{{item.id}}">
+                  {{item.segmento}}, {{item.tipo}}, {{item.descricao}}
                 </option>
               </select>
             </div>
@@ -324,7 +343,7 @@
 
         </div>
 
-          <button class="btn btn-light btn-sm" data-bs-dismiss="modal" routerLink='/tema'>Cadastre um novo</button>
+        <button class="btn btn-light btn-sm" data-bs-dismiss="modal" routerLink='/tema'>Cadastre um novo</button>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">

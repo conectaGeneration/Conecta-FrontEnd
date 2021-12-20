@@ -33,12 +33,18 @@ a {
   transition: .2s;
 }
 
+#sobre{
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
 .mb-0{
   margin-bottom: 0;
 }
 
 .icone-branco {
-  filter: invert(1);
+  width: 25px;
+  height: 25px;
 }
 
 
@@ -68,3 +74,5 @@ color: #FFFFFF;
   top: 0;
   z-index: 1000;
 }
+
+

@@ -14,23 +14,25 @@
         <div class="col-md-3">
 
 
-          <div class="input-group mb-3">
+          <div class="input-group">
             <input [(ngModel)]='tema.descricao' type="text" class="form-control" placeholder="Digite aqui a descrição"
               aria-label="Recipient's username" aria-describedby="button-addon2">
-
           </div>
+          <small >Exemplo: Procurando, divulgando.</small>
 
-          <div class="input-group mb-3">
+          <div class="input-group mt-3">
             <input [(ngModel)]='tema.segmento' type="text" class="form-control" placeholder="Digite aqui o segmento"
               aria-label="Recipient's username" aria-describedby="button-addon2">
-
           </div>
+          <small >Exemplo: Construção, alimentação.</small>
 
-          <div class="input-group mb-3">
+          <div class="input-group mt-3">
             <input [(ngModel)]='tema.tipo' type="text" class="form-control" placeholder="Digite aqui o tipo"
               aria-label="Recipient's username" aria-describedby="button-addon2">
 
           </div>
+          <small
+        >Exemplo: Produto, serviço ou pequeno négocio.</small>
           <div class="d-flex justify-content-center mt-3">
             <button class="btn btn-outline-secondary " type="button"
               id="button-addon2" (click)='cadastrar()'>Cadastrar</button>

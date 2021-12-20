@@ -52,12 +52,13 @@ export class UsuarioEditComponent implements OnInit {
         this.usuario = resp;
         this.router.navigate(['/inicio']);
         this.alertasService.showAlertSuccess('Usuário atualizado com sucesso!');
-        this.alertasService.showAlertInfo('Faça o login novamente para aplicar as alterações');
+
         environment.token = '';
         environment.nome = '';
         environment.foto = '';
         environment.id = 0;
         this.router.navigate(['/entrar'])
+        this.alertasService.showAlertInfo('Faça o login novamente para aplicar as alterações');
       });
     }
   }
