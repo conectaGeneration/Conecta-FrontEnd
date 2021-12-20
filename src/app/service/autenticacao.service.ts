@@ -13,25 +13,25 @@ export class AutenticacaoService {
 
   entrar(userLogin: UserLogin): Observable<UserLogin> {
     return this.http.post<UserLogin>(
-      'http://localhost:8080/usuario/logar',
+      'https://projetoconecta.herokuapp.com/usuario/logar',
       userLogin
     );
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(
-      'http://localhost:8080/usuario/cadastrar',
+      'https://projetoconecta.herokuapp.com/usuario/cadastrar',
       usuario
     );
   }
 
   getByIdUsuario(id: number): Observable<Usuario> {
-    return this.http.get<Usuario>(`http://localhost:8080/usuario/${id}`);
+    return this.http.get<Usuario>(`https://projetoconecta.herokuapp.com/usuario/${id}`);
   }
 
   atualizar(usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>(
-      'http://localhost:8080/usuario/atualizar',
+      'https://projetoconecta.herokuapp.com/usuario/atualizar',
       usuario
     );
   }
