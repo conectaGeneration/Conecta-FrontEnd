@@ -6,36 +6,55 @@ import { Usuario } from '../model/Usuario';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AutenticacaoService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   entrar(userLogin: UserLogin): Observable<UserLogin> {
-    return this.http.post<UserLogin>('http://localhost:8080/usuario/logar', userLogin)
+    return this.http.post<UserLogin>(
+      'http://localhost:8080/usuario/logar',
+      userLogin
+    );
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('http://localhost:8080/usuario/cadastrar', usuario)
+    return this.http.post<Usuario>(
+      'http://localhost:8080/usuario/cadastrar',
+      usuario
+    );
   }
 
-  getByIdUsuario(id: number):Observable<Usuario>{
-    return this.http.get<Usuario>(`http://localhost:8080/usuario/${id}`)
+  getByIdUsuario(id: number): Observable<Usuario> {
+    return this.http.get<Usuario>(`http://localhost:8080/usuario/${id}`);
   }
 
   atualizar(usuario: Usuario): Observable<Usuario> {
-    return this.http.put<Usuario>('http://localhost:8080/usuario/atualizar', usuario);
+    return this.http.put<Usuario>(
+      'http://localhost:8080/usuario/atualizar',
+      usuario
+    );
   }
 
   logado() {
-    let ok: boolean = false
+    let ok: boolean = false;
 
     if (environment.token != '') {
-      ok = true
+      ok = true;
     }
 
-    return ok
+    return ok;
   }
+
+  adm() {
+    let ok: boolean = false;
+
+    if (environment.tipo == 'admin') {
+      ok = true;
+    }
+
+    return ok;
+  }
+
 
 }

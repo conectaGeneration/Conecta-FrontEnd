@@ -3,3 +3,8 @@
   padding-left: 7%;
   padding-right: 7%;
 }
+
+.close{
+  border-radius: 5rem;
+  background-color: none;
+}

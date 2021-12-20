@@ -1,4 +1,4 @@
-<div class="container-fluid mb-5 pt-5 " id="bg-color">
+<div class="container-fluid pt-5 " id="bg-color">
 
   <div class="row">
     <div class="com-md-12">
@@ -46,17 +46,17 @@
       </div>
 
 
-      <div class="form-group">
-        <label for="tipo">Tipo de usuário</label>
-        <select class="form-control " name="tipo" id="tipo" (change)="tipoUser($event)">
+      <div *ngIf="authService.adm()" class="form-group">
+        <label  for="tipo">Tipo de usuário</label>
+        <select  class="form-control " name="tipo" id="tipo" (change)="tipoUser($event)">
           <option>-Selecione um tipo de usuário-</option>
           <option value="normal">Normal</option>
-          <option value="adm">Administrador</option>
+          <option value="admin">Administrador</option>
         </select>
       </div>
 
-      <div class="d-flex justify-content-center mt-3">
-        <button type="submit" class="btn mr-4 " routerLink="/inicio">Cancelar</button>
+      <div class="d-flex justify-content-center mt-4">
+        <button type="submit" class="btn" routerLink="/inicio">Cancelar</button>
         <button type="submit" class="btn btn-success" (click)='atualizar()'> Atualizar</button>
       </div>
 

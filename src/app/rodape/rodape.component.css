@@ -2,8 +2,12 @@
 
 body {
     height: 100% !important;
-
+    width: 100vw;
 }
+
+.row {
+   --bs-gutter-x: 0rem;
+  }
 
 .container-fluid {
     margin-top: 101px;
@@ -16,7 +20,7 @@ body {
 
 p {
     font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
-    display: fkex
+    display: flex
 }
 
 h3 {

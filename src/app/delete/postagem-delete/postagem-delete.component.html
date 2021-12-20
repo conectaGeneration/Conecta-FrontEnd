@@ -13,20 +13,23 @@
     </div>
   </div>
 
-  <div class="row mt-3">
+  <div class="row mt-3 text-center">
     <div class="col-md-12">
       <h5 class="text-center text-primary">Titulo: {{postagem.titulo}}</h5>
       <h5 class="text-center text-primary">Texto: {{postagem.texto}}</h5>
-      <h5 class="text-center text-primary">Imagem: </h5>
-      <img src="{{postagem.imagem}}" alt="imagem a ser apagada" width="400px" height="300px">
+      <h5 class="text-center text-primary mb-2">Imagem: </h5>
+      <img class="img rounded" src="{{postagem.imagem}}" alt="imagem a ser apagada" width="400px" height="300px">
     </div>
   </div>
 
-  <div class="row mt-3">
-    <div class="col-md-12 d-flex justify-content-center">
-      <button class="btn btn-danger mr-5" routerLink="/inicio">Não</button>
-      <button class="btn btn-success" (click)="apagar()">Sim</button>
+    <div class="col-md-12 d-flex justify-content-center mt-4">
+
+      <div class="m-btn">
+        <button class="btn btn-success" (click)="apagar()">Sim</button>
+      </div>
+
+      <button class="btn btn-danger" routerLink="/inicio">Não</button>
     </div>
-  </div>
+
 
 </div>

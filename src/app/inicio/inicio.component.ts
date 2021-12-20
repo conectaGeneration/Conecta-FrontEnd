@@ -94,6 +94,7 @@ export class InicioComponent implements OnInit {
         this.alertasService.showAlertSuccess('Sua publicação foi postada com sucesso!');
         this.postagem = new Postagem();
         this.getAllPostagens();
+        this.getAllTemas();
       });
   }
 

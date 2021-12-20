@@ -4,6 +4,7 @@
   text-decoration: none;
 }
 
+
 body {
   font-family: "Open Sans", sans-serif;
   margin-top: 200px
@@ -15,7 +16,12 @@ body {
 }
 
 .textoSobre{
-  padding: 0 100px 0 120px;
+  padding-right: 10%;
+
+}
+
+.imgSobre{
+  padding-left: 10%;
 }
 
 p{
@@ -24,7 +30,7 @@ p{
 
 h2 {
   color: #333;
-  text-align: center;
+  text-align: start;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
@@ -57,8 +63,8 @@ h2::after {
 .profile {
   position: relative;
   width: 250px;
-  height: 210px;
-  background: url("https://i.imgur.com/R1SS9RY.jpg");
+  height: 270px;
+  background: url("https://i.imgur.com/h8ZN60m.jpg");
   background-size: cover;
   cursor: pointer;
   border: 12px;
@@ -68,8 +74,8 @@ h2::after {
 .profile1 {
   position: relative;
   width: 250px;
-  height: 210px;
-  background: url("https://i.imgur.com/9D2PEjX.jpg");
+  height: 270px;
+  background: url("https://i.imgur.com/qNq1eJJ.jpg");
   background-size: cover;
   cursor: pointer;
   border: 12px;
@@ -79,8 +85,8 @@ h2::after {
 .profile2 {
   position: relative;
   width: 250px;
-  height: 210px;
-  background: url("https://i.imgur.com/D5VOdjo.jpg");
+  height: 270px;
+  background: url("https://i.imgur.com/Ys6SVdb.jpg");
   background-size: cover;
   cursor: pointer;
   border: 12px;
@@ -90,8 +96,8 @@ h2::after {
 .profile3 {
   position: relative;
   width: 250px;
-  height: 210px;
-  background: url("https://i.imgur.com/veHMpon.jpg");
+  height: 270px;
+  background: url("https://i.imgur.com/U8vn5j7.jpg");
   background-size: cover;
   cursor: pointer;
   border: 12px;
@@ -101,8 +107,8 @@ h2::after {
 .profilee {
   position: relative;
   width: 250px;
-  height: 210px;
-  background: url("https://i.imgur.com/veHMpon.jpg");
+  height: 270px;
+  background: url("https://i.imgur.com/LegzoS3.jpg");
   background-size: cover;
   cursor: pointer;
   border: 12px;
@@ -178,6 +184,11 @@ h2::after {
 
 .sobrenos{
   background-color: #1C2727;
-  height: 400px;
-  margin-bottom: 35px;
+  height: 500px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 8rem;
+
 }
+
+

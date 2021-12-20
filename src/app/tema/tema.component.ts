@@ -8,39 +8,43 @@ import { AlertasService } from '../service/alertas.service';
 @Component({
   selector: 'app-tema',
   templateUrl: './tema.component.html',
-  styleUrls: ['./tema.component.css']
+  styleUrls: ['./tema.component.css'],
 })
 export class TemaComponent implements OnInit {
-
-  tema: Tema = new Tema()
-  listaTemas: Tema[]
+  tema: Tema = new Tema();
+  listaTemas: Tema[];
 
   constructor(
     private router: Router,
     private temaService: TemaService,
     private alertasService: AlertasService
-  ) { }
+  ) {}
 
-  ngOnInit(){
-    if(environment.token == ''){
-      this.router.navigate(['/entrar'])
+  ngOnInit() {
+    if (environment.token == '') {
+      this.router.navigate(['/entrar']);
     }
-    this.findAllTemas()
+
+    if (environment.tipo != 'admin') {
+      this.alertasService.showAlertInfo('Você precisa ser um administrador para acessar essa rota!');
+      this.router.navigate(['/inicio'])
+    }
+
+    this.findAllTemas();
   }
 
   findAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
-      this.listaTemas = resp
-    })
+      this.listaTemas = resp;
+    });
   }
 
-  cadastrar(){
+  cadastrar() {
     this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
-      this.tema = resp
-      this.alertasService.showAlertSuccess('Tema cadastrado com sucesso!')
-      this.findAllTemas()
-      this.tema = new Tema()
-    })
+      this.tema = resp;
+      this.alertasService.showAlertSuccess('Tema cadastrado com sucesso!');
+      this.findAllTemas();
+      this.tema = new Tema();
+    });
   }
-
 }
