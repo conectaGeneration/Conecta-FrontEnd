@@ -2,14 +2,22 @@
 <img src="https://i.imgur.com/t0P3W9y.png">
 
 
-## Development server
+## Nosso foco
+O projeto tem por objetivos gerar valor para que tem um negócio próprio, e para conectar prestadores de serviços com novos clientes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Através da rede social Conecta o usuário poderá alcançar o seu público-alvo de maneira eficaz e ampliar o alcance do seu negócio.
 
-## Code scaffolding
+O projeto também pretende obter inclusão ao inserir pessoas no mercado de trabalho,  conectar pessoas, aumentar a rede de clientes e criar oportunidades de parcerias ou contratações.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## TEMAS A SEREM ABORDADOS NA  REDE SOCIAL 
 
+<ul>
+  <li>Divulgação de portfólio </li>
+
+ <li> Oportunidades para prestadores de serviços </li>
+
+ <li> Possibilidade para contratação de serviços </li>
+   
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
