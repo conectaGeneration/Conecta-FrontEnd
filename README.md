@@ -1,6 +1,6 @@
-# Conecta
+# Projeto Conecta
+<img src="https://i.imgur.com/t0P3W9y.png">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
 ## Development server
 
