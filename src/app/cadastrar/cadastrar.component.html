@@ -1,86 +1,30 @@
-<div class="row d-flex justify-content-center" id="gradient-bg">
 
-  <div class="container container-entrar">
-    <div class="row d-flex justify-content-center" id="quad">
-
-      <div class="col-md-4  justify-content-center" id="form-entrar-d">
-
-
-        <div class="img-bg">
-          <div id="text-img">
-            <p class="fw-bold fs-22">Compartilhe o seu negócio e/ou serviço conosco!</p>
-          </div>
-          <img src="https://i.imgur.com/LNMKeea.png">
+<section>
+  <div class="container">
+    <div class="login-area">
+      <h2>Cadastrar-se</h2>
+      <div class="login d-flex justify-content-center">
+      <div class="form">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Endereço de e-mail</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Senha</label>
+          <input   class="form-control" type="password" placeholder="******" id="exampleFormControlTextarea1" rows="3">
+        </div>
+        <small><a class="d-flex justify-content-center"  routerLink="/entrar">Já tem cadastro? Clique aqui</a> </small>
+        <div class="d-flex justify-content-center buttons">
 
+        <button class="btn btn-logar" >Logar</button>
+        <button class="btn btn-cancelar"  routerLink="/landing-page" >Cancelar</button>
+        </div>
       </div>
 
-      <!--  editandoooo -->
-      <div class="col-md-6 d-flex justify-content-center" id="form-entrar">
 
-        <div class="col-md-9">
-          <h1 class="text-center mb-3 fw-bold fs-3">Cadastre-se</h1>
-          <hr class="hr mt-4 mb-4">
-
-          <div class="form-floating mb-3">
-            <input [(ngModel)]="usuario.nome" type="nome" class="form-control input-control" id="floatingInput"
-              placeholder="name@example.com">
-            <label for="floatingInput">Nome</label>
-          </div>
-
-          <div class="form-floating mb-3 ">
-            <input [(ngModel)]="usuario.email" placeholder="email" class="form-control input-control" type="email"
-              name="email" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Endereço de email</label>
-          </div>
-
-          <div class="form-floating mb-3 ">
-            <input [(ngModel)]='usuario.foto' class="form-control input-control" placeholder="Link da Foto" type="text"
-              name="foto" id="foto">
-            <label for="floatingInput">Link da Foto</label>
-          </div>
-
-          <div class="form-floating mb-3 ">
-            <select placeholder="tipo de usuario" class="form-control input-control mt-4" (change)="tipoUser($event)"
-              name="tipoUsuario" id="tipoUsuario">
-              <option value="normal">Padrão</option>
-              <option value="admin">Administrador</option>
-            </select>
-            <label for="tipoUsuario">Tipo de Usuário</label>
-          </div>
-
-          <div class="d-flex justify-content-space-beetween">
-            <div class="form-floating mb-3 senha">
-              <input (input)='confirmSenha($event)' id="senha" placeholder="senha" class="form-control input-control "
-                type="password" name="senha" id="floatingPassword">
-              <label for="floatingPassword">Senha</label>
-            </div>
-
-            <div class="form-floating mb-3 ml-5 ">
-              <input [(ngModel)]='usuario.senha' id="confirmsenha" placeholder="confirmar senha"
-                class="form-control input-control" type="password" name="confirmSenha" id="floatingPassword">
-              <label for="floatingPassword">Confirmar senha</label>
-            </div>
-          </div>
-
-          <hr class="mt-4 mb-4">
-
-          <div class="d-flex justify-content-center text-center mb-4">
-            <small class="text-center">
-              Já possui uma conta? <a routerLink="/entrar">Entrar agora. </a>
-            </small>
-          </div>
-
-
-          <div class="d-flex justify-content-center fw-bold fs-4">
-            <button class="btn btn-success btn-cadastrar" (click)='cadastrar()' type="submit">Cadastrar</button>
-          </div>
-
-        </div>
-
-      </div>
-      <!--  editandooo  -->
 
     </div>
+  </div>
 
   </div>
+  </section>

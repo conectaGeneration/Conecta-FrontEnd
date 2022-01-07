@@ -22,6 +22,8 @@ import { AlertaComponent } from './alerta/alerta.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SobreDeslogadoComponent } from './sobre-deslogado/sobre-deslogado.component';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     PostagemEditComponent,
     AlertaComponent,
     UsuarioEditComponent,
+    LandingPageComponent,
+    SobreDeslogadoComponent,
   ],
   imports: [
     BrowserModule,

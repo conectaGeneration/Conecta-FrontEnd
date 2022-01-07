@@ -6,6 +6,7 @@ import { PostagemService } from './../../service/postagem.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Postagem } from './../../model/Postagem';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -66,7 +67,13 @@ idTema: number
 
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      this.alertasService.showAlertSuccess('Postagem atualizada com sucesso!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Postagem atualizada com sucesso!',
+        confirmButtonText: 'Certo!',
+        timer: 5000,
+        timerProgressBar: true
+      })
       this.router.navigate(['/inicio'])
     })
   }

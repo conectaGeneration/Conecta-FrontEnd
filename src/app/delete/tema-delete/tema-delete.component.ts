@@ -4,6 +4,7 @@ import { Tema } from 'src/app/model/Tema';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tema-delete',
@@ -38,7 +39,13 @@ export class TemaDeleteComponent implements OnInit {
 
   apagar() {
     this.temaService.deleteTema(this.idTema).subscribe(() => {
-      this.alertasService.showAlertSuccess('Tema apagado com sucesso!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Tema apagado com sucesso!',
+        confirmButtonText: 'Certo!',
+        timer: 5000,
+        timerProgressBar: true
+      })
       this.router.navigate(['/tema'])
     })
   }

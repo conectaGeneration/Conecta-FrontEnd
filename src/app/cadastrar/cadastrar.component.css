@@ -2,91 +2,125 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-#gradient-bg {
-  background: rgb(163, 207, 205);
-  background: linear-gradient(
-    90deg,
-    rgb(163, 207, 205) 1%,
-    rgb(7, 126, 119) 100%
-  );
-
-  min-height: 950px;
+.fs-16{
+  font-size: 16pt;
 }
 
-.container-entrar{
-
-      width: 1440px;
+.login{
+  padding-top: 50px;
 }
 
-.input-control{
-  background-color: #E8E8E8;
-  border-radius: 5px;
+section {
+  background: linear-gradient(245.34deg, #146C67 0.05%, rgba(30, 103, 99, 0.883489) 50.41%, rgba(80, 156, 151, 0) 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+/*
+
+  min-height: 90vh;
+  min-width: 90vw; */
 }
 
 
-#quad {
-  padding-top: 5rem;
-  margin-bottom: 5rem;
 
-}
-
-#form-entrar {
-  background-color: #fff;
-  padding-right: 8rem;
-  padding-left: 8rem;
-
-  padding-top: 5%;
-  padding-bottom: 5%;
-
-
-  border-bottom-right-radius: 1rem;
-  border-top-right-radius: 1rem;
-}
-
-#form-entrar-d {
-  background-color: #A3CFCD;
-  border-bottom-left-radius: 1rem;
-  border-top-left-radius: 1rem;
+.login-area{
+background: #fff;
+border-radius: 15px;
+width: 795px;
+height: 628px;
+margin: 0 auto;
 
 }
 
-#img-bg {
 
-  width: 270px;
-  height: 300px;
+
+
+.login{
+align-items: center;
 
 }
 
-#text-img {
+.login-area h2{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 51px;
+  /* identical to box height */
 
-  padding-top: 70px;
+  letter-spacing: 0.03em;
+  margin: 0 auto;
+  align-items: center;
   text-align: center;
+  color: #000000;
+  padding-top: 60px;
 }
 
-.form-group{
-  padding-top: 12px;
+label{
+  font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+
+letter-spacing: 0.03em;
+color: #000000;
+
 }
 
-.btn{
-  margin-right: 4px;
+.form-control{
+  width: 443px;
+  height: 48px;
+  border-width: 0px;
+  background: #E8E8E8;
+  border-radius: 5px;
+
 }
 
-.hr{
-  margin-bottom: 20px;
+.form{
+padding-top: 30px;
 }
 
-.senha{
-margin-right: 5px;
-}
-
-
-.btn-cadastrar{
+.btn-cancelar{
   width: 189.88px;
   height: 48px;
-  color: #fff;
-
-  background: #077E77;
+  background: #810000;
   border-radius: 5px;
+
+  font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+
+color: #FFFFFF;
+
 }
 
+.buttons{
+  margin-top: 25px
+}
+
+
+.btn-logar{
+  width: 189.88px;
+height: 48px;
+
+background: #06524D;
+border-radius: 5px;
+
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+color: #FFFFFF;
+margin-right: 15px;
+
+}

@@ -12,9 +12,11 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SobreDeslogadoComponent } from './sobre-deslogado/sobre-deslogado.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'entrar', pathMatch: 'full' }, //quando a uri estiver vazia, sera acessado
+  { path: '', redirectTo: 'landing-page', pathMatch: 'full' }, //quando a uri estiver vazia, sera acessado
   {
     path: 'entrar',
     component: EntrarComponent,
@@ -58,6 +60,13 @@ const routes: Routes = [
   {
     path: 'usuario-edit/:id',
     component: UsuarioEditComponent,
+  },
+  {path: 'landing-page',
+    component: LandingPageComponent,
+  },
+  {
+    path: 'sobre-deslogado',
+    component: SobreDeslogadoComponent,
   },
 ];
 

@@ -4,6 +4,7 @@ import { Postagem } from 'src/app/model/Postagem';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 import { TemaService } from './../../service/tema.service';
 
 @Component({
@@ -49,7 +50,13 @@ export class PostagemDeleteComponent implements OnInit {
 
   apagar() {
     this.postagemService.deletePostagem(this.idPostagem).subscribe(() => {
-      this.alertasService.showAlertSuccess('Postagem apagada com sucesso!');
+      Swal.fire({
+        icon: 'success',
+        title: 'Postagem apagada com sucesso!',
+        confirmButtonText: 'Certo!',
+        timer: 5000,
+        timerProgressBar: true
+      })
       this.router.navigate(['/inicio']);
     });
   }

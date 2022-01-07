@@ -4,6 +4,7 @@ import { TemaService } from './../../service/tema.service';
 import { Tema } from './../../model/Tema';
 import { Component, OnInit } from '@angular/core';
 import { AlertasService } from 'src/app/service/alertas.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tema-edit',
@@ -44,7 +45,13 @@ export class TemaEditComponent implements OnInit {
   atualizar() {
     this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
-      this.alertasService.showAlertSuccess('Tema atualizado com sucesso!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Tema atualizado com sucesso!',
+        confirmButtonText: 'Certo!',
+        timer: 5000,
+        timerProgressBar: true
+      })
       this.router.navigate(['/tema'])
     })
   }

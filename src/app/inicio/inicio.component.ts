@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 import { AutenticacaoService } from '../service/autenticacao.service';
 import { Usuario } from '../model/Usuario';
 import { AlertasService } from '../service/alertas.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio',
@@ -91,7 +92,13 @@ export class InicioComponent implements OnInit {
       .subscribe((resp: Postagem) => {
         this.postagem = resp;
         environment.imagem = this.postagem.imagem;
-        this.alertasService.showAlertSuccess('Sua publicação foi postada com sucesso!');
+        Swal.fire({
+          icon: 'success',
+          title: 'Sua publicação foi postada com sucesso!',
+          confirmButtonText: 'Certo!',
+          timer: 5000,
+          timerProgressBar: true
+        })
         this.postagem = new Postagem();
         this.getAllPostagens();
         this.getAllTemas();
@@ -117,7 +124,6 @@ export class InicioComponent implements OnInit {
       })
     }
   }
-
 
 
 }

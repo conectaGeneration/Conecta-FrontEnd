@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 import { UserLogin } from '../model/UserLogin';
 import { AlertasService } from '../service/alertas.service';
 import { AutenticacaoService } from '../service/autenticacao.service';
@@ -37,7 +38,13 @@ export class EntrarComponent implements OnInit {
     },
       (erro) => {
         if (erro.status == 401) {
-          this.alertasService.showAlertDanger('Email ou senha inválidos');
+          Swal.fire({
+            icon: 'error',
+            title: 'Email ou senha inválidos',
+            confirmButtonText: 'Certo!',
+            timer: 5000,
+            timerProgressBar: true
+          })
         }
       }
     );

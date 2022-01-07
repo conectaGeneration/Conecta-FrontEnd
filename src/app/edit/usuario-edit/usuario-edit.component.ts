@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/model/Usuario';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { AutenticacaoService } from 'src/app/service/autenticacao.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usuario-edit',
@@ -47,19 +48,33 @@ export class UsuarioEditComponent implements OnInit {
     this.usuario.tipo = this.tipoUsuario;
 
     if (this.usuario.senha != this.confirmarSenha) {
-      this.alertasService.showAlertDanger('As senhas estão incorretas!');
+      Swal.fire({
+        icon: 'error',
+        title: 'As senhas estão incorretas!',
+        confirmButtonText: 'Vou verificar novamente!',
+      })
     } else {
       this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
         this.router.navigate(['/inicio']);
-        this.alertasService.showAlertSuccess('Usuário atualizado com sucesso!');
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuário atualizado com sucesso!',
+          confirmButtonText: 'Certo!',
+          timer: 5000,
+          timerProgressBar: true
+        })
 
         environment.token = '';
         environment.nome = '';
         environment.foto = '';
         environment.id = 0;
         this.router.navigate(['/entrar'])
-        this.alertasService.showAlertInfo('Faça o login novamente para aplicar as alterações');
+        Swal.fire({
+          icon: 'warning',
+          title: 'Faça o login novamente para aplicar as alterações',
+          confirmButtonText: 'Certo!'
+        })
       });
     }
   }

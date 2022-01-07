@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
 import { AlertasService } from '../service/alertas.service';
 import { AutenticacaoService } from '../service/autenticacao.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-cadastrar',
@@ -37,12 +38,22 @@ export class CadastrarComponent implements OnInit {
     this.usuario.tipo = this.tipoUsuario
 
     if (this.usuario.senha != this.confirmarSenha) {
-      this.alertasService.showAlertInfo('Repita a senha corretamente')
+      Swal.fire({
+        icon: 'warning',
+        title: 'Repita a senha corretamente',
+        confirmButtonText: 'Certo!',
+      })
     }else{
       this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) =>{
         this.usuario = resp
         this.router.navigate(['/entrar'])
-        this.alertasService.showAlertSuccess('Usuário cadastrado com sucesso!')
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuário cadastrado com sucesso!',
+          confirmButtonText: 'Certo!',
+          timer: 10000,
+          timerProgressBar: true
+        })
       })
     }
   }
