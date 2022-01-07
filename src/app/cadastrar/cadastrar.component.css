@@ -35,7 +35,7 @@ border-radius: 15px;
   /* background: rgba(255, 255, 255, 0.3); */
   border-radius: 15px;
 border-radius: 15px;
-width: 795px;
+width: 900px;
 height: 900px;
 margin: 0 auto;
 
@@ -62,7 +62,7 @@ align-items: center;
   align-items: center;
   text-align: center;
   color: #fff;
-  padding-bottom: 10px;
+
 }
 
 label{
@@ -88,7 +88,7 @@ color: #fff;
 }
 
 .form{
-padding-top: 20px;
+
 padding-bottom: 90px;
 }
 

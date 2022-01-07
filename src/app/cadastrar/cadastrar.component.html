@@ -28,7 +28,6 @@
             <option value="admin">Administrador</option>
           </select>
         </div>
-
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Senha</label>
           <input [(ngModel)]='usuario.senha' class="form-control" type="password" placeholder="******" id="exampleFormControlTextarea1" rows="3">
@@ -38,6 +37,9 @@
           <input (input)='confirmSenha($event)' id="senha"  class="form-control" type="password" placeholder="******" id="exampleFormControlTextarea1" rows="3">
         </div>
 
+
+
+
         <small><a style="color: #fff;" class="d-flex justify-content-center textc"  routerLink="/entrar">Já tem cadastro? Clique aqui</a> </small>
         <div class="d-flex justify-content-center buttons">
 
@@ -46,7 +48,9 @@
 
         </div>
 
+        <img width="400px" height="500px" src="https://imgur.com/wtJeeH9.gif">
       </div>
+
       <!-- <img width="400px" height="500px" src="https://imgur.com/fRjPAoY.png"> -->
 
       <!-- <video autoplay loop>
