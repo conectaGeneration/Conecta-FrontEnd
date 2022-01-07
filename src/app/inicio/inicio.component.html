@@ -292,9 +292,6 @@
               <label for="floatingInput">Título</label>
             </div>
 
-            <p><label for="review">Seu comentário</label> <small class="caracteres"></small></p>
-            <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
-
             <div class="form-floating mt-3">
               <textarea [(ngModel)]='postagem.texto' class="form-control input-modal text-dark fs-6"
                 placeholder="Leave a comment here" id="floatingTextarea" name="floatingTextarea" onclick="contaCaracteres(this)" onkeydown="contaCaracteres(this)" onkeyup="contaCaracteres(this)"></textarea>
