@@ -1,9 +1,13 @@
 <section>
-  <div class="container">
+  <div class="container d-flex">
+    <img width="400px" height="500px" src="https://imgur.com/fRjPAoY.png">
+    <!-- <img   src="https://imgur.com/AgRKniX.gif"> -->
+
     <div class="login-area ">
-      <h2>Entrar</h2>
       <div class="login d-flex justify-content-center">
       <div class="form">
+        <h2>Entrar</h2>
+
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Endereço de e-mail</label>
           <input [(ngModel)]='userLogin.email' type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -12,14 +16,19 @@
           <label for="exampleFormControlTextarea1" class="form-label">Senha</label>
           <input  [(ngModel)]='userLogin.senha' class="form-control" type="password" placeholder="******" id="exampleFormControlTextarea1" rows="3">
         </div>
-        <small><a class="d-flex justify-content-center"  routerLink="/cadastrar">Não tem cadastro? Clique aqui</a> </small>
+        <small><a style="color: #fff;" class="d-flex justify-content-center textc"  routerLink="/cadastrar">Não tem cadastro? Clique aqui</a> </small>
         <div class="d-flex justify-content-center buttons">
 
+          <button class="btn btn-cancelar"  routerLink="/landing-page" >Cancelar</button>
         <button class="btn btn-logar" (click)="entrar()">Logar</button>
-        <button class="btn btn-cancelar"  routerLink="/landing-page" >Cancelar</button>
+
         </div>
+
       </div>
-      <iframe src="https://giphy.com/embed/ZKE4KLapkkDAyrof2K" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+      <!-- <video autoplay loop>
+        <source src="https://imgur.com/iPkzGuT" type="video/mp4">
+      </video> -->
 
 
 
