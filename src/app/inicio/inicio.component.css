@@ -81,7 +81,6 @@ small {
   padding-bottom: 60px;
   background-color: white;
   box-shadow: 0 0 5px 0 rgb(126, 125, 125);
-  
 }
 
 .social-network li {
@@ -135,15 +134,49 @@ small {
   border-radius: 10px;
 }
 
-.form-control {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 15px;
+.modal-body input {
+  background-color: #fff;
+  border-color: 1px solid #03524d;
+  border-radius: 10px;
+  color: #000;
+}
 
-  color: #9a9ea6;
-  background: #ffffff;
+.modal-body select {
+  background-color: #fff;
+  border-color: 1px solid #03524d;
+  border-radius: 10px;
+  color: #000;
+}
+
+.form-floating input {
+  border: 1px solid #03524d;
+}
+
+.form-floating textarea {
+  border: 1px solid #03524d;
+}
+
+.form-floating textarea {
+  background-color: #fff;
+  border-color: 1px solid #03524d;
+  border-radius: 10px;
+  color: #000;
+}
+
+select {
+  background-color: #ffff;
+  border-color: 1px solid #03524d;
+  height: 55px;
+  width: 102px;
+}
+
+.form-selected {
+  height: 55px;
+  width: 102px;
+  border-radius: 10px;
+}
+
+.border-r {
   border-radius: 10px;
 }
 
@@ -161,9 +194,13 @@ small {
 }
 
 .modal-content,
-.modal-header,
-.modal-body {
+.modal-header {
+  display: block;
   background-color: #06524d;
+}
+
+.modal-body {
+  background-color: #fff;
 }
 
 .modal {
@@ -204,4 +241,25 @@ small {
 
 .ajust {
   object-fit: cover;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.card-post {
+  width: 700px;
+  height: 371px;
+}
+
+
+
+.card-title {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  color: #000000;
 }

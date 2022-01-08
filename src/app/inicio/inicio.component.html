@@ -131,51 +131,45 @@
                 </div>
               </div>
 
-              <div class="card-columns mt-4">
+              <div class="card card-post mb-3" style="max-width: 540px">
                 <div
-                  class="card mb-3"
-                  id="card-size"
+                  class="row g-0"
                   *ngFor="let item of listaPostagens | orderBy: key:reverse"
-                  width="400px"
                 >
-                  <div class="card-body" width="400px">
-                    <h5 class="card-title m-0 bold" width="400px">
-                      {{ item.titulo }}
-                    </h5>
-
+                  <div class="col-md-7">
                     <img
-                      class="navbar-brand img rounded mx-auto text-center ajustar"
+                      class="navbar-brand mx-auto text-center ajustar"
                       src="{{ item.imagem }}"
                       alt="SEM-IMAGEM"
-                      width="100%"
-                      height="250px"
+                      width="328px"
                     />
+                  </div>
 
-                    <p class="card-title mt-3">{{ item.texto }}</p>
-
-                    <small class="text-muted space" id="tag-color">
-                      <font color="#ffffff">#{{ item.tema.descricao }}</font>
-                    </small>
-
-                    <small class="text-muted space" id="tag-color">
-                      <font color="#ffffff">#{{ item.tema.tipo }}</font>
-                    </small>
-
-                    <small class="text-muted space" id="tag-color">
-                      <font color="#ffffff">#{{ item.tema.segmento }}</font>
-                    </small>
-
-                    <p class="card-text">
-                      <small class="text-muted"
-                        >{{ item.data | date: "dd/MM/yyyy" }} às
-                        {{ item.data | date: "HH:mm" }}</small
-                      >
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted"
-                        >por: {{ item.usuario.nome }}</small
-                      >
-                    </p>
+                  <div class="col-md-5">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ item.titulo }}</h5>
+                      <div class="d-flex">
+                        <p class="card-text">
+                          <small class="text-muted"
+                            >por: {{ item.usuario.nome }}</small
+                          >
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted"
+                            >{{ item.data | date: "dd/MM/yyyy" }} às
+                            {{ item.data | date: "HH:mm" }}</small
+                          >
+                        </p>
+                      </div>
+                      <p style="width: 300px" class="card-text">
+                        {{ item.texto }}
+                      </p>
+                      <p class="card-text">
+                        <small class="text-muted"
+                          >Last updated 3 mins ago</small
+                        >
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -377,28 +371,21 @@
     >
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header d-flex justify-content-center">
-            <div class="row">
-              <div class="col-md-12"><h5
-                class="modal-title text-center text-white"
-                id="TituloModalCentralizado"
-              >
-                Criar postagem
-              </h5></div>
-              
-            </div>
-
-            <div class="row">
-              <small
+          <div class="modal-header text-center">
+            <h5
+              class="modal-title text-center text-white"
+              id="TituloModalCentralizado"
+            >
+              Criar postagem
+            </h5>
+            <p>
+              <small style="color: #fff"
                 >Poste aqui os seus produtos ou busque algum profissional.
               </small>
-            </div>
+            </p>
           </div>
 
           <div class="modal-body">
-            <p class="text-white">
-              Selecione os campos conforme o que você editou em tema
-            </p>
             <div class="row">
               <div class="form-floating mt-3">
                 <input
@@ -408,7 +395,7 @@
                   id="floatingInput"
                   placeholder="Digite o título"
                 />
-                <label for="floatingInput">Título</label>
+                <label for="floatingInput"><p class="mx-1">Título</p></label>
               </div>
 
               <div class="form-floating mt-3">
@@ -418,12 +405,8 @@
                   placeholder="Leave a comment here"
                   id="floatingTextarea"
                   name="floatingTextarea"
-                  onclick="contaCaracteres(this)"
-                  onkeydown="contaCaracteres(this)"
-                  onkeyup="contaCaracteres(this)"
                 ></textarea>
-                <label for="floatingTextarea">Texto</label>
-                <div id="divmag"></div>
+                <label for="floatingTextarea"><p class="mx-1">Texto</p></label>
               </div>
 
               <div class="form-floating mt-3">
@@ -433,38 +416,47 @@
                   placeholder="Leave a comment here"
                   id="floatingInput"
                 />
-                <label for="floatingInput">Imagem</label>
+                <label for="floatingInput"><p class="mx-1">Imagem</p> </label>
               </div>
 
               <div class="row mt-3 d-flex justify-content-center">
                 <div class="col-md-12">
-                  <p class="text-white">
+                  <p class="text-secondary">
                     Escolha as tags que descrevem sua postagem:
                   </p>
 
-                  <select
-                    class="form-control text-dark fs-6"
-                    name="tema"
-                    id="tema"
-                    [(ngModel)]="idTema"
-                    (change)="findByIdTema()"
-                  >
-                    <option
-                      class="option text-dark fs-6"
-                      *ngFor="let item of listaTemas"
-                      value="{{ item.id }}"
+                  <div class="border-r" style="border: 1px solid #03524d">
+                    <select
+                      style="width: 100%"
+                      class="form-control text-dark fs-6 form-selected"
+                      name="tema"
+                      id="tema"
+                      [(ngModel)]="idTema"
+                      (change)="findByIdTema()"
                     >
-                      {{ item.segmento }}, {{ item.tipo }}, {{ item.descricao }}
-                    </option>
-                  </select>
+                      <option class="option fs-6" selected disabled>
+                        Escolha segmento, tipo e descrição
+                      </option>
+
+                      <option
+                        class="option text-dark fs-6"
+                        *ngFor="let item of listaTemas"
+                        value="{{ item.id }}"
+                      >
+                        {{ item.segmento }}, {{ item.tipo }},
+                        {{ item.descricao }}
+                      </option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="row justify-content-center pt-2">
               <button
+                style="background-color: #cdcaca"
                 *ngIf="authService.adm()"
-                class="btn btn-light btn-sm"
+                class="btn btn-light btn-sm text-dark"
                 data-bs-dismiss="modal"
                 routerLink="/tema"
               >
@@ -472,10 +464,10 @@
               </button>
             </div>
 
-            <div class="modal-footer">
+            <div class="modal-footer justify-content-center">
               <button
                 type="button"
-                class="btn btn-success"
+                class="btn btn-outline-success"
                 (click)="publicar()"
                 data-bs-dismiss="modal"
               >
@@ -483,7 +475,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-danger"
+                class="btn btn-outline-danger"
                 data-bs-dismiss="modal"
               >
                 Cancelar
