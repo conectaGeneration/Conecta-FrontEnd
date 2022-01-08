@@ -24,6 +24,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SobreDeslogadoComponent } from './sobre-deslogado/sobre-deslogado.component';
+import { CursosComponent } from './cursos/cursos.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { SobreDeslogadoComponent } from './sobre-deslogado/sobre-deslogado.compo
     UsuarioEditComponent,
     LandingPageComponent,
     SobreDeslogadoComponent,
+    CursosComponent,
   ],
   imports: [
     BrowserModule,

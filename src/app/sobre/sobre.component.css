@@ -1,41 +1,43 @@
-
 * {
   list-style: none;
   text-decoration: none;
 }
 
-
 body {
   font-family: "Open Sans", sans-serif;
-  margin-top: 200px
+  margin-top: 200px;
 }
 
 .bg-colors {
   background-color: rgb(234, 245, 239);
-
 }
 
-.textoSobre{
-  padding-right: 10%;
-
+.textoSobre p {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+  color: #000000;
+  width: 600px;
 }
 
-.imgSobre{
-  padding-left: 10%;
-}
-
-p{
-  font-size:14pt;
-}
+/* .imgSobre {
+  padding-left: 3%;
+} */
 
 h2 {
-  color: #333;
   text-align: start;
   text-transform: uppercase;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  position: relative;
-  margin: 25px 0 50px
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 52px;
+
+  color: #03524d;
+  /* position: relative; */
+  margin: 25px 0 20px;
 }
 
 h2::after {
@@ -44,17 +46,16 @@ h2::after {
   position: absolute;
   margin: 0 auto;
   height: 3px;
-  
   left: 0;
   right: 0;
-  bottom: -10px
+  bottom: -10px;
 }
 
-.img{
+.img {
   border-radius: 1rem;
 }
 
-.about{
+.about {
   align-items: center;
 }
 
@@ -68,7 +69,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profile1 {
@@ -79,7 +80,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profile2 {
@@ -90,7 +91,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profile3 {
@@ -101,7 +102,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profilee {
@@ -112,7 +113,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .overlay {
@@ -123,24 +124,24 @@ h2::after {
   cursor: pointer;
   opacity: 0;
   transition: all 1s;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profile:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 
 .profile1:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 .profile2:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 .profile3:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 .profilee:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 
 .social-icons {
@@ -150,10 +151,10 @@ h2::after {
   position: absolute;
   text-align: center;
   justify-content: center;
-  left: 44px
+  left: 44px;
 }
 
-.social-icons li a{
+.social-icons li a {
   width: 25px;
   height: 25px;
   border: 1px solid #eee;
@@ -164,12 +165,12 @@ h2::after {
   align-items: center;
   color: #fff;
   border-radius: 5px;
-  transition: all 1s
+  transition: all 1s;
 }
 
 .social-icons li:hover {
   background: #fff;
-  color: #000
+  color: #000;
 }
 
 .overlay .about {
@@ -179,16 +180,25 @@ h2::after {
   display: flex;
   top: 40%;
   color: #fff;
-  flex: column
+  flex: column;
 }
 
-.sobrenos{
-  background-color: #1C2727;
-  height: 500px;
+.sobrenos {
+  background-color: #07504b;
+  height: 560px;
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 8rem;
-
 }
 
-
+.sobrenos h3 {
+  color: rgb(255, 255, 255);
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 52px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}

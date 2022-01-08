@@ -14,6 +14,7 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SobreDeslogadoComponent } from './sobre-deslogado/sobre-deslogado.component';
+import { CursosComponent } from './cursos/cursos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing-page', pathMatch: 'full' }, //quando a uri estiver vazia, sera acessado
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'tema',
     component: TemaComponent,
+  },
+  {
+    path: 'cursos',
+    component: CursosComponent,
   },
   {
     path: 'tema-edit/:id',

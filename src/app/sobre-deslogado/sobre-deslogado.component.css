@@ -11,104 +11,23 @@ a {
 }
 
 .bg-colors {
-  background-color: #E2E2E2;
+  background-color: #e2e2e2;
   min-height: 100vh;
 }
 
-.navb {
-
-  padding-left: 7%;
-  padding-right: 7%;
-
-  background-color: #077E77;
-  box-shadow: 0 0 10px 0 rgb(77, 76, 76);
-
-}
-
-.link-text {
-  text-decoration: none;
-  color: #040422
-}
-
-#c:hover {
-  color: #232327;
-  transform: scale(1.2);
-  transition: .2s;
-}
-
-.logo{
-
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 45px;
-
-  color: #FFFFFF;
-}
-
-.nav-items ul li{
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
-
-  color: #FFFFFF;
-  }
-
-  .textoSobre{
-    padding-right: 10%;
-
-  }
-
-  #foco{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 8rem;
-  }
-
-
-* {
-  list-style: none;
-  text-decoration: none;
-}
-
-
-body {
-  font-family: "Open Sans", sans-serif;
-  margin-top: 200px
-}
-
-.bg-colors {
-  background-color: rgb(234, 245, 239);
-
-}
-
-.textoSobre{
-  padding-right: 10%;
-
-}
-
-.imgSobre{
-  padding-left: 10%;
-}
-
-p{
-  font-size:14pt;
-}
-
 h2 {
-  color: #333;
   text-align: start;
   text-transform: uppercase;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  position: relative;
-  margin: 25px 0 50px
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 52px;
+
+  color: #03524d;
+  /* position: relative; */
+  margin: 25px 0 20px;
 }
-
-
 
 h2::after {
   content: "";
@@ -116,17 +35,105 @@ h2::after {
   position: absolute;
   margin: 0 auto;
   height: 3px;
-  background: #077E77;
   left: 0;
   right: 0;
-  bottom: -10px
+  bottom: -10px;
 }
 
-.img{
+.navb {
+  padding-left: 7%;
+  padding-right: 7%;
+
+  background-color: #12403d;
+  box-shadow: 0 0 10px 0 rgb(77, 76, 76);
+}
+
+.link-text {
+  text-decoration: none;
+  color: #040422;
+}
+
+#c:hover {
+  color: #232327;
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 45px;
+
+  color: #ffffff;
+}
+
+.nav-items ul li {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: #ffffff;
+}
+
+.textoSobre p{
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+  color: #000000;
+  width: 600px;
+}
+
+.textoSobre h2{
+  font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: 800;
+font-size: 32px;
+line-height: 48px;
+color: #03524D;
+}
+
+#foco {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8rem;
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  margin-top: 200px;
+}
+
+.bg-colors {
+  background-color: rgb(234, 245, 239);
+}
+
+.textoSobre {
+  padding-right: 10%;
+}
+
+.imgSobre {
+  padding-left: 10%;
+}
+
+p {
+  font-size: 11pt;
+}
+
+.img {
   border-radius: 1rem;
 }
 
-.about{
+.about {
   align-items: center;
 }
 
@@ -140,7 +147,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profile1 {
@@ -151,7 +158,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profile2 {
@@ -162,7 +169,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profile3 {
@@ -173,7 +180,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profilee {
@@ -184,7 +191,7 @@ h2::after {
   background-size: cover;
   cursor: pointer;
   border: 12px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .overlay {
@@ -195,24 +202,24 @@ h2::after {
   cursor: pointer;
   opacity: 0;
   transition: all 1s;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 .profile:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 
 .profile1:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 .profile2:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 .profile3:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 .profilee:hover .overlay {
-  opacity: 1
+  opacity: 1;
 }
 
 .social-icons {
@@ -222,10 +229,10 @@ h2::after {
   position: absolute;
   text-align: center;
   justify-content: center;
-  left: 44px
+  left: 44px;
 }
 
-.social-icons li a{
+.social-icons li a {
   width: 25px;
   height: 25px;
   border: 1px solid #eee;
@@ -236,12 +243,12 @@ h2::after {
   align-items: center;
   color: #fff;
   border-radius: 5px;
-  transition: all 1s
+  transition: all 1s;
 }
 
 .social-icons li:hover {
   background: #fff;
-  color: #000
+  color: #000;
 }
 
 .overlay .about {
@@ -251,16 +258,24 @@ h2::after {
   display: flex;
   top: 40%;
   color: #fff;
-  flex: column
+  flex: column;
 }
 
-.sobrenos{
-  background-color: #1C2727;
+.sobrenos {
+  background-color: #1c2727;
   height: 500px;
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 8rem;
-
 }
 
-
+h3 {
+  color: rgb(255, 255, 255);
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 52px;
+  padding-top: 30px;
+  position: relative;
+}

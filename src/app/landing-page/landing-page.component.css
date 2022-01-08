@@ -11,13 +11,21 @@ a {
 }
 
 .bg-colors {
-  background-color: #e2e2e2;
+  background-color: rgb(234, 245, 239);
   min-height: 100vh;
+}
+
+.bg-colors img {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
 }
 
 .bg-colorv {
   background-color: #07504b;
   padding-top: 30px;
+  height: 656px;
+
   padding-bottom: 30px;
 }
 
@@ -25,10 +33,15 @@ h2 {
   color: #333;
   text-align: start;
   text-transform: uppercase;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  position: relative;
-  margin: 25px 0 50px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 52px;
+
+  color: #03524d;
+  /* position: relative; */
+  margin: 25px 0 20px;
 }
 
 h2::after {
@@ -49,6 +62,7 @@ h3 {
   font-weight: 800;
   font-size: 35px;
   line-height: 52px;
+  padding-top: 30px;
   position: relative;
 }
 
@@ -56,7 +70,7 @@ h3 {
   padding-left: 7%;
   padding-right: 7%;
 
-  background-color: #077e77;
+  background: #12403d;
   box-shadow: 0 0 10px 0 rgb(77, 76, 76);
 }
 
@@ -93,22 +107,71 @@ h3 {
 
 .textoSobre {
   padding-right: 10%;
+  padding-bottom: 50px;
+}
+
+.textoSobre p {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+  color: #000000;
+  width: 600px;
 }
 
 .card {
-  height: 350px;
-  width: 300px;
+  width: 281px;
+  height: 334px;
+  margin: 0 auto;
+
+  background: #ffffff;
 }
 
 .cards {
   text-align: center;
-  margin: 0;
-  padding-left: 6%;
-  border-radius: 10px;
-  padding-bottom: 30px;
+  margin: 0 auto;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  display: flex;
 }
 
-.card-text{
+.card-body h5 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.card-body p {
+  width: 189px;
+  height: 89px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  margin: 0 auto;
+  color: #575151;
+}
+
+.area-foco {
+  padding-top: 20px;
+}
+
+.foco {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card-text {
   padding-top: 10px;
 }
 
@@ -117,6 +180,10 @@ h3 {
   justify-content: center;
   font-size: 70pt;
   padding-top: 30px;
+}
+
+footer {
+  padding-top: 50px;
 }
 
 #footerlanding {

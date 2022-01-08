@@ -1,36 +1,96 @@
-<nav class="navbar navb navbar-expand-lg static" >
+<nav class="navbar navb navbar-expand-lg static">
   <div class="container-fluid">
     <a routerLink="/inicio" class="navbar-brand logo" href="#">Conecta.</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="navbar-principal">
+      <ul class="d-flex justify-content-center">
+        <li><a
+          routerLink="/inicio"
+          class="nav-link active text-white"
+          aria-current="page"
+          href="#"
+          >Home</a
+        ></li>
+        <li>|</li>
+        <li> <a
+          routerLink="/sobre"
+          href="#sobrenos"
+          class="nav-link text-white"
+          id="sobre"
+          >Sobre</a
+        ></li>
+        <li>|</li>
+        <li><a
+          routerLink="/cursos"
+          class="nav-link active text-white"
+          aria-current="page"
+          href="#"
+          >Cursos</a
+        ></li>
+      </ul>
+    </div>
 
     <form class="d-flex">
-      <ul class="navbar-nav nav-items">
-        <li class="nav-item ">
-          <a routerLink="/inicio" class="nav-link active text-white" aria-current="page" href="#">Home</a>
-        </li>
-
-        <li class="nav-item ">
-          <a routerLink="/sobre" href="#sobrenos" class="nav-link text-white" id="sobre">Sobre nós</a>
-        </li>
-      </ul>
       <span class="navbar-text">
-        <div class="dropdown " style="color:#fff">
-          <img  style="color:#fff" class="dropdown-toggle icone-branco ml-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
-            src="https://i.imgur.com/363Hrvh.png" />
+        <!-- <div class="dropdown" style="color: #fff">
+          <img
+            style="color: #fff"
+            class="dropdown-toggle icone-branco ml-2"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            src="https://i.imgur.com/363Hrvh.png"
+          />
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a [routerLink]="['/usuario-edit', id]" class="dropdown-item">Editar perfil</a></li>
-            <li><a (click)='sair()' class="dropdown-item" >Sair</a></li>
+            <li>
+              <a [routerLink]="['/usuario-edit', id]" class="dropdown-item"
+                >Editar perfil</a
+              >
+            </li>
+            <button class="btn"><a (click)="sair()" class="dropdown-item">Sair</a></button>
           </ul>
+        </div> -->
+        <!-- Default dropstart button -->
+        <div class="btn-group dropstart">
+          <button
+            type="button"
+            class="btn dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              style="color: #fff"
+              class="dropdown-toggle icone-branco ml-2"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              src="https://i.imgur.com/363Hrvh.png"
+            />
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLink]="['/usuario-edit', id]" class="dropdown-item"
+                >Editar perfil</a
+              >
+            </li>
+          </ul>
+          <button class="btn-sair">
+            <a (click)="sair()" class="dropdown-item">Sair</a>
+          </button>
         </div>
-
-            </span>
+      </span>
     </form>
-
-
-
-
-
-    </div>
+  </div>
 </nav>
