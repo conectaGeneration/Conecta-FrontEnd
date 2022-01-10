@@ -17,7 +17,6 @@ export class UsuarioEditComponent implements OnInit {
   confirmarSenha: string;
   tipoUsuario: string;
 
-
   constructor(
     public authService: AutenticacaoService,
     private route: ActivatedRoute,

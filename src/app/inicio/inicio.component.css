@@ -37,6 +37,9 @@ small {
   padding-right: 2%;
 }
 
+
+
+
 .posts {
   padding-left: 10vh;
   padding-right: 10vh;
@@ -66,6 +69,80 @@ small {
   color: #000000;
 }
 
+.info-perfil{
+  padding-top: 10px;
+}
+
+.cardsubtitle{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #232121;
+}
+
+.cardtitle{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+
+}
+
+.cardtitle p{
+  width: 242px;
+  height: 66px;
+
+
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+
+  color: #232121;
+}
+
+.card-body img{
+  width: 74px;
+  height: 73px;
+  border-radius: 35px;
+}
+
+.cardtitle-feed{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+
+  color: #000000;
+}
+
+
+.perfil-card{
+  width: 278px;
+  height: 433px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 35px;
+
+  margin-top: 50px;
+}
+
 .card-pub {
   width: 350px;
   height: 48px;
@@ -74,6 +151,35 @@ small {
   border-radius: 40px;
   padding-right: 40px;
   padding-left: 40px;
+}
+
+.btn-perfil{
+  width: 172px;
+  height: 42px;
+
+  background: #06524D;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #FFFFFF;
+  margin-top: 15px;
+}
+
+
+.btn-perfil-edit{
+  width: 172px;
+  height: 42px;
+  font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+border: 1px solid #03524d;
+
+color: #06524D;
 }
 
 .columnLateral {
@@ -108,6 +214,20 @@ small {
 
 .username {
   padding-top: 15%;
+}
+
+.criar-pub p{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-align: center;
+  margin: 0 auto;
+  color: #000000;
 }
 
 #btnPubli {
@@ -249,9 +369,11 @@ select {
 }
 
 .card-post {
-  width: 700px;
-  height: 371px;
+  width: 1800px;
+  height: auto;
+  border-radius: 15px;
 }
+
 
 
 
@@ -263,3 +385,27 @@ select {
   line-height: 33px;
   color: #000000;
 }
+
+/* Responsive ================================*/
+@media (max-width: 1100px) {
+  #columnE{
+    display: none;
+  }
+
+
+}
+
+@media (max-width: 1300px) {
+  .username{
+    display: none;
+  }
+
+
+}
+
+
+
+
+
+
+

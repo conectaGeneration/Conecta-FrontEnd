@@ -104,3 +104,15 @@ color: #000000;
 background: #FFFFFF;
 border-radius: 10px;
 }
+
+/* Responsive ================================*/
+@media (max-width: 1400px) {
+  .navbar-principal
+  {
+    display: none;
+  }
+
+
+}
+
+

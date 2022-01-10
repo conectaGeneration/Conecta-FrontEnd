@@ -49,7 +49,7 @@
       <div *ngIf="authService.adm()" class="form-group">
         <label  for="tipo">Tipo de usuário</label>
         <select  class="form-control " name="tipo" id="tipo" (change)="tipoUser($event)">
-          <option>-Selecione um tipo de usuário-</option>
+          <option disabled selected>-Selecione um tipo de usuário-</option>
           <option value="normal">Normal</option>
           <option value="admin">Administrador</option>
         </select>

@@ -1,42 +1,17 @@
 <nav class="navbar navb navbar-expand-lg static">
   <div class="container-fluid">
     <a routerLink="/inicio" class="navbar-brand logo" href="#">Conecta.</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-principal">
       <ul class="d-flex justify-content-center">
-        <li><a
-          routerLink="/inicio"
-          class="nav-link active text-white"
-          aria-current="page"
-          href="#"
-          >Home</a
-        ></li>
+        <li><a routerLink="/inicio" class="nav-link active text-white" aria-current="page" href="#">Home</a></li>
         <li>|</li>
-        <li> <a
-          routerLink="/sobre"
-          href="#sobrenos"
-          class="nav-link text-white"
-          id="sobre"
-          >Sobre</a
-        ></li>
+        <li> <a routerLink="/sobre" href="#sobrenos" class="nav-link text-white" id="sobre">Sobre</a></li>
         <li>|</li>
-        <li><a
-          routerLink="/cursos"
-          class="nav-link active text-white"
-          aria-current="page"
-          href="#"
-          >Cursos</a
-        ></li>
+        <li><a routerLink="/cursos" class="nav-link active text-white" aria-current="page" href="#">Cursos</a></li>
       </ul>
     </div>
 
@@ -63,28 +38,21 @@
         </div> -->
         <!-- Default dropstart button -->
         <div class="btn-group dropstart">
-          <button
-            type="button"
-            class="btn dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              style="color: #fff"
-              class="dropdown-toggle icone-branco ml-2"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              src="https://i.imgur.com/363Hrvh.png"
-            />
+          <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img style="color: #fff" class="dropdown-toggle icone-branco ml-2" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false" src="https://i.imgur.com/363Hrvh.png" />
           </button>
           <ul class="dropdown-menu">
             <li>
-              <a [routerLink]="['/usuario-edit', id]" class="dropdown-item"
-                >Editar perfil</a
-              >
+              <a [routerLink]="['/usuario-edit', id]" class="dropdown-item">Editar perfil</a>
             </li>
+            <li>
+              <a routerLink="/cursos" class="dropdown-item" aria-current="page" href="#">Cursos</a>
+            </li>
+            <li>
+              <a routerLink="/sobre" href="#sobrenos" class="dropdown-item" >Sobre</a>
+            </li>
+
           </ul>
           <button class="btn-sair">
             <a (click)="sair()" class="dropdown-item">Sair</a>

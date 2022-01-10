@@ -2,7 +2,7 @@ import { Tema } from './../model/Tema';
 import { TemaService } from './../service/tema.service';
 import { PostagemService } from './../service/postagem.service';
 import { Postagem } from './../model/Postagem';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { AutenticacaoService } from '../service/autenticacao.service';
@@ -32,13 +32,16 @@ export class InicioComponent implements OnInit {
   foto = environment.foto;
   nome = environment.nome;
   imagem = environment.imagem;
+  contato = environment.contato;
+  sobre = environment.sobre;
+  cargo = environment.cargo;
 
   key = 'data'
   reverse = true
 
-
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private postagemService: PostagemService,
     private temaService: TemaService,
     public authService: AutenticacaoService,
@@ -55,6 +58,9 @@ export class InicioComponent implements OnInit {
     this.getAllTemas();
     this.getAllPostagens();
   }
+
+
+
 
   getAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
@@ -125,5 +131,62 @@ export class InicioComponent implements OnInit {
     }
   }
 
+/*
+salvar() {
+    this.user.id = this.idUser;
+    this.authService
+      .atualizar(this.user)
+      .subscribe((resp: Usuario) => {
+        this.user = resp;
+        environment.sobre = this.user.sobre;
+        Swal.fire({
+          icon: 'success',
+          title: 'Suas informações foram atualizadas com sucesso!',
+          confirmButtonText: 'Certo!',
+          timer: 5000,
+          timerProgressBar: true
+        })
+        this.user = new Usuario();
+        this.findByIdUser();
+      });
+  }*/
 
-}
+
+
+  salvar() {
+    this.user.sobre = this.sobre;
+    this.user.cargo = this.cargo;
+    this.user.contato = this.contato;
+
+      this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
+        this.user = resp;
+        this.router.navigate(['/inicio']);
+        Swal.fire({
+          icon: 'success',
+          title: 'Informações atualizadas com sucesso!',
+          confirmButtonText: 'Certo!',
+          timer: 5000,
+          timerProgressBar: true
+        })
+
+        environment.token = '';
+        environment.nome = '';
+        environment.foto = '';
+        environment.id = 0;
+        this.router.navigate(['/entrar'])
+        Swal.fire({
+          icon: 'warning',
+          title: 'Faça o login novamente para aplicar as alterações',
+          confirmButtonText: 'Certo!'
+        })
+      });
+    }
+
+
+
+  }
+
+
+
+
+
