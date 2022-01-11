@@ -7,6 +7,6 @@ export const environment = {
   imagem: '',
   tipo: '',
   cargo: '',
-  contato: 0,
+  contato: '',
   sobre: '',
 };

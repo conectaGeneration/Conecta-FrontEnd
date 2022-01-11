@@ -19,6 +19,7 @@ export class UsuarioEditComponent implements OnInit {
   sobre = environment.sobre;
   cargo = environment.cargo;
 
+
   constructor(
     public authService: AutenticacaoService,
     private route: ActivatedRoute,
@@ -46,16 +47,13 @@ export class UsuarioEditComponent implements OnInit {
 
   atualizar() {
     this.usuario.tipo = this.tipoUsuario;
-    this.usuario.sobre = this.sobre;
-    this.usuario.cargo = this.cargo;
-    this.usuario.contato = this.contato;
 
     if (this.usuario.senha != this.confirmarSenha) {
       Swal.fire({
         title: 'As senhas não estão correspondentes!',
         icon: 'warning',
         confirmButtonText: 'Certo!',
-      })
+      });
     } else {
       this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
@@ -66,12 +64,12 @@ export class UsuarioEditComponent implements OnInit {
           confirmButtonText: 'Certo!',
           timer: 10000,
           timerProgressBar: true,
-        })
+        });
         environment.token = '';
         environment.nome = '';
         environment.foto = '';
         environment.id = 0;
-        this.router.navigate(['/entrar'])
+        this.router.navigate(['/entrar']);
       });
     }
   }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
-import { AlertasService } from '../service/alertas.service';
 import { AutenticacaoService } from '../service/autenticacao.service';
 import Swal from 'sweetalert2'
 
@@ -18,8 +17,7 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private auth: AutenticacaoService,
-    private router: Router,
-    private alertasService: AlertasService
+    private router: Router
   ) { }
 
   ngOnInit() {

@@ -2,12 +2,11 @@ import { Tema } from './../model/Tema';
 import { TemaService } from './../service/tema.service';
 import { PostagemService } from './../service/postagem.service';
 import { Postagem } from './../model/Postagem';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { AutenticacaoService } from '../service/autenticacao.service';
 import { Usuario } from '../model/Usuario';
-import { AlertasService } from '../service/alertas.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -26,41 +25,37 @@ export class InicioComponent implements OnInit {
   nomeTema: string;
   segmentoTema: string;
 
-  user: Usuario = new Usuario();
+  usuario: Usuario = new Usuario();
   idUser = environment.id;
+  confirmarSenha: string;
 
   foto = environment.foto;
-  nome = environment.nome;
   imagem = environment.imagem;
+  nome = environment.nome;
   contato = environment.contato;
   sobre = environment.sobre;
   cargo = environment.cargo;
 
-  key = 'data'
-  reverse = true
+  key = 'data';
+  reverse = true;
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    public authService: AutenticacaoService,
-    private alertasService: AlertasService
-  ) { }
+    public authService: AutenticacaoService
+  ) {}
 
   ngOnInit() {
     window.scroll(0, 0);
 
     if (environment.token == '') {
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/entrar']);
     }
 
     this.getAllTemas();
     this.getAllPostagens();
   }
-
-
-
 
   getAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
@@ -82,7 +77,7 @@ export class InicioComponent implements OnInit {
 
   findByIdUser() {
     this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario) => {
-      this.user = resp;
+      this.usuario = resp;
     });
   }
 
@@ -90,8 +85,8 @@ export class InicioComponent implements OnInit {
     this.tema.id = this.idTema;
     this.postagem.tema = this.tema;
 
-    this.user.id = this.idUser;
-    this.postagem.usuario = this.user;
+    this.usuario.id = this.idUser;
+    this.postagem.usuario = this.usuario;
 
     this.postagemService
       .postPostagem(this.postagem)
@@ -103,8 +98,8 @@ export class InicioComponent implements OnInit {
           title: 'Sua publicação foi postada com sucesso!',
           confirmButtonText: 'Certo!',
           timer: 5000,
-          timerProgressBar: true
-        })
+          timerProgressBar: true,
+        });
         this.postagem = new Postagem();
         this.getAllPostagens();
         this.getAllTemas();
@@ -113,78 +108,88 @@ export class InicioComponent implements OnInit {
 
   findByTituloPostagem() {
     if (this.tituloPost == '') {
-      this.getAllPostagens()
+      this.getAllPostagens();
     } else {
-      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
-        this.listaPostagens = resp
-      })
+      this.postagemService
+        .getByTituloPostagem(this.tituloPost)
+        .subscribe((resp: Postagem[]) => {
+          this.listaPostagens = resp;
+        });
     }
   }
 
-  findBySegmentoTema(){
+  findBySegmentoTema() {
     if (this.segmentoTema == '') {
-      this.getAllTemas()
+      this.getAllTemas();
     } else {
-      this.temaService.getBySegmentoTema(this.segmentoTema).subscribe((resp: Tema[]) => {
-        this.listaTemas = resp
-      })
+      this.temaService
+        .getBySegmentoTema(this.segmentoTema)
+        .subscribe((resp: Tema[]) => {
+          this.listaTemas = resp;
+        });
     }
   }
 
-/*
+  confirmSenha(event: any) {
+    this.confirmarSenha = event.target.value;
+  }
+
+
 salvar() {
-    this.user.id = this.idUser;
-    this.authService
-      .atualizar(this.user)
-      .subscribe((resp: Usuario) => {
-        this.user = resp;
-        environment.sobre = this.user.sobre;
-        Swal.fire({
-          icon: 'success',
-          title: 'Suas informações foram atualizadas com sucesso!',
-          confirmButtonText: 'Certo!',
-          timer: 5000,
-          timerProgressBar: true
-        })
-        this.user = new Usuario();
-        this.findByIdUser();
+    if (this.usuario.senha != this.confirmarSenha) {
+      Swal.fire({
+        title: 'As senhas não estão correspondentes!',
+        icon: 'warning',
+        confirmButtonText: 'Certo!',
       });
-  }*/
-
-  salvar() {
-    this.user.sobre = this.sobre;
-    this.user.cargo = this.cargo;
-    this.user.contato = this.contato;
-
-      this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
-        this.user = resp;
+    } else {
+      this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
+        this.usuario = resp;
         this.router.navigate(['/inicio']);
         Swal.fire({
-          icon: 'success',
-          title: 'Informações atualizadas com sucesso!',
+          title: 'Usuário atualizado com sucesso!',
+          text: 'Faça o login novamente para aplicar as alterações',
           confirmButtonText: 'Certo!',
-          timer: 5000,
-          timerProgressBar: true
-        })
-
+          timer: 10000,
+          timerProgressBar: true,
+        });
         environment.token = '';
         environment.nome = '';
         environment.foto = '';
         environment.id = 0;
-        this.router.navigate(['/entrar'])
-        Swal.fire({
-          icon: 'warning',
-          title: 'Faça o login novamente para aplicar as alterações',
-          confirmButtonText: 'Certo!'
-        })
+        this.router.navigate(['/entrar']);
       });
-    }
+  }
+
+  /*
+  salvar() {
+    this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
+      this.usuario = resp;
+      this.router.navigate(['/inicio']);
+      Swal.fire({
+        icon: 'success',
+        title: 'Informações atualizadas com sucesso!',
+        confirmButtonText: 'Certo!',
+        timer: 5000,
+        timerProgressBar: true,
+      });
+
+      environment.token = '';
+      environment.nome = '';
+      environment.foto = '';
+      environment.id = 0;
+      this.router.navigate(['/entrar']);
+      Swal.fire({
+        icon: 'warning',
+        title: 'Faça o login novamente para aplicar as alterações',
+        confirmButtonText: 'Certo!',
+      });
+    });*/
+
+
 
 
 
   }
-
-
-
-
+}
 
