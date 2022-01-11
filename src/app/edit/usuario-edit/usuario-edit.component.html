@@ -45,6 +45,24 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Profissão atual</label>
+          <input [(ngModel)]="usuario.cargo" type="text" class="form-control" id="exampleFormControlInput1"
+            placeholder="ex: Autônomo">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Sobre você</label>
+          <textarea [(ngModel)]="usuario.sobre" type="text" class="form-control" id="exampleFormControlTextarea1"
+            rows="3" placeholder="Conte mais sobre você aqui"></textarea>
+        </div>
+        <div class="mb-3">
+          <label>Contato</label>
+          <input [(ngModel)]="usuario.contato" type="number" class="form-control" id="exampleFormControlInput1"
+            placeholder="+55 11 99999999">
+        </div>
+      </div>
+
 
       <div *ngIf="authService.adm()" class="form-group">
         <label  for="tipo">Tipo de usuário</label>
@@ -64,3 +82,13 @@
   </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+

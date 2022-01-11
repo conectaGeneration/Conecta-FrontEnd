@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from './../../environments/environment.prod';
 
 @Component({
   selector: 'app-cursos',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    window.scroll(0, 0);
+
+    if (environment.token == '') {
+      this.router.navigate(['/entrar'])
+    }
   }
 
 }

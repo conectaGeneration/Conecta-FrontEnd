@@ -7,16 +7,17 @@
         <div class=" d-flex">
           <img class="navbar-brand img rounded-circle mx-auto ajust" src="{{ foto }}" alt="Foto de perfil" width="70px"
             height="75px" />
-            <div class="d-block info-perfil">
+          <div class="d-block info-perfil">
             <h5 class=" cardtitle">{{ nome }}</h5>
-            <p class="cardsubtitle mb-2 text-muted">{{user.cargo}}Empreendedora</p>
-            </div>
+            <p class="cardsubtitle mb-2 text-muted">{{ user.cargo }}</p>
+          </div>
         </div>
 
         <h6 class="cardtitle">Sobre</h6>
-        <p class="card-text">{{user.sobre}}Sou apaixonada em confeitaria e bolos. Resido em SP e faço encomendas toda semana.</p>
+        <p class="card-text">{{ user.sobre }}
+  </p>
         <h6 class="cardtitle">Contato</h6>
-        <p class="card-text">{{user.contato}} +55 11 9595656323</p>
+         <p class="card-text">{{ contato }} </p>
 
         <!-- modal editar perfil -->
         <button type="button" class="btn btn-perfil-edit" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -27,29 +28,33 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-header d-flex">
                 <h5 class="modal-title text-white" id="exampleModalLabel">Editar informações do usuário</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <div class="row">
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">Profissão atual</label>
-                  <input [(ngModel)]="user.cargo" type="text" class="form-control" id="exampleFormControlInput1" placeholder="ex: Autônomo">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label">Sobre você</label>
-                  <textarea [(ngModel)]="user.sobre" type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Conte mais sobre você aqui"></textarea>
-                </div>
-                <div class="mb-3">
-                <label>Contato</label>
-                <input [(ngModel)]="user.contato" type="number" class="form-control" id="exampleFormControlInput1" placeholder="+55 11 99999999">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Profissão atual</label>
+                    <input [(ngModel)]="user.cargo" type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="ex: Autônomo">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Sobre você</label>
+                    <textarea [(ngModel)]="user.sobre" type="text" class="form-control" id="exampleFormControlTextarea1"
+                      rows="3" placeholder="Conte mais sobre você aqui"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label>Contato</label>
+                    <input [(ngModel)]="user.contato" type="number" class="form-control" id="exampleFormControlInput1"
+                      placeholder="+55 11 99999999">
 
-              </div>
-            </div>
+                  </div>
+                </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" routerLink="/inicio">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                  routerLink="/inicio">Cancelar</button>
                 <button (click)="salvar()" type="button" data-bs-dismiss="modal" class="btn btn-success">Salvar</button>
               </div>
             </div>
@@ -115,227 +120,247 @@
 
               <!-- test -->
               <div class="card-columns ">
-              <div class="card card-post mb-3" style="max-width: 540px" *ngFor="let item of listaPostagens | orderBy: key:reverse">
-                <div class="row g-0" >
-                  <div class="col-md-7">
-                    <img class="navbar-brand mx-auto text-center ajustar" src="{{ item.imagem }}" alt="SEM-IMAGEM"
-                      width="300px" />
-                  </div>
-                  <div class="col-md-5">
-                    <div class="card-body ">
-                      <div class="d-flex">
-                      <h5 class="card-title cardtitle-feed ">{{ item.titulo }}</h5>
-                      </div>
-                      <div class="d-flex">
+                <div class="card card-post mb-3" style="max-width: 540px"
+                  *ngFor="let item of listaPostagens | orderBy: key:reverse">
+                  <div class="row g-0">
+                    <div class="col-md-7">
+                      <img class="navbar-brand mx-auto text-center ajustar" src="{{ item.imagem }}" alt="SEM-IMAGEM"
+                        width="300px" />
+                    </div>
+                    <div class="col-md-5">
+                      <div class="card-body ">
+                        <div class="d-flex">
+                          <h5 class="card-title cardtitle-feed ">{{ item.titulo }}</h5>
+                        </div>
+                        <div class="d-flex">
+                          <p class="card-text">
+                            <small class="text-muted small-nome">Postado por: {{ item.usuario.nome }}</small>
+
+                          </p>
+                          <p><small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
+                              {{ item.data | date: "HH:mm" }}</small></p>
+
+                        </div>
                         <p class="card-text">
-                          <small class="text-muted small-nome">Postado por: {{ item.usuario.nome }}</small>
-
+                          {{ item.texto }}
                         </p>
-                        <p><small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
-                          {{ item.data | date: "HH:mm" }}</small></p>
-
-                      </div>
-                      <p class="card-text">
-                        {{ item.texto }}
-                      </p>
-                      <button type="button" class="btn btn-outline-danger" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
-                        </svg>
-                        Like
-                    </button>
-                      <!-- <p class="card-text">
+                        <button type="button" id="like"  class="btn btn-like btn-outline-danger">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-heart" viewBox="0 0 16 16">
+                            <path
+                              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
+                            </path>
+                          </svg>
+                          Like
+                        </button>
+                        <!-- <p class="card-text">
                         <small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
                           {{ item.data | date: "HH:mm" }}</small>
                       </p> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- test -->
+
+            </div>
+            <!-- FIM TODAS AS POSTAGENS -->
+
+
+            <!-- MINHAS POSTAGENS -->
+            <div class="tab-pane fade text-start" id="nav-minhasPostagens" role="tabpanel"
+              aria-labelledby="nav-minhasPostagens-tab">
+
+              <div class="card-columns ">
+                <div class="card card-post mb-3" style="max-width: 540px"
+                  *ngFor="let item of user.postagem | orderBy: key:reverse">
+                  <div class="row g-0">
+                    <div class="col-md-7">
+                      <img class="navbar-brand mx-auto text-center ajustar" src="{{ item.imagem }}" alt="SEM-IMAGEM"
+                        width="300px" />
+                    </div>
+                    <div class="col-md-5">
+                      <div class="card-body ">
+                        <div class="d-flex">
+                          <h5 class="card-title cardtitle-feed ">{{ item.titulo }}</h5>
+                        </div>
+                        <div class="d-flex">
+
+                          <p><small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
+                              {{ item.data | date: "HH:mm" }}</small></p>
+
+                        </div>
+                        <p class="card-text">
+                          {{ item.texto }}
+                        </p>
+                        <button type="button" id="like"  class="btn btn-like btn-outline-danger">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-heart" viewBox="0 0 16 16">
+                            <path
+                              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
+                            </path>
+                          </svg>
+                          Like
+                        </button>
+
+                        <div class="mt-5">
+                          <a [routerLink]="['/postagem-edit', item.id]" class="text-primary mr-4" href="">Editar</a>
+                        <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">
+                          Apagar
+                        </a>
+                        </div>
+
+
+                        <!-- <p class="card-text">
+                        <small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
+                          {{ item.data | date: "HH:mm" }}</small>
+                      </p> -->
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- test -->
+            <!-- FIM MINHAS POSTAGENS -->
 
-          </div>
-          <!-- FIM TODAS AS POSTAGENS -->
-
-
-          <!-- MINHAS POSTAGENS -->
-          <div class="tab-pane fade text-start" id="nav-minhasPostagens" role="tabpanel"
-            aria-labelledby="nav-minhasPostagens-tab">
-            <div class="card-columns mt-4">
-              <div class="card mb-3" id="card-size" *ngFor="let item of user.postagem | orderBy: key:reverse">
-                <div class="card-body">
-                  <h5 class="card-title ml-4 bold">{{ item.titulo }}</h5>
-
-                  <img class="navbar-brand img rounded mx-auto ajustar" src="{{ item.imagem }}" alt="imagem da postagem"
-                    width="100%" height="250px" />
-
-                  <p class="card-title mt-3">{{ item.texto }}</p>
-
-                  <small class="text-muted space" id="tag-color">
-                    <font color="#ffffff">#{{ item.tema.descricao }}</font>
-                  </small>
-
-                  <small class="text-muted space" id="tag-color">
-                    <font color="#ffffff">#{{ item.tema.tipo }}</font>
-                  </small>
-
-                  <small class="text-muted space" id="tag-color">
-                    <font color="#ffffff">#{{ item.tema.segmento }}</font>
-                  </small>
-
-                  <p class="card-text">
-                    <small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
-                      {{ item.data | date: "HH:mm" }}</small>
-                  </p>
-
-                  <a [routerLink]="['/postagem-edit', item.id]" class="text-primary mr-4" href="">Editar</a>
-                  <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">
-                    Apagar
-                  </a>
+            <!-- POSTAGENS POR TEMA -->
+            <div class="tab-pane fade text-start" id="nav-postagemTema" role="tabpanel"
+              aria-labelledby="nav-postagemTema-tab">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-11">
+                  <div class="form group">
+                    <input type="text" class="form-control fs-6" id="segmento"
+                      placeholder="Digite um segmento de trabalho para pesquisar" [(ngModel)]="segmentoTema"
+                      (keyup)="findBySegmentoTema()" />
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- FIM MINHAS POSTAGENS -->
 
-          <!-- POSTAGENS POR TEMA -->
-          <div class="tab-pane fade text-start" id="nav-postagemTema" role="tabpanel"
-            aria-labelledby="nav-postagemTema-tab">
-            <div class="row d-flex justify-content-center">
-              <div class="col-md-11">
-                <div class="form group">
-                  <input type="text" class="form-control fs-6" id="segmento"
-                    placeholder="Digite um segmento de trabalho para pesquisar" [(ngModel)]="segmentoTema"
-                    (keyup)="findBySegmentoTema()" />
-                </div>
-              </div>
-            </div>
+              <div class="card-columns mt-4" *ngFor="let tema of listaTemas">
+                <div class="card text-start mb-3 justify-content-center" id="card-size"
+                  *ngFor="let item of tema.postagem | orderBy: key:reverse">
+                  <div class="card-body">
+                    <h5 class="card-title m-0 bold">{{ item.titulo }}</h5>
 
-            <div class="card-columns mt-4" *ngFor="let tema of listaTemas">
-              <div class="card text-start mb-3 justify-content-center" id="card-size"
-                *ngFor="let item of tema.postagem | orderBy: key:reverse">
-                <div class="card-body">
-                  <h5 class="card-title m-0 bold">{{ item.titulo }}</h5>
+                    <img class="navbar-brand img rounded mx-auto ajustar" src="{{ item.imagem }}"
+                      alt="imagem da postagem" width="100%" height="250px" />
 
-                  <img class="navbar-brand img rounded mx-auto ajustar" src="{{ item.imagem }}" alt="imagem da postagem"
-                    width="100%" height="250px" />
+                    <p class="card-title mt-3">{{ item.texto }}</p>
 
-                  <p class="card-title mt-3">{{ item.texto }}</p>
+                    <small class="text-muted space" id="tag-color">
+                      <font color="#ffffff">#{{ tema.descricao }} </font>
+                    </small>
 
-                  <small class="text-muted space" id="tag-color">
-                    <font color="#ffffff">#{{ tema.descricao }} </font>
-                  </small>
+                    <small class="text-muted space" id="tag-color">
+                      <font color="#ffffff">#{{ tema.tipo }} </font>
+                    </small>
 
-                  <small class="text-muted space" id="tag-color">
-                    <font color="#ffffff">#{{ tema.tipo }} </font>
-                  </small>
+                    <small class="text-muted space" id="tag-color">
+                      <font color="#ffffff">#{{ tema.segmento }} </font>
+                    </small>
 
-                  <small class="text-muted space" id="tag-color">
-                    <font color="#ffffff">#{{ tema.segmento }} </font>
-                  </small>
-
-                  <p class="card-text">
-                    <small class="text-muted">por: {{ item.usuario.nome }}</small>
-                  </p>
-                  <p class="card-text">
-                    <small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
-                      {{ item.data | date: "HH:mm" }}</small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- FIM POSTANGES  POR TEMA -->
-
-
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal criar postagem-->
-    <div class="modal t-modal fade"  id="novaPostagem" tabindex="-1" role="dialog"
-      aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document" >
-        <div class="modal-content modalPost">
-          <div class="modal-header text-center">
-            <h5 class="modal-title text-center text-white" id="TituloModalCentralizado">
-              Criar postagem
-            </h5>
-            <p>
-              <small style="color: #fff">Poste aqui os seus produtos ou busque algum profissional.
-              </small>
-            </p>
-          </div>
-
-          <div class="modal-body">
-            <div class="row">
-              <div class="form-floating mt-3">
-                <input [(ngModel)]="postagem.titulo" type="text" class="form-control input-modal text-dark fs-6"
-                  id="floatingInput" placeholder="Digite o título" />
-                <label for="floatingInput">
-                  <p class="mx-1">Título</p>
-                </label>
-              </div>
-
-              <div class="form-floating mt-3">
-                <textarea [(ngModel)]="postagem.texto" class="form-control input-modal text-dark fs-6"
-                  placeholder="Leave a comment here" id="floatingTextarea" name="floatingTextarea"></textarea>
-                <label for="floatingTextarea">
-                  <p class="mx-1">Texto</p>
-                </label>
-              </div>
-
-              <div class="form-floating mt-3">
-                <input [(ngModel)]="postagem.imagem" class="form-control input-modal text-dark fs-6"
-                  placeholder="Leave a comment here" id="floatingInput" />
-                <label for="floatingInput">
-                  <p class="mx-1">Imagem</p>
-                </label>
-              </div>
-
-              <div class="row mt-3 d-flex justify-content-center">
-                <div class="col-md-12">
-                  <p class="text-secondary">
-                    Escolha as tags que descrevem sua postagem:
-                  </p>
-
-                  <div class="border-r" style="border: 1px solid #03524d">
-                    <select style="width: 100%" class="form-control text-dark fs-6 form-selected" name="tema" id="tema"
-                      [(ngModel)]="idTema" (change)="findByIdTema()">
-                      <option class="option fs-6" selected disabled>
-                        -Escolha segmento, tipo e descrição-
-                      </option>
-
-                      <option class="option text-dark fs-6" *ngFor="let item of listaTemas" value="{{ item.id }}">
-                        {{ item.segmento }}, {{ item.tipo }},
-                        {{ item.descricao }}
-                      </option>
-                    </select>
+                    <p class="card-text">
+                      <small class="text-muted">por: {{ item.usuario.nome }}</small>
+                    </p>
+                    <p class="card-text">
+                      <small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
+                        {{ item.data | date: "HH:mm" }}</small>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- FIM POSTANGES  POR TEMA -->
 
-            <div class="row justify-content-center pt-2">
-              <button style="background-color: #03524d" *ngIf="authService.adm()"
-                class="btn btn-light btn-sm text-white" data-bs-dismiss="modal" routerLink="/tema">
-                Cadastrar novas tags
-              </button>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal criar postagem-->
+      <div class="modal t-modal fade" id="novaPostagem" tabindex="-1" role="dialog"
+        aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content modalPost">
+            <div class="modal-header text-center">
+              <h5 class="modal-title text-center text-white" id="TituloModalCentralizado">
+                Criar postagem
+              </h5>
+              <p>
+                <small style="color: #fff">Poste aqui os seus produtos ou busque algum profissional.
+                </small>
+              </p>
             </div>
 
-            <div class="modal-footer justify-content-center">
-              <button type="button" class="btn btn-outline-success" (click)="publicar()" data-bs-dismiss="modal">
-                Publicar
-              </button>
-              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
-                Cancelar
-              </button>
+            <div class="modal-body">
+              <div class="row">
+                <div class="form-floating mt-3">
+                  <input [(ngModel)]="postagem.titulo" type="text" class="form-control input-modal text-dark fs-6"
+                    id="floatingInput" placeholder="Digite o título" />
+                  <label for="floatingInput">
+                    <p class="mx-1">Título</p>
+                  </label>
+                </div>
+
+                <div class="form-floating mt-3">
+                  <textarea [(ngModel)]="postagem.texto" class="form-control input-modal text-dark fs-6"
+                    placeholder="Leave a comment here" id="floatingTextarea" name="floatingTextarea"></textarea>
+                  <label for="floatingTextarea">
+                    <p class="mx-1">Texto</p>
+                  </label>
+                </div>
+
+                <div class="form-floating mt-3">
+                  <input [(ngModel)]="postagem.imagem" class="form-control input-modal text-dark fs-6"
+                    placeholder="Leave a comment here" id="floatingInput" />
+                  <label for="floatingInput">
+                    <p class="mx-1">Imagem</p>
+                  </label>
+                </div>
+
+                <div class="row mt-3 d-flex justify-content-center">
+                  <div class="col-md-12">
+                    <p class="text-secondary">
+                      Escolha as tags que descrevem sua postagem:
+                    </p>
+
+                    <div class="border-r" style="border: 1px solid #03524d">
+                      <select style="width: 100%" class="form-control text-dark fs-6 form-selected" name="tema"
+                        id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
+                        <option class="option fs-6" selected disabled>
+                          -Escolha segmento, tipo e descrição-
+                        </option>
+
+                        <option class="option text-dark fs-6" *ngFor="let item of listaTemas" value="{{ item.id }}">
+                          {{ item.segmento }}, {{ item.tipo }},
+                          {{ item.descricao }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-center pt-2">
+                <button style="background-color: #03524d" *ngIf="authService.adm()"
+                  class="btn btn-light btn-sm text-white" data-bs-dismiss="modal" routerLink="/tema">
+                  Cadastrar novas tags
+                </button>
+              </div>
+
+              <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-outline-success" (click)="publicar()" data-bs-dismiss="modal">
+                  Publicar
+                </button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
+                  Cancelar
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

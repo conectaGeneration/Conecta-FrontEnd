@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
-import { AlertasService } from 'src/app/service/alertas.service';
 import { AutenticacaoService } from 'src/app/service/autenticacao.service';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
@@ -13,15 +12,17 @@ import Swal from 'sweetalert2';
 })
 export class UsuarioEditComponent implements OnInit {
   usuario: Usuario = new Usuario();
-  idUsuario: number;
+  idUser: number;
   confirmarSenha: string;
   tipoUsuario: string;
+  contato = environment.contato;
+  sobre = environment.sobre;
+  cargo = environment.cargo;
 
   constructor(
     public authService: AutenticacaoService,
     private route: ActivatedRoute,
-    private router: Router,
-    private alertasService: AlertasService
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -31,8 +32,8 @@ export class UsuarioEditComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
 
-    this.idUsuario = this.route.snapshot.params['id'];
-    this.findByIdUser(this.idUsuario);
+    this.idUser = this.route.snapshot.params['id'];
+    this.findByIdUser(this.idUser);
   }
 
   confirmSenha(event: any) {
@@ -45,35 +46,32 @@ export class UsuarioEditComponent implements OnInit {
 
   atualizar() {
     this.usuario.tipo = this.tipoUsuario;
+    this.usuario.sobre = this.sobre;
+    this.usuario.cargo = this.cargo;
+    this.usuario.contato = this.contato;
 
     if (this.usuario.senha != this.confirmarSenha) {
       Swal.fire({
-        icon: 'error',
-        title: 'As senhas estão incorretas!',
-        confirmButtonText: 'Vou verificar novamente!',
+        title: 'As senhas não estão correspondentes!',
+        icon: 'warning',
+        confirmButtonText: 'Certo!',
       })
     } else {
       this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
         this.router.navigate(['/inicio']);
         Swal.fire({
-          icon: 'success',
           title: 'Usuário atualizado com sucesso!',
+          text: 'Faça o login novamente para aplicar as alterações',
           confirmButtonText: 'Certo!',
-          timer: 5000,
-          timerProgressBar: true
+          timer: 10000,
+          timerProgressBar: true,
         })
-
         environment.token = '';
         environment.nome = '';
         environment.foto = '';
         environment.id = 0;
         this.router.navigate(['/entrar'])
-        Swal.fire({
-          icon: 'warning',
-          title: 'Faça o login novamente para aplicar as alterações',
-          confirmButtonText: 'Certo!'
-        })
       });
     }
   }

@@ -151,8 +151,6 @@ salvar() {
       });
   }*/
 
-
-
   salvar() {
     this.user.sobre = this.sobre;
     this.user.cargo = this.cargo;

@@ -357,6 +357,10 @@ select {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  padding-left: 10px;
+  padding-top: 8px;
+  border-radius: 18px;
+
 }
 
 .ajust {
@@ -369,12 +373,17 @@ select {
 }
 
 .card-post {
-  width: 1800px;
+  width: 2800px;
   height: auto;
   border-radius: 15px;
 }
 
-
+#like{
+  width: 91px;
+  height: 36px;
+  box-shadow: 0px 4px 4px rgba(180, 19, 19, 0.5);
+  border-radius: 15px;
+}
 
 
 .card-title {
@@ -401,6 +410,12 @@ select {
   }
 
 
+}
+
+
+.btn-like:active{
+  color: #fff;
+  background-color: hsl(354deg 70% 54%);
 }
 
 
