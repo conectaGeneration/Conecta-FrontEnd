@@ -37,9 +37,6 @@ small {
   padding-right: 2%;
 }
 
-
-
-
 .posts {
   padding-left: 10vh;
   padding-right: 10vh;
@@ -100,8 +97,6 @@ small {
 
 }
 
-
-
 .cardtitle p {
   width: 242px;
   height: 66px;
@@ -132,6 +127,7 @@ small {
 
 
 .perfil-card {
+  max-width: 100%;
   width: 278px;
   height: auto;
   background: #FFFFFF;
@@ -141,6 +137,15 @@ small {
   margin-top: 50px;
   position: fixed;
 }
+
+/* @media screen and (min-width: 900px) {
+  .perfil-card {
+    width: 100px;
+  }
+
+
+} */
+
 
 .card-pub {
   width: 350px;
@@ -152,7 +157,7 @@ small {
   padding-left: 40px;
 }
 
-.cardtext{
+.cardtext {
   width: 199px;
   height: auto;
   font-family: 'Poppins', sans-serif;
@@ -178,6 +183,11 @@ small {
   line-height: 21px;
   color: #FFFFFF;
   margin-top: 15px;
+}
+
+.btn-perfil:hover{
+  background-color: #348B86;
+  transition: 1s;
 }
 
 
@@ -360,7 +370,7 @@ select {
 
 #tag-color {
   background-color: #fff;
-  color:#06524D;
+  color: #06524D;
   font-weight: 600;
 
 }
@@ -440,6 +450,10 @@ select {
 }
 
 
+.testess{
+  hyphens: auto;
+}
+
 .btn-like:active {
   color: #fff;
   background-color: hsl(354deg 70% 54%);
@@ -450,28 +464,27 @@ select {
 .foto-area img {
   width: 300px;
   height: 320px;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding: 10px;
   border-radius: 0px;
 }
 
 .card-feed {
   width: 800px;
-  height: 330px;
+  height: auto;
   background: #FFFFFF;
   filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
   margin-bottom: 10px;
   margin-top: 30px;
   border-radius: 0px;
-
 }
 
-.text-feed{
+.text-feed {
   justify-content: center;
   margin: 0 auto;
   align-items: center;
 }
-.feed-area h2{
+
+.feed-area h2 {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -481,15 +494,15 @@ select {
   padding-top: 15px;
 }
 
-.svg{
+.svg {
   color: #06524D;
 }
 
-.text-content{
+.text-content {
   padding-top: 18px;
 }
 
-.text-feed p{
+.text-feed p {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -502,7 +515,7 @@ select {
 
 }
 
-.text-content p{
+.text-content p {
   margin: 0 auto;
   display: flex;
   width: 400px;
@@ -510,12 +523,12 @@ select {
   color: #575151;
 }
 
-.text-content small{
+.text-content small {
   margin: 0 auto;
   text-align: center;
 }
 
-.btn-contato{
+.btn-contato {
   width: 160px;
   height: 35px;
   background: #06524D;
@@ -529,13 +542,25 @@ select {
   color: #FFFFFF;
 }
 
-.buttons{
-justify-content: flex-start;
-padding-top: 15px;
+.buttons {
+  justify-content: flex-start;
+  padding-top: 15px;
 }
 
-.buttons button{
+.buttons button {
   margin-right: 30px;
   width: auto;
 
+}
+
+
+.text-content a{
+  padding-top: 20px;
+  padding-right: 8px;
+
+
+}
+
+.container-fluid{
+  flex-wrap: wrap;
 }

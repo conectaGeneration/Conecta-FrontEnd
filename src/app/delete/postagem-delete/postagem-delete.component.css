@@ -1,4 +1,116 @@
-.m-btn
-{
+.m-btn {
   margin-right: 15px;
+}
+
+.fs-20{
+  font-size: 20px;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 45px;
+  color: #000000;
+}
+
+.card-feed {
+  width: 800px;
+  height: 330px;
+  background: #ffffff;
+  filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.25));
+  margin-bottom: 10px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.text-feed {
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.feed-area h2 {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  color: #000000;
+  padding-top: 15px;
+}
+
+.svg {
+  color: #06524D;
+}
+
+.text-content {
+  padding-top: 18px;
+}
+
+.text-feed p {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  padding-right: 30px;
+  color: #575151;
+  width: auto;
+  display: flex;
+
+}
+
+.text-content p {
+  margin: 0 auto;
+  display: flex;
+  width: 400px;
+  justify-content: center;
+  color: #575151;
+}
+
+.text-content small {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bordimg {
+  border-radius: 20px
+}
+
+.foto-area img {
+  width: 300px;
+  height: 320px;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-radius: 20px;
+}
+
+.btn-sim {
+  width: 142px;
+  height: 45px;
+  background: #0D7B0B;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: #FFFFFF;
+
+}
+
+.btn-nao {
+  width: 142px;
+  height: 45px;
+  background: #810000;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: #FFFFFF;
+
 }

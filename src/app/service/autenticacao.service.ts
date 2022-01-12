@@ -26,7 +26,9 @@ export class AutenticacaoService {
   }
 
   getByIdUsuario(id: number): Observable<Usuario> {
-    return this.http.get<Usuario>(`https://projetoconecta.herokuapp.com/usuario/${id}`);
+    return this.http.get<Usuario>(
+      `https://projetoconecta.herokuapp.com/usuario/${id}`
+    );
   }
 
   atualizar(usuario: Usuario): Observable<Usuario> {
@@ -55,6 +57,4 @@ export class AutenticacaoService {
 
     return ok;
   }
-
-
 }

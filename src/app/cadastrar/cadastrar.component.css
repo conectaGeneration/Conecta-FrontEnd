@@ -11,12 +11,10 @@
 }
 
 section {
-  background: linear-gradient(
-    245.34deg,
-    #146c67 0.05%,
-    rgba(30, 103, 99, 0.883489) 72.04%,
-    rgba(80, 156, 151, 0) 100%
-  );
+  background: linear-gradient(245.34deg,
+      #146c67 0.05%,
+      rgba(30, 103, 99, 0.883489) 72.04%,
+      rgba(80, 156, 151, 0) 100%);
   /* background: linear-gradient(245.34deg, #146C67 0.05%, rgba(30, 103, 99, 0.883489) 50.41%, rgba(80, 156, 151, 0) 100%); */
   display: flex;
   flex-direction: row;
@@ -39,7 +37,7 @@ section {
   border-radius: 15px;
   width: 700px;
   height: 860px;
-  
+
 }
 
 .login {
@@ -132,3 +130,19 @@ label {
   padding-top: 170px;
 }
 
+@media (max-width: 1000px) {
+  .img-lateral {
+    display: none;
+  }
+}
+
+.btn-logar:hover{
+  background-color: #077E77;
+  transition: 1s;
+
+}
+
+.btn-cancelar:hover{
+  background-color: #CA1111;
+  transition: 1s;
+}

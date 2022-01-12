@@ -14,30 +14,27 @@ body {
 
 .textoSobre p {
   font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 30px;
-  text-align: justify;
-  color: #000000;
-  width: 600px;
+  width: 595px;
+height: 387px;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+color: #262020;
 }
 
 /* .imgSobre {
   padding-left: 3%;
 } */
 
-h2 {
-  text-align: start;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+.textoSobre h3 {
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 800;
-  font-size: 35px;
-  line-height: 52px;
-
-  color: #03524d;
-  /* position: relative; */
-  margin: 25px 0 20px;
+  font-size: 32px;
+  line-height: 48px;
+  color: #03524D;
+  padding-bottom: 20px;
 }
 
 h2::after {
@@ -60,6 +57,9 @@ h2::after {
 }
 
 /* NOSSO TIME */
+.wrap{
+  flex-wrap: wrap;
+}
 
 .profile {
   position: relative;
@@ -70,6 +70,7 @@ h2::after {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .profile1 {
@@ -81,6 +82,7 @@ h2::after {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .profile2 {
@@ -92,6 +94,7 @@ h2::after {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .profile3 {
@@ -103,6 +106,7 @@ h2::after {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .profilee {
@@ -114,6 +118,7 @@ h2::after {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .overlay {
@@ -134,12 +139,15 @@ h2::after {
 .profile1:hover .overlay {
   opacity: 1;
 }
+
 .profile2:hover .overlay {
   opacity: 1;
 }
+
 .profile3:hover .overlay {
   opacity: 1;
 }
+
 .profilee:hover .overlay {
   opacity: 1;
 }
@@ -203,26 +211,54 @@ h2::after {
   position: relative;
 }
 
-.text-about h1{
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 34px;
-  line-height: 51px;
-
-  color: #FFFFFF;
-}
-
-.text-about p{
+.text-about h3 {
   width: 915px;
   height: 194px;
 
-  padding-top: 20px;
-  font-family: "Poppins", sans-serif;
+
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
   line-height: 30px;
 
   color: #FFFFFF;
+}
+.text-about{
+  width: 600px;
+}
+
+.text-about p {
+  width: 780px;
+height: 194px;
+
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 30px;
+
+color: #FFFFFF;
+}
+
+
+.about-btn button{
+  width: 120px;
+  height: 40px;
+  display: block;
+  border-width: 0px;
+
+}
+.about-btn button a{
+  color: #000;
+}
+.svg{
+  color: #000;
+  padding-right: 6px;
+}
+
+.about-btn button:hover{
+  background-color: #077E77;
+  transition: 1s;
+
 }
