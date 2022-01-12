@@ -6,7 +6,7 @@ export const environment = {
   foto: '',
   imagem: '',
   tipo: '',
-  cargo: '',
-  contato: '',
-  sobre: '',
+  cargo: 'cargo do environment',
+  contato: 'contato do environment',
+  sobre: 'sobre do environment',
 };

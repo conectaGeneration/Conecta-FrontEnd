@@ -1,65 +1,65 @@
 <div class="container-fluid pt-5 " id="bg-color">
 
-  <div class="row">
+  <div class="row ">
     <div class="com-md-12">
-      <h1 class="text-center text-secondary">Atualizar meu usuário</h1>
+      <h1 class="text-center text-white mt-3">Atualizar meu usuário</h1>
     </div>
   </div>
 
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center text-white">
 
     <div class="col-md-6 mt-3">
 
       <div class="col-xs-5 ">
-        <div class="form-group ">
+        <div class="form-group mb-3">
           <label for="nome">Nome</label>
           <input [(ngModel)]="usuario.nome" class="form-control" type="text" name="nome" id="nome"
             placeholder="Digite seu nome">
         </div>
 
-        <div class="form-group ">
+        <div class="form-group mb-3">
           <label for="email">Email</label>
           <input [(ngModel)]="usuario.email" class="form-control" type="text" name="email" id="email"
             placeholder="Digite seu email">
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="foto">Link da foto</label>
           <input [(ngModel)]="usuario.foto" class="form-control " type="text" name="foto" id="foto"
             placeholder="Digite o link da foto">
         </div>
 
         <div class="col-xs-5 ">
-          <div class="form-group">
+          <div class="form-group mb-3">
             <label for="senha">Senha</label>
             <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha" id="senha"
               placeholder="Digite uma senha">
           </div>
 
-          <div class="form-group ml-1">
+          <div class="form-group mb-3">
             <label for="confirmSenha">Confirmar senha</label>
             <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmSenha"
               id="confirmSenha" placeholder="Repita a senha inserida">
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="cargo">Profissão atual {{usuario.contato}} {{usuario.nome}}</label>
+        <div class="form-group mb-3">
+          <label for="cargo">Profissão atual</label>
           <input [(ngModel)]="usuario.cargo" type="text" class="form-control" id="cargo" placeholder="Autônomo">
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="sobre">Sobre você</label>
           <textarea [(ngModel)]="usuario.sobre" type="text" class="form-control" id="sobre" rows="3"
             placeholder="Conte mais sobre você aqui"></textarea>
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="contato">Contato</label>
           <input [(ngModel)]="usuario.contato" type="text" class="form-control" id="contato" placeholder="1199876543">
         </div>
 
-        <div *ngIf="authService.adm()" class="form-group">
+        <div *ngIf="authService.adm()" class="form-group mb-3">
           <label for="tipo">Tipo de usuário</label>
           <select class="form-control " name="tipo" id="tipo" (change)="tipoUser($event)">
             <option disabled selected>-Selecione um tipo de usuário-</option>
@@ -68,9 +68,9 @@
           </select>
         </div>
 
-        <div class="d-flex justify-content-center mt-4">
-          <button type="submit" class="btn" routerLink="/inicio">Cancelar</button>
-          <button type="submit" class="btn btn-success" (click)='atualizar()'> Atualizar</button>
+        <div class="d-flex justify-content-center mt-5 mbot">
+          <button type="submit" class="btn btn-outline-danger mx-3" routerLink="/inicio">Cancelar</button>
+          <button type="submit" class="btn btn-outline-success" (click)='atualizar()'> Atualizar</button>
         </div>
 
       </div>

@@ -184,8 +184,8 @@ h2::after {
 }
 
 .sobrenos {
-  background-color: #07504b;
-  height: 560px;
+  background-color: #0F2625;
+  height: auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 8rem;
@@ -201,4 +201,28 @@ h2::after {
   padding-top: 10px;
   padding-bottom: 20px;
   position: relative;
+}
+
+.text-about h1{
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 51px;
+
+  color: #FFFFFF;
+}
+
+.text-about p{
+  width: 915px;
+  height: 194px;
+
+  padding-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: #FFFFFF;
 }

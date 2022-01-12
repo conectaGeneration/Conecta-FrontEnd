@@ -25,8 +25,9 @@ export class InicioComponent implements OnInit {
   nomeTema: string;
   segmentoTema: string;
 
-  usuario: Usuario = new Usuario();
-  idUser = environment.id;
+  user: Usuario = new Usuario();
+  idUsuario = environment.id;
+  idUser: number;
   confirmarSenha: string;
 
   foto = environment.foto;
@@ -55,6 +56,7 @@ export class InicioComponent implements OnInit {
 
     this.getAllTemas();
     this.getAllPostagens();
+    this.findByIdUsuario();
   }
 
   getAllTemas() {
@@ -75,9 +77,17 @@ export class InicioComponent implements OnInit {
     });
   }
 
-  findByIdUser() {
-    this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario) => {
-      this.usuario = resp;
+  findByIdUsuario() {
+    this.authService
+      .getByIdUsuario(this.idUsuario)
+      .subscribe((resp: Usuario) => {
+        this.user = resp;
+      });
+  }
+
+  findByIdUser(id: number) {
+    this.authService.getByIdUsuario(id).subscribe((resp: Usuario) => {
+      this.user = resp;
     });
   }
 
@@ -85,8 +95,8 @@ export class InicioComponent implements OnInit {
     this.tema.id = this.idTema;
     this.postagem.tema = this.tema;
 
-    this.usuario.id = this.idUser;
-    this.postagem.usuario = this.usuario;
+    this.user.id = this.idUsuario;
+    this.postagem.usuario = this.user;
 
     this.postagemService
       .postPostagem(this.postagem)
@@ -134,17 +144,16 @@ export class InicioComponent implements OnInit {
     this.confirmarSenha = event.target.value;
   }
 
-
-salvar() {
-    if (this.usuario.senha != this.confirmarSenha) {
+  salvar() {
+    if (this.user.senha != this.confirmarSenha) {
       Swal.fire({
         title: 'As senhas não estão correspondentes!',
         icon: 'warning',
         confirmButtonText: 'Certo!',
       });
     } else {
-      this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
-        this.usuario = resp;
+      this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
+        this.user = resp;
         this.router.navigate(['/inicio']);
         Swal.fire({
           title: 'Usuário atualizado com sucesso!',
@@ -159,9 +168,9 @@ salvar() {
         environment.id = 0;
         this.router.navigate(['/entrar']);
       });
-  }
+    }
 
-  /*
+    /*
   salvar() {
     this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp;
@@ -185,11 +194,5 @@ salvar() {
         confirmButtonText: 'Certo!',
       });
     });*/
-
-
-
-
-
   }
 }
-

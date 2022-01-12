@@ -11,8 +11,12 @@ a {
 }
 
 .bg-colors {
-  background-color: #e2e2e2;
+  background-color: rgb(234, 245, 239);
   min-height: 100vh;
+}
+
+.d-fluid{
+  background-color: rgb(234, 245, 239);
 }
 
 h2 {
@@ -79,7 +83,7 @@ h2::after {
   color: #ffffff;
 }
 
-.textoSobre p{
+.textoSobre p {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-size: 18px;
@@ -89,13 +93,13 @@ h2::after {
   width: 600px;
 }
 
-.textoSobre h2{
+.textoSobre h2 {
   font-family: 'Poppins', sans-serif;
-font-style: normal;
-font-weight: 800;
-font-size: 32px;
-line-height: 48px;
-color: #03524D;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 48px;
+  color: #03524D;
 }
 
 #foco {
@@ -212,12 +216,15 @@ p {
 .profile1:hover .overlay {
   opacity: 1;
 }
+
 .profile2:hover .overlay {
   opacity: 1;
 }
+
 .profile3:hover .overlay {
   opacity: 1;
 }
+
 .profilee:hover .overlay {
   opacity: 1;
 }
@@ -262,8 +269,8 @@ p {
 }
 
 .sobrenos {
-  background-color: #1c2727;
-  height: 500px;
+  background-color: #0F2625;
+  height: auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 8rem;
@@ -278,4 +285,8 @@ h3 {
   line-height: 52px;
   padding-top: 30px;
   position: relative;
+}
+
+.bg-footer {
+  background-color: #042e2b
 }

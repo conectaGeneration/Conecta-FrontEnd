@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
 import { UserLogin } from '../model/UserLogin';
-import { AlertasService } from '../service/alertas.service';
 import { AutenticacaoService } from '../service/autenticacao.service';
 
 @Component({
@@ -16,26 +15,29 @@ export class EntrarComponent implements OnInit {
 
   constructor(
     private auth: AutenticacaoService,
-    private router: Router,
-    private alertasService: AlertasService
-  ) { }
+    private router: Router
+    ) {}
 
   ngOnInit() {
     window.scroll(0, 0);
   }
 
   entrar() {
-    this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
-      this.userLogin = resp;
+    this.auth.entrar(this.userLogin).subscribe(
+      (resp: UserLogin) => {
+        this.userLogin = resp;
 
-      environment.token = this.userLogin.token;
-      environment.nome = this.userLogin.nome;
-      environment.id = this.userLogin.id;
-      environment.foto = this.userLogin.foto;
-      environment.tipo = this.userLogin.tipo;
+        environment.token = this.userLogin.token;
+        environment.nome = this.userLogin.nome;
+        environment.id = this.userLogin.id;
+        environment.foto = this.userLogin.foto;
+        environment.tipo = this.userLogin.tipo;
+        environment.sobre = this.userLogin.sobre;
+        environment.cargo = this.userLogin.cargo;
+        environment.contato = this.userLogin.contato;
 
-      this.router.navigate(['/inicio']);
-    },
+        this.router.navigate(['/inicio']);
+      },
       (erro) => {
         if (erro.status == 401) {
           Swal.fire({
@@ -43,8 +45,8 @@ export class EntrarComponent implements OnInit {
             title: 'Email ou senha inválidos',
             confirmButtonText: 'Certo!',
             timer: 5000,
-            timerProgressBar: true
-          })
+            timerProgressBar: true,
+          });
         }
       }
     );

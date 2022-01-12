@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./usuario-edit.component.css'],
 })
 export class UsuarioEditComponent implements OnInit {
-  usuario: Usuario = new Usuario();
+  public usuario: Usuario = new Usuario();
   idUser: number;
   confirmarSenha: string;
   tipoUsuario: string;
@@ -79,4 +79,7 @@ export class UsuarioEditComponent implements OnInit {
       this.usuario = resp;
     });
   }
+
+
+
 }

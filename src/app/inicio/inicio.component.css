@@ -89,29 +89,27 @@ small {
 .cardtitle {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: normal;
   font-size: 14px;
   line-height: 21px;
   display: flex;
   align-items: center;
   text-align: center;
 
-  color: #000000;
+  color: hsl(0deg 3% 13%);
 
 }
+
+
 
 .cardtitle p {
   width: 242px;
   height: 66px;
-
-
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
-  display: flex;
-  align-items: center;
 
   color: #232121;
 }
@@ -135,12 +133,13 @@ small {
 
 .perfil-card {
   width: 278px;
-  height: 433px;
+  height: auto;
   background: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
 
   margin-top: 50px;
+  position: fixed;
 }
 
 .card-pub {
@@ -151,6 +150,20 @@ small {
   border-radius: 40px;
   padding-right: 40px;
   padding-left: 40px;
+}
+
+.cardtext{
+  width: 199px;
+  height: auto;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  color: #232121;
 }
 
 .btn-perfil {
@@ -194,6 +207,7 @@ small {
 }
 
 #tag-color {
+
   padding: 2px 8px 3px 8px;
 }
 
@@ -345,8 +359,10 @@ select {
 }
 
 #tag-color {
-  background-color: #077e77;
-  border-radius: 5px;
+  background-color: #fff;
+  color:#06524D;
+  font-weight: 600;
+
 }
 
 .space {
@@ -433,15 +449,15 @@ select {
 
 .foto-area img {
   width: 300px;
-  height: 290px;
+  height: 320px;
   padding-left: 10px;
   padding-top: 10px;
   border-radius: 0px;
 }
 
 .card-feed {
-  width: 756px;
-  height: 300px;
+  width: 800px;
+  height: 330px;
   background: #FFFFFF;
   filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
   margin-bottom: 10px;
@@ -455,13 +471,22 @@ select {
   margin: 0 auto;
   align-items: center;
 }
-.text-feed h1{
+.feed-area h2{
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
   line-height: 33px;
   color: #000000;
+  padding-top: 15px;
+}
+
+.svg{
+  color: #06524D;
+}
+
+.text-content{
+  padding-top: 18px;
 }
 
 .text-feed p{
@@ -472,6 +497,45 @@ select {
   line-height: 15px;
   padding-right: 30px;
   color: #575151;
-  width: 300px;
+  width: auto;
+  display: flex;
+
 }
 
+.text-content p{
+  margin: 0 auto;
+  display: flex;
+  width: 400px;
+  justify-content: center;
+  color: #575151;
+}
+
+.text-content small{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-contato{
+  width: 160px;
+  height: 35px;
+  background: #06524D;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+
+  color: #FFFFFF;
+}
+
+.buttons{
+justify-content: flex-start;
+padding-top: 15px;
+}
+
+.buttons button{
+  margin-right: 30px;
+  width: auto;
+
+}

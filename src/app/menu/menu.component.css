@@ -106,7 +106,7 @@ border-radius: 10px;
 }
 
 /* Responsive ================================*/
-@media (max-width: 1400px) {
+@media (max-width: 500px) {
   .navbar-principal
   {
     display: none;
