@@ -129,10 +129,27 @@ line-height: 21px;
 /* identical to box height */
 color: #FFFFFF;
 margin-left: 15px;
+}
 
+.btn-logar:hover{
+  background-color: #077E77;
+  transition: 1s;
 
 }
 
+.btn-cancelar:hover{
+  background-color: #CA1111;
+  transition: 1s;
+}
+
+
+
 .textc{
 color: blue;
+}
+
+@media (max-width: 1000px) {
+  .imgEntrar {
+    display: none;
+  }
 }

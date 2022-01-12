@@ -2,34 +2,69 @@
 
   <div class="row mb-5">
     <div class="col-md-12">
-      <h1 class="text-center text-secondary">Apagar Postagem</h1>
+      <h1 class="text-center text-dark">Apagar Postagem</h1>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-12">
-      <h4 class="text-center text-secondary">Você tem certeza que deseja apagar essa postagem e todo seu conteúdo?
-      </h4>
+      <p class="text-center text-dark fs-20">Você tem certeza que deseja apagar essa postagem e todo seu conteúdo?
+      </p>
     </div>
   </div>
 
-  <div class="row mt-3 text-center">
-    <div class="col-md-12">
-      <h5 class="text-center text-primary">Titulo: {{postagem.titulo}}</h5>
-      <h5 class="text-center text-primary">Texto: {{postagem.texto}}</h5>
-      <h5 class="text-center text-primary mb-2">Imagem: </h5>
-      <img class="img rounded" src="{{postagem.imagem}}" alt="imagem a ser apagada" width="400px" height="300px">
-    </div>
-  </div>
+  <div class="row mt-3 text-center mb-5">
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="card-feed mt-5">
+        <div class="feed-area d-flex ">
+          <div class="foto-area">
+            <img class="bordimg" src="{{postagem.imagem}}">
+          </div>
+          <div class="mx-auto">
+            <h2> {{postagem.titulo}} </h2>
 
-    <div class="col-md-12 d-flex justify-content-center mt-4">
+            <div class="text-feed d-flex justify-content-center">
+              <p class="p-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                  class="svg bi bi-calendar3 mx-1" viewBox="0 0 16 16">
+                  <path
+                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                  <path
+                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                </svg>{{ postagem.data | date: "dd/MM/yyyy" }} às
+                {{ postagem.data | date: "HH:mm" }}</p>
+            </div>
 
-      <div class="m-btn">
-        <button class="btn btn-success" (click)="apagar()">Sim</button>
+            <div class="text-content justify-content-center">
+              <p class="card-text text-center mb-2">{{postagem.texto}}</p>
+              <div class="d-flex justify-content-center">
+                <small class="text-muted space mx-2" id="tag-color">
+                  <font color="#06524D">#{{ postagem.tema.descricao }} </font>
+                </small>
+                <small class="text-muted space mx-2" id="tag-color">
+                  <font color="#06524D">#{{ postagem.tema.tipo }} </font>
+                </small>
+                <small class="text-muted space mx-2" id="tag-color">
+                  <font color="#06524D">#{{ postagem.tema.segmento }} </font>
+                </small>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
       </div>
-
-      <button class="btn btn-danger" routerLink="/inicio">Não</button>
     </div>
+  </div>
+
+  <div class="col-md-12 d-flex justify-content-center mt-5 mb-5">
+
+    <div class="m-btn">
+      <button class="btn btn-sim" (click)="apagar()">Sim</button>
+    </div>
+
+    <button class="btn btn-nao" routerLink="/inicio">Não</button>
+  </div>
 
 
 </div>

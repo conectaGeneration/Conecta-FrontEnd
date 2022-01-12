@@ -24,7 +24,7 @@
               id="exampleFormControlTextarea1" rows="3" />
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3" *ngIf="authService.adm()">
             <label for="tipoUsuario">Tipo de Usuário</label>
             <select placeholder="tipo de usuario" class="form-control input-control" (change)="tipoUser($event)"
               name="tipoUsuario" id="tipoUsuario">

@@ -55,6 +55,7 @@ a {
 
   color: #ffffff;
 }
+
 .nav-items ul li {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -89,30 +90,31 @@ a {
   padding-right: 15px;
 }
 
-.btn-sair{
+.btn-sair {
   width: 90px;
-height: 40px;
-font-family: 'Poppins', sans-serif;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 27px;
-border-width: 0px;
+  height: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  border-width: 0px;
 
-color: #000000;
+  color: #000000;
 
-background: #FFFFFF;
-border-radius: 10px;
+  background: #FFFFFF;
+  border-radius: 10px;
 }
 
 /* Responsive ================================*/
-@media (max-width: 500px) {
-  .navbar-principal
-  {
+@media (max-width: 800px) {
+  .navbar-principal {
     display: none;
   }
 
 
 }
 
-
+.btn-group svg{
+  color: #fff;
+}

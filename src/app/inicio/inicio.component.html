@@ -94,7 +94,7 @@
                   </div>
                 </div>
               </div>
-              <!-- card test -->
+              <!-- card postagem -->
               <div class="card-columns">
                 <div class="card-feed" *ngFor="let item of listaPostagens | orderBy: key : reverse">
                   <div class="feed-area d-flex ">
@@ -125,6 +125,69 @@
                       </div>
 
                       <div class="text-content justify-content-center">
+                        <p class="card-text text-center mb-2"> {{item.texto}}</p>
+                        <div class="d-flex justify-content-center">
+                          <small class="text-muted space mx-2" id="tag-color">
+                            <font color="#06524D">#{{ item.tema.descricao }} </font>
+                          </small>
+                          <small class="text-muted space mx-2" id="tag-color">
+                            <font color="#06524D">#{{ item.tema.tipo }} </font>
+                          </small>
+                          <small class="text-muted space mx-2" id="tag-color">
+                            <font color="#06524D">#{{ item.tema.segmento }} </font>
+                          </small>
+                        </div>
+                      </div>
+
+                      <div class="buttons mb-3">
+                        <button type="button" id="like" class="btn btn-like btn-outline-danger">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-heart" viewBox="0 0 16 16">
+                            <path
+                              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
+                            </path>
+                          </svg>
+                          Like
+                        </button>
+                        <a class="btn btn-contato " href="http://api.whatsapp.com/send?1=pt_BR&phone=55{{user.contato}}"
+                          target="_blank"> Entrar em contato</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- fim card postagem -->
+            </div>
+            <!-- FIM TODAS AS POSTAGENS -->
+
+
+            <!-- MINHAS POSTAGENS -->
+            <div class="tab-pane fade text-center" id="nav-minhasPostagens" role="tabpanel"
+              aria-labelledby="nav-minhasPostagens-tab">
+
+              <!-- inicio card minhas postagens -->
+              <div class="card-columns">
+                <div class="card-feed mt-5" *ngFor="let item of user.postagem | orderBy: key : reverse">
+                  <div class="feed-area d-flex ">
+                    <div class="foto-area">
+                      <img src="{{item.imagem}}">
+                    </div>
+                    <div class="mx-auto">
+                      <h2> {{item.titulo}} </h2>
+
+                      <div class="text-feed d-flex justify-content-center">
+                        <p class="p-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                            class="svg bi bi-calendar3 mx-1" viewBox="0 0 16 16">
+                            <path
+                              d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                            <path
+                              d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                          </svg>{{ item.data | date: "dd/MM/yyyy" }} às
+                          {{ item.data | date: "HH:mm" }}</p>
+                      </div>
+
+                      <div class="text-content justify-content-center">
                         <p class="card-text text-center mb-2">{{item.texto}}</p>
                         <div class="d-flex justify-content-center">
                           <small class="text-muted space mx-2" id="tag-color">
@@ -151,69 +214,23 @@
                         </button>
                         <a class="btn btn-contato " href="http://api.whatsapp.com/send?1=pt_BR&phone=55{{user.contato}}"
                           target="_blank"> Entrar em contato</a>
+
+                        <div class="mt-3 mb-3 d-flex justify-content-end">
+                          <a [routerLink]="['/postagem-edit', item.id]" class="text-primary mx-3" href="">Editar</a>
+                          <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+                        </div>
+
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- card teste -->
-            </div>
-            <!-- FIM TODAS AS POSTAGENS -->
-
-
-            <!-- MINHAS POSTAGENS -->
-            <div class="tab-pane fade text-start" id="nav-minhasPostagens" role="tabpanel"
-              aria-labelledby="nav-minhasPostagens-tab">
-
-              <div class="card-columns">
-                <div class="card card-post mb-3" style="max-width: 540px"
-                  *ngFor="let item of user.postagem | orderBy: key:reverse">
-                  <div class="row g-0">
-
-                    <div class="col-md-7">
-                      <img class="navbar-brand mx-auto text-center ajustar" src="{{ item.imagem }}" alt="SEM-IMAGEM"
-                        width="300px" />
-                    </div>
-                    <div class="col-md-5">
-                      <div class="card-body ">
-                        <div class="d-flex">
-                          <h5 class="card-title cardtitle-feed ">{{ item.titulo }}</h5>
-                        </div>
-                        <div class="d-flex">
-                          <p><small class="text-muted">{{ item.data | date: "dd/MM/yyyy" }} às
-                              {{ item.data | date: "HH:mm" }}</small></p>
-                        </div>
-                        <p class="card-text">
-                          {{ item.texto }}
-                        </p>
-                        <button type="button" id="like" class="btn btn-like btn-outline-danger">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-heart" viewBox="0 0 16 16">
-                            <path
-                              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
-                            </path>
-                          </svg>
-                          Like
-                        </button>
-
-                        <div class="mt-5">
-                          <a [routerLink]="['/postagem-edit', item.id]" class="text-primary mr-4" href="">Editar</a>
-                          <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">
-                            Apagar
-                          </a>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
+              <!-- fim card minhas postagens -->
             </div>
             <!-- FIM MINHAS POSTAGENS -->
 
             <!-- POSTAGENS POR TEMA -->
-            <div class="tab-pane fade text-start" id="nav-postagemTema" role="tabpanel"
+            <div class="tab-pane fade text-center" id="nav-postagemTema" role="tabpanel"
               aria-labelledby="nav-postagemTema-tab">
 
               <div class="row d-flex justify-content-center mt-3">
@@ -239,32 +256,38 @@
 
                       <div class="text-feed d-flex justify-content-center">
                         <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            class="svg bi bi-person-circle mx-1" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                             <path fill-rule="evenodd"
                               d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                           </svg>{{item.usuario.nome}}</p>
-                        <p>{{ item.data | date: "dd/MM/yyyy" }} às
+                        <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                            class="svg bi bi-calendar3 mx-1" viewBox="0 0 16 16">
+                            <path
+                              d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                            <path
+                              d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                          </svg>{{ item.data | date: "dd/MM/yyyy" }} às
                           {{ item.data | date: "HH:mm" }}</p>
 
                       </div>
 
                       <div class="text-content justify-content-center">
-                        <p class="card-text text-center">{{item.texto}}</p>
+                        <p class="card-text text-center mb-2">{{ item.texto }}</p>
                         <div class="d-flex justify-content-center">
                           <small class="text-muted space mx-2" id="tag-color">
-                            <font color="#ffffff">#{{ item.tema.descricao }} </font>
+                            <font color="#06524D">#{{ tema.descricao }} </font>
                           </small>
                           <small class="text-muted space mx-2" id="tag-color">
-                            <font color="#ffffff">#{{ item.tema.tipo }} </font>
+                            <font color="#06524D">#{{ tema.tipo }} </font>
                           </small>
                           <small class="text-muted space mx-2" id="tag-color">
-                            <font color="#ffffff">#{{ item.tema.segmento }} </font>
+                            <font color="#06524D">#{{ tema.segmento }} </font>
                           </small>
                         </div>
                       </div>
 
-                      <div class="buttons">
+                      <div class="buttons mb-3">
                         <button type="button" id="like" class="btn btn-like btn-outline-danger">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-heart" viewBox="0 0 16 16">
@@ -341,7 +364,7 @@
                     <div class="border-r" style="border: 1px solid #03524d">
                       <select style="width: 100%" class="form-control text-dark fs-6 form-selected" name="tema"
                         id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
-                        <option class="option fs-6" selected disabled>
+                        <option class="option text-dark fs-6" selected disabled>
                           -Escolha segmento, tipo e descrição-
                         </option>
 

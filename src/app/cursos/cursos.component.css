@@ -7,11 +7,11 @@
 
 section {
   padding-top: 80px;
- 
+
 }
 
-.sec2{
-    padding-bottom: 80px;
+.sec2 {
+  padding-bottom: 80px;
 }
 
 .area-cursos h1 {
@@ -60,6 +60,11 @@ section {
   padding-top: 10px;
 }
 
+.card1 img{
+  width: 367px;
+  height: 211px;
+}
+
 .acess {
   padding-top: 50px;
 }
@@ -86,4 +91,11 @@ section {
   font-size: 14px;
   line-height: 21px;
   border-radius: 0px;
+}
+
+.btn-saiba:hover{
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  transition: 1s;
 }

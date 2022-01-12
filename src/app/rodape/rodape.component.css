@@ -17,16 +17,12 @@ body {
 }
 
 p {
-  font-size: calc(
-    12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))
-  ) !important;
+  font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
   display: flex;
 }
 
 h3 {
-  font-size: calc(
-    24px + (30 - 24) * ((100vw - 360px) / (1600 - 360))
-  ) !important;
+  font-size: calc(24px + (30 - 24) * ((100vw - 360px) / (1600 - 360))) !important;
 }
 
 .color-text {
@@ -34,22 +30,12 @@ h3 {
 }
 
 button {
-  font-size: calc(
-    12px + (13 - 12) * ((100vw - 360px) / (1600 - 320))
-  ) !important;
+  font-size: calc(12px + (13 - 12) * ((100vw - 360px) / (1600 - 320))) !important;
   background-color: #2ca6fb !important;
-  padding-left: calc(
-    20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))
-  ) !important;
-  padding-right: calc(
-    20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))
-  ) !important;
-  padding-top: calc(
-    10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))
-  ) !important;
-  padding-bottom: calc(
-    10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))
-  ) !important;
+  padding-left: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+  padding-right: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+  padding-top: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important;
+  padding-bottom: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important;
 }
 
 button:focus {
@@ -90,7 +76,7 @@ footer {
   width: 1px;
   background-color: rgb(255, 255, 255);
   height: 100%;
-  
+
 }
 
 .mr-5 {
@@ -98,6 +84,6 @@ footer {
 }
 
 
-.justify-content-space-between{
-    justify-content: space-between
+.justify-content-space-between {
+  justify-content: space-between
 }

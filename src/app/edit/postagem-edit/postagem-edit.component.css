@@ -5,6 +5,64 @@
   padding-right: 7%;
 }
 
-.mr-4{
+.mr-4 {
   margin-right: 15px;
+}
+h1{
+
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 45px;
+
+  color: #000000;
+}
+
+
+
+.form-group input{
+
+  height: 49px;
+  border: 1px solid #000000;
+}
+
+.form-group select{
+
+  height: 49px;
+  border: 1px solid #000000;
+}
+
+.form-group textarea{
+
+  height: 49px;
+  border: 1px solid #000000;
+}
+
+.btn-atualizar{
+  width: 142px;
+  height: 45px;
+  background: #0D7B0B;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: #FFFFFF;
+
+}
+
+.btn-cancelar{
+  width: 142px;
+  height: 45px;
+  background: #810000;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: #FFFFFF;
+
 }

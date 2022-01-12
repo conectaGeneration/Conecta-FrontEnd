@@ -12,22 +12,20 @@ a {
 
 .bg-colors {
   background-color: rgb(234, 245, 239);
-  min-height: 100vh;
+  min-height: 110vh;
 }
 
-.d-fluid{
+.d-fluid {
   background-color: rgb(234, 245, 239);
 }
 
 h2 {
   text-align: start;
-  text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 35px;
   line-height: 52px;
-
   color: #03524d;
   /* position: relative; */
   margin: 25px 0 20px;
@@ -83,14 +81,33 @@ h2::after {
   color: #ffffff;
 }
 
+.texto-sobre p{
+  font-family: "Poppins", sans-serif;
+  width: 595px;
+height: 387px;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+color: #262020;
+padding-top: 50px;
+}
+
+.textoSobre{
+padding-left: 50px;
+}
+
 .textoSobre p {
   font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 30px;
-  text-align: justify;
-  color: #000000;
-  width: 600px;
+  width: 595px;
+height: 387px;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+
+color: #262020;
+
 }
 
 .textoSobre h2 {
@@ -119,6 +136,8 @@ body {
 
 .bg-colors {
   background-color: rgb(234, 245, 239);
+  align-items: center;
+  margin: 0 auto;
 }
 
 .textoSobre {
@@ -143,6 +162,10 @@ p {
 
 /* NOSSO TIME */
 
+.wrap{
+  flex-wrap: wrap;
+}
+
 .profile {
   position: relative;
   width: 250px;
@@ -152,6 +175,7 @@ p {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .profile1 {
@@ -163,6 +187,7 @@ p {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .profile2 {
@@ -174,6 +199,7 @@ p {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .profile3 {
@@ -185,6 +211,7 @@ p {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .profilee {
@@ -196,6 +223,7 @@ p {
   cursor: pointer;
   border: 12px;
   border-radius: 6px;
+  margin-top: 15px;
 }
 
 .overlay {
@@ -289,4 +317,29 @@ h3 {
 
 .bg-footer {
   background-color: #042e2b
+}
+
+.text-about{
+  width: 600px;
+}
+
+.about-btn button{
+  width: 120px;
+  height: 40px;
+  display: block;
+  border-width: 0px;
+
+}
+.about-btn button a{
+  color: #000;
+}
+.svg{
+  color: #000;
+  padding-right: 6px;
+}
+
+
+.about-btn button:hover{
+  background-color: #077E77;
+  transition: 1s;
 }

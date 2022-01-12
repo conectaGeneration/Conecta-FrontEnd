@@ -163,6 +163,7 @@ h3 {
 
 .area-foco {
   padding-top: 20px;
+  height: auto;
 }
 
 .foco {
@@ -180,6 +181,10 @@ h3 {
   justify-content: center;
   font-size: 70pt;
   padding-top: 30px;
+}
+
+.mvv{
+  padding-top:100px;
 }
 
 footer {
