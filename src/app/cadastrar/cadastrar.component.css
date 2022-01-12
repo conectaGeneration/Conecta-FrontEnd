@@ -1,0 +1,134 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.fs-16 {
+  font-size: 16pt;
+}
+
+.login {
+  padding-top: 50px;
+}
+
+section {
+  background: linear-gradient(
+    245.34deg,
+    #146c67 0.05%,
+    rgba(30, 103, 99, 0.883489) 72.04%,
+    rgba(80, 156, 151, 0) 100%
+  );
+  /* background: linear-gradient(245.34deg, #146C67 0.05%, rgba(30, 103, 99, 0.883489) 50.41%, rgba(80, 156, 151, 0) 100%); */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 150vh;
+  /*
+
+  min-height: 90vh;
+  min-width: 90vw; */
+}
+
+.login-area {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  /* background: rgba(255, 255, 255, 0.3); */
+  border-radius: 15px;
+  border-radius: 15px;
+  width: 700px;
+  height: 860px;
+  
+}
+
+.login {
+  align-items: center;
+}
+
+.form h2 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 51px;
+  /* identical to box height */
+
+  letter-spacing: 0.03em;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 30px;
+}
+
+label {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.form-control {
+  width: 443px;
+  height: 48px;
+  border-width: 0px;
+  background: #e8e8e8;
+  border-radius: 5px;
+}
+
+.form {
+  padding-bottom: 90px;
+}
+
+.btn-cancelar {
+  width: 189.88px;
+  height: 48px;
+  background: #810000;
+  border-radius: 5px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #ffffff;
+  margin-left: 15px;
+}
+
+.buttons {
+  margin-top: 25px;
+}
+
+.btn-logar {
+  width: 189.88px;
+  height: 48px;
+
+  background: #06524d;
+  border-radius: 5px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+  color: #ffffff;
+}
+
+.textc {
+  color: blue;
+}
+
+.cadastrar-area img {
+  padding-right: 90px;
+  padding-top: 170px;
+}
+

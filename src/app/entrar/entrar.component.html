@@ -1,0 +1,58 @@
+<section>
+  <div class="container d-flex">
+    <img width="500px" height="500px" src="https://i.imgur.com/eAnNZlu.png" />
+    <!-- <img   src="https://imgur.com/AgRKniX.gif"> -->
+
+    <div class="login-area">
+      <div class="login d-flex justify-content-center">
+        <div class="form">
+          <h2>Entrar</h2>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Endereço de e-mail</label
+            >
+            <input
+              [(ngModel)]="userLogin.email"
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Senha</label
+            >
+            <input
+              [(ngModel)]="userLogin.senha"
+              class="form-control"
+              type="password"
+              placeholder="******"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            />
+          </div>
+          <small
+            ><a
+              style="color: rgb(33, 4, 161)"
+              class="d-flex justify-content-center textc"
+              routerLink="/cadastrar"
+              >Não tem cadastro? Clique aqui</a
+            >
+          </small>
+          <div class="d-flex justify-content-center buttons">
+            <button class="btn btn-cancelar" routerLink="/landing-page">Cancelar</button>
+            <button class="btn btn-logar" (click)="entrar()">
+              Entrar
+            </button>
+          </div>
+        </div>
+
+        <!-- <video autoplay loop>
+        <source src="https://imgur.com/iPkzGuT" type="video/mp4">
+      </video> -->
+      </div>
+    </div>
+  </div>
+</section>

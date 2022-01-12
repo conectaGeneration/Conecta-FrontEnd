@@ -1,0 +1,10 @@
+.feed {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.mr-4{
+  margin-right: 15px;
+}
