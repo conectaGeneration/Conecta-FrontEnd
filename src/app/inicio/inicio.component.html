@@ -1,4 +1,4 @@
-<div class="container-fluid pb-4" id="bg-color">
+<div class="container-fluid-page pb-4" id="bg-color">
   <div class="row d-flex justify-content-center feed">
 
     <!-- COLUNA ESQUERDA -->
@@ -7,7 +7,7 @@
         <div class="card-body">
 
           <div class="d-flex mb-3">
-            <img class="rounded-circle d-flex flex-row ajust" src="{{ foto }}" alt="Foto de perfil" width="70px"
+            <img class="rounded-circle d-flex flex-row ajust-page" src="{{ foto }}" alt="Foto de perfil" width="70px"
               height="75px" />
             <div class="d-block info-perfil mx-3">
               <h5 class="cardtitle">{{ nome }}</h5>
@@ -48,12 +48,12 @@
       <div class="row d-flex justify-content-center">
         <button data-bs-toggle="modal" data-bs-target="#novaPostagem"
           class="col-md-8 btn mb-1 mt-3 d-flex align-items-center" data-dismiss="modal" data-toggle="modal"
-          data-target="#novaPostagem" id="btnPubli">
+          data-target="#novaPostagem" id="btnPubli-page">
           <div>
-            <img class="rounded-circle d-flex flex-row ajust" src="{{ foto }}" width="45px" height="45px" />
+            <img class="rounded-circle d-flex flex-row ajust-page" src="{{ foto }}" width="45px" height="45px" />
           </div>
 
-          <div class="criar-pub text-center  mx-3">
+          <div class="criar-pub-page text-center  mx-3">
             <p class="fs-14">Criar nova publicação</p>
           </div>
         </button>
@@ -96,15 +96,15 @@
                 </div>
               </div>
               <div class="card-columns">
-                <div class="card-feed" *ngFor="let item of listaPostagens | orderBy: key : reverse">
-                  <div class="feed-area d-flex ">
-                    <div class="foto-area">
+                <div class="card-feed-page" *ngFor="let item of listaPostagens | orderBy: key : reverse">
+                  <div class="feed-area-page d-flex ">
+                    <div class="foto-area-page">
                       <img src="{{item.imagem}}">
                     </div>
                     <div class="mx-auto">
                       <h2>{{item.titulo}}</h2>
 
-                      <div class="text-feed d-flex justify-content-center">
+                      <div class="text-feed-page d-flex justify-content-center">
                         <p>
                           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                             class="svg bi bi-person-circle mx-1" viewBox="0 0 16 16">
@@ -124,23 +124,23 @@
 
                       </div>
 
-                      <div class="text-content justify-content-center">
+                      <div class="text-content-page justify-content-center">
                         <p class="card-text text-center mb-2"> {{item.texto}}</p>
                         <div class="d-flex justify-content-center">
-                          <small class="text-muted space mx-2" id="tag-color">
+                          <small class="text-muted space mx-2" id="tag-color-page">
                             <font color="#06524D">#{{ item.tema.descricao }} </font>
                           </small>
-                          <small class="text-muted space mx-2" id="tag-color">
+                          <small class="text-muted space mx-2" id="tag-color-page">
                             <font color="#06524D">#{{ item.tema.tipo }} </font>
                           </small>
-                          <small class="text-muted space mx-2" id="tag-color">
+                          <small class="text-muted space mx-2" id="tag-color-page">
                             <font color="#06524D">#{{ item.tema.segmento }} </font>
                           </small>
                         </div>
                       </div>
 
-                      <div class="buttons mb-3">
-                        <button type="button" id="like" class="btn btn-like btn-outline-danger">
+                      <div class="buttons-page mb-3">
+                        <button type="button" id="like-page" class="btn btn-like btn-outline-danger">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-heart" viewBox="0 0 16 16">
                             <path
@@ -164,15 +164,15 @@
 
               <!-- inicio card minhas postagens -->
               <div class="card-columns">
-                <div class="card-feed mt-5" *ngFor="let item of user.postagem | orderBy: key : reverse">
-                  <div class="feed-area d-flex ">
-                    <div class="foto-area">
+                <div class="card-feed-page mt-5" *ngFor="let item of user.postagem | orderBy: key : reverse">
+                  <div class="feed-area-page d-flex ">
+                    <div class="foto-area-page">
                       <img src="{{item.imagem}}">
                     </div>
                     <div class="mx-auto">
                       <h2> {{item.titulo}} </h2>
 
-                      <div class="text-feed d-flex justify-content-center">
+                      <div class="text-feed-page d-flex justify-content-center">
                         <p class="p-0">
                           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                             class="svg bi bi-calendar3 mx-1" viewBox="0 0 16 16">
@@ -184,23 +184,23 @@
                           {{ item.data | date: "HH:mm" }}</p>
                       </div>
 
-                      <div class="text-content justify-content-center">
+                      <div class="text-content-page justify-content-center">
                         <p class="card-text text-center mb-2">{{item.texto}}</p>
                         <div class="d-flex justify-content-center">
-                          <small class="text-muted space mx-2" id="tag-color">
+                          <small class="text-muted space mx-2" id="tag-color-page">
                             <font color="#06524D">#{{ item.tema.descricao }} </font>
                           </small>
-                          <small class="text-muted space mx-2" id="tag-color">
+                          <small class="text-muted space mx-2" id="tag-color-page">
                             <font color="#06524D">#{{ item.tema.tipo }} </font>
                           </small>
-                          <small class="text-muted space mx-2" id="tag-color">
+                          <small class="text-muted space mx-2" id="tag-color-page">
                             <font color="#06524D">#{{ item.tema.segmento }} </font>
                           </small>
                         </div>
                       </div>
 
-                      <div class="buttons">
-                        <button type="button" id="like" class="btn btn-like btn-outline-danger">
+                      <div class="buttons-page">
+                        <button type="button" id="like-page" class="btn btn-like btn-outline-danger">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-heart" viewBox="0 0 16 16">
                             <path
@@ -239,18 +239,19 @@
                 </div>
               </div>
 
+              <!-- inicio do card -->
               <div class="card-columns" *ngFor="let tema of listaTemas">
-                <div class="card-feed" *ngFor="let item of tema.postagem | orderBy: key:reverse">
-                  <div class="feed-area d-flex ">
+                <div class="card-feed-page" *ngFor="let item of tema.postagem | orderBy: key:reverse">
+                  <div class="feed-area-page d-flex ">
 
-                    <div class="foto-area">
+                    <div class="foto-area-page">
                       <img src="{{item.imagem}}">
                     </div>
 
                     <div class="mx-auto">
                       <h2>{{item.titulo}}</h2>
 
-                      <div class="text-feed d-flex justify-content-center">
+                      <div class="text-feed-page d-flex justify-content-center">
                         <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                             class="svg bi bi-person-circle mx-1" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -268,23 +269,23 @@
 
                       </div>
 
-                      <div class="text-content justify-content-center">
+                      <div class="text-content-page justify-content-center">
                         <p class="card-text text-center mb-2">{{ item.texto }}</p>
                         <div class="d-flex justify-content-center">
-                          <small class="text-muted space mx-2" id="tag-color">
+                          <small class="text-muted space mx-2" id="tag-color-page">
                             <font color="#06524D">#{{ tema.descricao }} </font>
                           </small>
-                          <small class="text-muted space mx-2" id="tag-color">
+                          <small class="text-muted space mx-2" id="tag-color-page">
                             <font color="#06524D">#{{ tema.tipo }} </font>
                           </small>
-                          <small class="text-muted space mx-2" id="tag-color">
+                          <small class="text-muted space mx-2" id="tag-color-page">
                             <font color="#06524D">#{{ tema.segmento }} </font>
                           </small>
                         </div>
                       </div>
 
-                      <div class="buttons mb-3">
-                        <button type="button" id="like" class="btn btn-like btn-outline-danger">
+                      <div class="buttons-page mb-3">
+                        <button type="button" id="like-page" class="btn btn-like btn-outline-danger">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-heart" viewBox="0 0 16 16">
                             <path
@@ -299,10 +300,10 @@
                   </div>
                 </div>
               </div>
-
+              <!-- fim do card -->
 
             </div>
- <!-- FIM POSTANGES  POR TEMA -->
+            <!-- FIM POSTANGES  POR TEMA -->
           </div>
         </div>
       </div>
@@ -353,8 +354,8 @@
                       Escolha as tags que descrevem sua postagem:
                     </p>
 
-                    <div class="border-r" style="border: 1px solid #03524d">
-                      <select style="width: 100%" class="form-control text-dark fs-6 form-selected" name="tema"
+                    <div class="border-r-page" style="border: 1px solid #03524d">
+                      <select style="width: 100%" class="form-control text-dark fs-6 form-selected-page" name="tema"
                         id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
                         <option class="option text-dark fs-6" selected disabled>
                           -Escolha segmento, tipo e descrição-
