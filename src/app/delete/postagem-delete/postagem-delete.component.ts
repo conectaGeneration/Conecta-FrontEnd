@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
-import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
@@ -24,8 +23,7 @@ export class PostagemDeleteComponent implements OnInit {
     private postagemService: PostagemService,
     private router: Router,
     private route: ActivatedRoute,
-    private temaService: TemaService,
-    private alertasService: AlertasService
+    private temaService: TemaService
   ) {}
 
 
@@ -60,6 +58,4 @@ export class PostagemDeleteComponent implements OnInit {
       this.router.navigate(['/inicio']);
     });
   }
-
-
 }

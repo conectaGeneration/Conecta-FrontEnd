@@ -3,7 +3,6 @@ import { Tema } from './../model/Tema';
 import { environment } from 'src/environments/environment.prod';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { AlertasService } from '../service/alertas.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,8 +16,7 @@ export class TemaComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private temaService: TemaService,
-    private alertasService: AlertasService
+    private temaService: TemaService
   ) {}
 
   ngOnInit() {

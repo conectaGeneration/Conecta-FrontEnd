@@ -79,7 +79,4 @@ export class UsuarioEditComponent implements OnInit {
       this.usuario = resp;
     });
   }
-
-
-
 }

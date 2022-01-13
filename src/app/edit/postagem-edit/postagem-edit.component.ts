@@ -1,4 +1,3 @@
-import { AlertasService } from './../../service/alertas.service';
 import { TemaService } from './../../service/tema.service';
 import { Tema } from './../../model/Tema';
 import { environment } from './../../../environments/environment.prod';
@@ -26,8 +25,7 @@ idTema: number
     private router: Router,
     private route:ActivatedRoute,
     private postagemService: PostagemService,
-    private temaService: TemaService,
-    private alertasService: AlertasService
+    private temaService: TemaService
     ) { }
 
   ngOnInit() {
@@ -77,6 +75,5 @@ idTema: number
       this.router.navigate(['/inicio'])
     })
   }
-
 
 }
