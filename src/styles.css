@@ -205,3 +205,13 @@
 .container-fluid-page {
   flex-wrap: wrap;
 }
+
+.nav-items ul li a {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: #ffffff;
+}
